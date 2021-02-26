@@ -1,10 +1,8 @@
 import React from 'react';
-import styles from './Contact.module.css';
+import "./Contact.module.css";
 
-const Contact: React.FC = () => (
-  <div className={styles.Contact}>
-    Contact Component
-  </div>
-);
+const Contact = () => {
+  return <div></div>;
+}
 
 export default Contact;
