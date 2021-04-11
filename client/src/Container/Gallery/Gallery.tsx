@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import styles from './style'
 
-const Contact : FC = () => {
+const Gallery : FC = () => {
     return <div style={{marginTop:'50px'}}>
-       Contact
+        Gallery
      </div>
         
 }
 
-export default Contact;
+export default Gallery;

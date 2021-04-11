@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import styles from './style'
 
-const Contact : FC = () => {
+const Country : FC = () => {
     return <div style={{marginTop:'50px'}}>
-       Contact
+        Country
      </div>
         
 }
 
-export default Contact;
+export default Country;

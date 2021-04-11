@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import fond from '../../Images/fond.jpg'
+import fond from '../../Images/fond-1.png';
 
 const useStyles = makeStyles((theme) => ({
     boxOne: {

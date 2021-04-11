@@ -25,10 +25,10 @@ const WrapperComponent = (props: WrapperComponentProps) => {
           <div>
             
             <Link to="/" className={classes.navLink}>Fandraisana</Link>
-            <Link to="/" className={classes.navLink}>Mombamomba</Link>
-            <Link to="/" className={classes.navLink}>Faritra</Link>
-            <Link to="/" className={classes.navLink}>Sary</Link>
-            <Link to="/" className={classes.navLink}>Fifandraisana</Link> 
+            <Link to="/about" className={classes.navLink}>Mombamomba</Link>
+            <Link to="/country" className={classes.navLink}>Faritra</Link>
+            <Link to="/gallery" className={classes.navLink}>Sary</Link>
+            <Link to="/contact" className={classes.navLink}>Fifandraisana</Link> 
           </div>
         </nav>
       </div>
