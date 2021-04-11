@@ -1,7 +1,7 @@
 import { PrismaClient, User } from '@prisma/client';
 import Redis from 'ioredis';
 import { RedisPubSub } from 'graphql-redis-subscriptions';
-import { decodeAccessToken } from './server/graphql/prisma/src/lib/auth';
+import { decodeAccessToken } from './lib/auth';
 
 
 

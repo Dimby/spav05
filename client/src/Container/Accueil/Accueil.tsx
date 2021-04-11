@@ -17,7 +17,7 @@ const Accueil : FC = () => {
                 <h2>Tit. 2:7a</h2>
             </div>
             <div className={classes.boxButton}>
-                <Link to="/">MOMBA NY SPAV5</Link>
+                <Link to="/">MOMBA NY SPAV5    </Link>
             </div>
         </div>
         <div className={classes.boxTwo}>
