@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     },
     boxThree2: {
         width: "70%",
-        padding: "2rem",
+        padding: "2rem 2rem 2rem 0rem",
         "& .content": {
             backgroundColor: "#fff",
             padding: "1rem 2.5rem",
