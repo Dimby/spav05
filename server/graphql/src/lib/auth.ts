@@ -5,15 +5,14 @@ import { randomBytes } from 'crypto'
 export const decodeAccessToken = async (
   req: any,
   prisma: PrismaClient,
-  redis: Redis,
 ): Promise<User | null> => {
   if (req && req.headers && req.headers.authorization) {
     const accessToken = req.headers.authorization.replace('Bearer ', '')
-    const id = await redis.get(accessToken)
-    if (!id) {
-      return null
-    }
-    return prisma.user.findOne({ where: { id } })
+    // const id = await redis.get(accessToken)
+    // if (!id) {
+    //   return null
+    // }
+    // return prisma.user.findUnique({ where: { id } })
   }
   return null
 }
@@ -51,4 +50,3 @@ export const uuidv4 = () => {
     return v.toString(16)
   })
 }
-Z

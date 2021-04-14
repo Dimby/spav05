@@ -3,8 +3,8 @@
  * Do not make changes to this file directly
  */
 
-import * as Context from "../../context"
 
+import { Context } from "./../../context"
 
 
 declare global {
@@ -24,33 +24,87 @@ export interface NexusGenInputs {
 export interface NexusGenEnums {
 }
 
-export interface NexusGenRootTypes {
-  Query: {};
-  String: string;
-  Int: number;
-  Float: number;
-  Boolean: boolean;
-  ID: string;
+export interface NexusGenScalars {
+  String: string
+  Int: number
+  Float: number
+  Boolean: boolean
+  ID: string
 }
 
-export interface NexusGenAllTypes extends NexusGenRootTypes {
+export interface NexusGenObjects {
+  AuthPayload: { // root type
+    accessToken?: string | null; // String
+    user?: NexusGenRootTypes['User'] | null; // User
+  }
+  Mutation: {};
+  Query: {};
+  User: { // root type
+    email?: string | null; // String
+    id?: string | null; // String
+  }
 }
+
+export interface NexusGenInterfaces {
+}
+
+export interface NexusGenUnions {
+}
+
+export type NexusGenRootTypes = NexusGenObjects
+
+export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
+  AuthPayload: { // field return type
+    accessToken: string | null; // String
+    user: NexusGenRootTypes['User'] | null; // User
+  }
+  Mutation: { // field return type
+    login: NexusGenRootTypes['AuthPayload'] | null; // AuthPayload
+  }
   Query: { // field return type
-    ok: boolean; // Boolean!
+    me: NexusGenRootTypes['User'] | null; // User
+  }
+  User: { // field return type
+    email: string | null; // String
+    id: string | null; // String
+  }
+}
+
+export interface NexusGenFieldTypeNames {
+  AuthPayload: { // field return type name
+    accessToken: 'String'
+    user: 'User'
+  }
+  Mutation: { // field return type name
+    login: 'AuthPayload'
+  }
+  Query: { // field return type name
+    me: 'User'
+  }
+  User: { // field return type name
+    email: 'String'
+    id: 'String'
   }
 }
 
 export interface NexusGenArgTypes {
+  Mutation: {
+    login: { // args
+      email?: string | null; // String
+      password?: string | null; // String
+    }
+  }
 }
 
-export interface NexusGenAbstractResolveReturnTypes {
+export interface NexusGenAbstractTypeMembers {
 }
 
-export interface NexusGenInheritedFields {}
+export interface NexusGenTypeInterfaces {
+}
 
-export type NexusGenObjectNames = "Query";
+export type NexusGenObjectNames = keyof NexusGenObjects;
 
 export type NexusGenInputNames = never;
 
@@ -58,18 +112,32 @@ export type NexusGenEnumNames = never;
 
 export type NexusGenInterfaceNames = never;
 
-export type NexusGenScalarNames = "Boolean" | "Float" | "ID" | "Int" | "String";
+export type NexusGenScalarNames = keyof NexusGenScalars;
 
 export type NexusGenUnionNames = never;
 
+export type NexusGenObjectsUsingAbstractStrategyIsTypeOf = never;
+
+export type NexusGenAbstractsUsingStrategyResolveType = never;
+
+export type NexusGenFeaturesConfig = {
+  abstractTypeStrategies: {
+    isTypeOf: false
+    resolveType: true
+    __typename: false
+  }
+}
+
 export interface NexusGenTypes {
-  context: Context.Context;
+  context: Context;
   inputTypes: NexusGenInputs;
   rootTypes: NexusGenRootTypes;
+  inputTypeShapes: NexusGenInputs & NexusGenEnums & NexusGenScalars;
   argTypes: NexusGenArgTypes;
   fieldTypes: NexusGenFieldTypes;
+  fieldTypeNames: NexusGenFieldTypeNames;
   allTypes: NexusGenAllTypes;
-  inheritedFields: NexusGenInheritedFields;
+  typeInterfaces: NexusGenTypeInterfaces;
   objectNames: NexusGenObjectNames;
   inputNames: NexusGenInputNames;
   enumNames: NexusGenEnumNames;
@@ -80,7 +148,10 @@ export interface NexusGenTypes {
   allOutputTypes: NexusGenTypes['objectNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['unionNames'] | NexusGenTypes['interfaceNames'] | NexusGenTypes['scalarNames'];
   allNamedTypes: NexusGenTypes['allInputTypes'] | NexusGenTypes['allOutputTypes']
   abstractTypes: NexusGenTypes['interfaceNames'] | NexusGenTypes['unionNames'];
-  abstractResolveReturn: NexusGenAbstractResolveReturnTypes;
+  abstractTypeMembers: NexusGenAbstractTypeMembers;
+  objectsUsingAbstractStrategyIsTypeOf: NexusGenObjectsUsingAbstractStrategyIsTypeOf;
+  abstractsUsingStrategyResolveType: NexusGenAbstractsUsingStrategyResolveType;
+  features: NexusGenFeaturesConfig;
 }
 
 
@@ -89,6 +160,10 @@ declare global {
   }
   interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {
   }
+  interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {
+  }
   interface NexusGenPluginSchemaConfig {
+  }
+  interface NexusGenPluginArgConfig {
   }
 }

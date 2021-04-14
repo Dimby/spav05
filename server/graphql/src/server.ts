@@ -1,21 +1,19 @@
 import { ApolloServer } from 'apollo-server-express'
-import { GraphQLError } from 'graphql'
-import { configureRedis } from './redis'
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
-import { createServer } from 'http'
-import { execute, subscribe } from 'graphql'
-import { schema } from './schema'
 import { SubscriptionServer } from 'subscriptions-transport-ws'
-import { createContext } from './context'
 import { prisma } from './context'
-
+import { createContext } from './context'
+import { configureRedis } from './redis'
+import { schema } from './schema'
+import { GraphQLError } from 'graphql'
+import { execute, subscribe } from 'graphql'
+import { createServer } from 'http'
 const port = process.env.NODE_PORT || 4000
 
-const { redis, pubsub } = configureRedis()
-
-const app = express()
+//const { redis, pubsub } = configureRedis()
+let app = express()
 
 app.use(
   '/graphql',
@@ -28,11 +26,9 @@ app.use(
 
 app.use(cors())
 app.use('/graphql', bodyParser.json({ limit: '200mb' }))
-
-
 const apolloServer = new ApolloServer({
   schema,
-  context: (req) => createContext(req, redis, pubsub),
+  context: (req) => createContext(req),
   formatError: (error: GraphQLError) => {
     if (error.message.startsWith('Database Error: ')) {
       return new Error('Internal server error')
@@ -44,13 +40,12 @@ const apolloServer = new ApolloServer({
     return error
   },
 })
-
 apolloServer.applyMiddleware({ app, bodyParserConfig: { limit: '200mb' } })
 
 const server = createServer(app)
 server.listen({ port }, async () => {
   // tslint:disable-next-line: ban-comma-operator
-  console.log(`🚀 Server ready at: http://localhost:${port}\n⭐️ `),
+  console.log(`🚀 Server ready at: http://localhost:${port}/graphql\n⭐️ `),
     new SubscriptionServer(
       {
         execute,
@@ -60,8 +55,6 @@ server.listen({ port }, async () => {
           return {
             ...params,
             context: {
-              pubsub,
-              redis,
               prisma,
             },
           }

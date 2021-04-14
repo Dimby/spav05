@@ -1,26 +1,24 @@
-import { nexusSchemaPrisma ,} from 'nexus-plugin-prisma/schema';
-import { makeSchema } from '@nexus/schema';
+import { makeSchema } from 'nexus'
+import { nexusPrisma } from 'nexus-plugin-prisma'
+import { User, AuthPayload, UserMutation, UserQuery } from './User'
 
 export const schema = makeSchema({
-	types: [
-		
-	],
-	plugins: [ nexusSchemaPrisma() ],
-	outputs: {
-		schema: __dirname + '/../schema.graphql',
-		typegen: __dirname + '/generated/nexus.ts'
-	},
-	typegenAutoConfig: {
-		contextType: 'Context.Context',
-		sources: [
-			{
-				source: '@prisma/client',
-				alias: 'prisma'
-			},
-			{
-				source: __dirname + '/../context.ts',
-				alias: 'Context'
-			}
-		]
-	}
-});
+  types: [User, AuthPayload, UserQuery, UserMutation],
+  plugins: [nexusPrisma()],
+  outputs: {
+    schema: __dirname + '/../schema.graphql',
+    typegen: __dirname + '/generated/nexus.ts',
+  },
+  contextType: {
+    module: require.resolve('../context'),
+    export: 'Context',
+  },
+  sourceTypes: {
+    modules: [
+      {
+        module: '@prisma/client',
+        alias: 'prisma',
+      },
+    ],
+  },
+})
