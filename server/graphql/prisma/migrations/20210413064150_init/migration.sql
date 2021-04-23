@@ -4,6 +4,8 @@ CREATE TABLE `User` (
     `email` VARCHAR(191),
     `firstName` VARCHAR(191) NOT NULL,
     `name` VARCHAR(191) NOT NULL,
+    `phone` VARCHAR(191),
+    `address` VARCHAR(191),
 UNIQUE INDEX `User.email_unique`(`email`),
 
     PRIMARY KEY (`id`)

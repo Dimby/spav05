@@ -1,18 +1,18 @@
-import { Grid, Link } from '@material-ui/core';
-import React, { FC } from 'react';
-import useStyles from "./style";
+import { Grid, Link } from '@material-ui/core'
+import React, { FC } from 'react'
+import useStyles from './style'
 
-const About : FC = () => {
-    const classes = useStyles()
-    return <div>
-        <div className={classes.boxOne}>
-            <div>
-                "FA FAHASOAVANA NO NAMONJENA ANAREO AMIN'NY FINOANA <br/>ARY TSY AVY AMINAREO IZANY, FA FAMONJENA AVY AMIN'ANDRIAMANITRA"
-            </div>
-            <p style={{fontSize: "18px"}}>
-                - Efesiana 2 : 8
-            </p>
+const About: FC = () => {
+  const classes = useStyles()
+  return (
+    <div>
+      <div className={classes.boxOne}>
+        <div>
+          "FA FAHASOAVANA NO NAMONJENA ANAREO AMIN'NY FINOANA <br />
+          ARY TSY AVY AMINAREO IZANY, FA FAMONJENA AVY AMIN'ANDRIAMANITRA"
         </div>
+        <p style={{ fontSize: '18px' }}>- Efesiana 2 : 8</p>
+      </div>
         <div className={classes.boxTwo}>
             <Grid container spacing={0}>
                 <Grid xs={2}>
@@ -46,4 +46,4 @@ const About : FC = () => {
         
 }
 
-export default About;
+export default About

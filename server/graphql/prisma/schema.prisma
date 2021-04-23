@@ -16,4 +16,5 @@ model User {
   firstName String
   name      String
   phone     String?
+  address   String?
 }
