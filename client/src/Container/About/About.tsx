@@ -37,7 +37,7 @@ const About : FC = () => {
                 <Grid className={classes.bRed} xs>
                     <div>xs=6</div>
                 </Grid>
-                <Grid className={classes.bRed} xs={2}>
+                <Grid className={classes.bRed} xs={3}>
                     <div>xs</div>
                 </Grid>
             </Grid>

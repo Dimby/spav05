@@ -17,14 +17,15 @@ const useStyles = makeStyles((theme) => ({
     },
     item: {
         "& .menuItem": {
-            padding: "0rem 0.5rem",
             marginBottom: "10px",
-            border: "3px solid transparent",
             "& :hover": {
                 borderLeft: "3px solid #006AB0",
                 padding: "0rem 0.5rem",
+                transition: "all .1s ease-out",
             },
             "& a": {
+                padding: "0rem 0.5rem",
+                border: "0px solid transparent",
                 cursor: "pointer",
                 textDecoration: "none",
                 color: "#006AB0"
