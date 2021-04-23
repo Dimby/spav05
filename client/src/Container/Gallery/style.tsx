@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
                         height: "250px"
                     },
                     "& .desc": {
-                        padding: "5px",
+                        padding: "5px 15px",
                     }
                 }
             }

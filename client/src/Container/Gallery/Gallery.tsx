@@ -1,4 +1,4 @@
-import { Grid, IconButton } from '@material-ui/core';
+import { Grid, IconButton, Modal } from '@material-ui/core';
 import React, { FC } from 'react';
 import useStyles from "./style";
 import fond from '../../Images/fond-1.jpg';
@@ -9,7 +9,6 @@ import ZoomOutMapIcon from '@material-ui/icons/ZoomOutMap';
 
 const Gallery : FC = () => {
     const classes = useStyles()
-
     return <div>
         <div className={classes.boxOne}>
             <div>
@@ -35,7 +34,7 @@ const Gallery : FC = () => {
                                         </Grid>
                                         <Grid xs style={{textAlign: "right"}}>
                                             <IconButton>
-                                                <ZoomOutMapIcon />
+                                                <ZoomOutMapIcon/>
                                             </IconButton>
                                         </Grid>
                                     </Grid>

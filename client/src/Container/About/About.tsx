@@ -4,8 +4,7 @@ import useStyles from './style'
 
 const About: FC = () => {
   const classes = useStyles()
-  return (
-    <div>
+  return <div>
       <div className={classes.boxOne}>
         <div>
           "FA FAHASOAVANA NO NAMONJENA ANAREO AMIN'NY FINOANA <br />
@@ -43,7 +42,7 @@ const About: FC = () => {
             </Grid>
         </div>
      </div>
-        
+  
 }
 
 export default About
