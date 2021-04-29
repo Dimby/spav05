@@ -20,7 +20,7 @@ const Gallery : FC = () => {
             </p>
         </div>
         <div className={classes.boxTwo}>
-            <Grid container spacing={0}>
+            <Grid container spacing={0} className="listImage">
                 <Grid xs style={{borderRight: "1px solid rgb(0 0 0 / 10%)"}}>
                     <div><h2 style={{marginLeft: "15px", color: "#F4C247"}}>SARY SY HORONANTSARY TAHIRY</h2></div>
                     <Grid container spacing={0}>
@@ -42,7 +42,7 @@ const Gallery : FC = () => {
                                 </div>
                             </div>
                         </Grid>
-                        <Grid xs={4}>
+                        <Grid xs={4} style={{marginBottom: "20px"}}>
                             <div className="responsive">
                                 <div className="gallery">
                                     <img src={fg} alt=""/>
@@ -60,7 +60,7 @@ const Gallery : FC = () => {
                                 </div>
                             </div>
                         </Grid>
-                        <Grid xs={4}>
+                        <Grid xs={4} style={{marginBottom: "20px"}}>
                             <div className="responsive">
                                 <div className="gallery">
                                     <img src={fond} alt=""/>
@@ -78,7 +78,7 @@ const Gallery : FC = () => {
                                 </div>
                             </div>
                         </Grid>
-                        <Grid xs={4}>
+                        <Grid xs={4} style={{marginBottom: "20px"}}>
                             <div className="responsive">
                                 <div className="gallery">
                                     <img src={fg} alt=""/>
@@ -96,7 +96,7 @@ const Gallery : FC = () => {
                                 </div>
                             </div>
                         </Grid>
-                        <Grid xs={4}>
+                        <Grid xs={4} style={{marginBottom: "20px"}}>
                             <div className="responsive">
                                 <div className="gallery">
                                     <img src={fond} alt=""/>
@@ -114,7 +114,7 @@ const Gallery : FC = () => {
                                 </div>
                             </div>
                         </Grid>
-                        <Grid xs={4}>
+                        <Grid xs={4} style={{marginBottom: "20px"}}>
                             <div className="responsive">
                                 <div className="gallery">
                                     <img src={fg} alt=""/>
@@ -132,7 +132,7 @@ const Gallery : FC = () => {
                                 </div>
                             </div>
                         </Grid>
-                        <Grid xs={4}>
+                        <Grid xs={4} style={{marginBottom: "20px"}}>
                             <div className="responsive">
                                 <div className="gallery">
                                     <img src={fond} alt=""/>
@@ -152,9 +152,9 @@ const Gallery : FC = () => {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid xs={3} style={{paddingLeft: "20px"}}>
+                <Grid xs={3} style={{paddingLeft: "20px"}} className="news">
                     <div><h2 style={{marginLeft: "15px", color: "#F4C247"}}>JEREO KOA</h2></div>
-                    <div className="news">
+                    <div>
                         <div className="item">
                             <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
                                 <Grid container>
@@ -177,7 +177,7 @@ const Gallery : FC = () => {
                                 <Grid container>
                             <Grid item>
                                 <div><h4 style={{margin: 0}}>TETIKANDRO</h4></div>
-                                <div>Taona 2021</div>
+                                <div>tetikandro2021.docx</div>
                             </Grid>
                             <Grid xs style={{textAlign: "right"}}>
                                 <IconButton style={{backgroundColor: "#F5F5F5"}}>
@@ -194,7 +194,7 @@ const Gallery : FC = () => {
                                 <Grid container>
                             <Grid item>
                                 <div><h4 style={{margin: 0}}>FITSIPIPIFEHEZANA</h4></div>
-                                <div>Ireo tsara ho fantatra...</div>
+                                <div>fitsipikaanatiny.docx</div>
                             </Grid>
                             <Grid xs style={{textAlign: "right"}}>
                                 <IconButton style={{backgroundColor: "#F5F5F5"}}>

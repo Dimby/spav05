@@ -1,3 +1,5 @@
+import { Grid, IconButton } from '@material-ui/core';
+import { ChevronRight } from '@material-ui/icons';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import useStyles from "./style";
@@ -53,6 +55,57 @@ const Accueil : FC = () => {
                         Aut asperiores illo repellendus eligendi voluptatibus?
                     </div>
                 </div>
+                <br/><br/>
+                <div className="news">
+                    <div><h2 style={{marginLeft: "15px", color: "#F4C247"}}>JEREO KOA</h2></div>
+                    <div>
+                        <div className="item">
+                            <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                                <Grid container>
+                            <Grid item>
+                                <div><h4 style={{margin: 0}}>14 Juin 2021</h4></div>
+                                <div>Fambolenkazo teny Manakambahiny </div>
+                            </Grid>
+                            <Grid xs style={{textAlign: "right"}}>
+                                <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                    <ChevronRight />
+                                </IconButton>
+                            </Grid>
+                                </Grid>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                                <Grid container>
+                            <Grid item>
+                                <div><h4 style={{margin: 0}}>TETIKANDRO</h4></div>
+                                <div>tetikandro2021.docx</div>
+                            </Grid>
+                            <Grid xs style={{textAlign: "right"}}>
+                                <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                    <ChevronRight />
+                                </IconButton>
+                            </Grid>
+                                </Grid>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                                <Grid container>
+                            <Grid item>
+                                <div><h4 style={{margin: 0}}>FITSIPIPIFEHEZANA</h4></div>
+                                <div>fitsipikaanatiny.docx</div>
+                            </Grid>
+                            <Grid xs style={{textAlign: "right"}}>
+                                <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                    <ChevronRight />
+                                </IconButton>
+                            </Grid>
+                                </Grid>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className={classes.boxThree2}>
                 <div className="content">
@@ -72,9 +125,6 @@ const Accueil : FC = () => {
                             <div className="profil">--- PS RASOLONIRINA Robert, Mpitandrina FJKM</div>
                         </div>
                     </div>
-                </div>
-                <div className="content">
-                    <h1>VAOVAO FARANY</h1>
                 </div>
             </div>
         </div>
