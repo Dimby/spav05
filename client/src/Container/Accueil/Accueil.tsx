@@ -3,10 +3,18 @@ import { ChevronRight } from '@material-ui/icons';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import useStyles from "./style";
+import Slider from 'react-slick'
 
 const Accueil: FC = () => {
   const classes = useStyles()
   const height = '612px'
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  }
   return (
     <div>
       <div className={classes.boxOne} style={{ height: height, zIndex: 2 }}>
@@ -33,31 +41,6 @@ const Accueil: FC = () => {
         </p>
       </div>
       <div className={classes.boxThree}>
-        <div className={classes.boxThree1}>
-          <div className="content">
-            <div style={{ backgroundColor: '#F4C247', paddingLeft: '50px' }}>
-              <div
-                style={{
-                  backgroundColor: '#fff',
-                  width: '50%',
-                  textAlign: 'center',
-                  fontSize: '30px',
-                }}
-              >
-                MOFON'AINA
-              </div>
-            </div>
-            <div className={classes.boxButton}>
-                <Link to="/about">MOMBA NY SPAV5    </Link>
-            </div>
-            <div className="boxVerset" style={{ textAlign: 'center' }}>
-              <div className="verset">HEBREO 4 : 1 - 13</div>
-            </div>
-            <p style={{fontSize: "18px"}}>
-                "Mifalia mandrakariva ao amin'ny Tompo, hoy izaho indray, mifalia." Fil. 4:4
-            </p>
-        </div>
-        <div className={classes.boxThree}>
             <div className={classes.boxThree1}>
                 <div className="content">
                     <div style={{backgroundColor: "#F4C247", paddingLeft: "50px"}}>
@@ -149,8 +132,6 @@ const Accueil: FC = () => {
                     </div>
                 </div>
             </div>
-          </div>
-        </div>
         <div className={classes.boxThree2}>
           <div className="content">
             <h1>HAFATRY NY PRESIDENT SYNODAL</h1>
@@ -189,15 +170,46 @@ const Accueil: FC = () => {
                   quisquam voluptatem aperiam eius minus vitae harum? Vero, in
                   perspiciatis.
                 </div>
-                <div className="content">
-                    <h1>VAOVAO FARANY</h1>
-                    
-                </div>
               </div>
             </div>
           </div>
           <div className="content">
             <h1>VAOVAO FARANY</h1>
+            <Slider {...settings} className="slider">
+              <div className="itemSlick">
+                <div className="context">
+                  <h3>ALAHADY FAHA 12 APRILY 2021</h3>
+                  <div>Fivoriamben'ny synodamparitany any amin'ny Fitandremana Antokazo</div>
+                </div>
+              </div>
+              <div className="itemSlick">
+                <div className="context">
+                  <h3>ALAKAMISY 13 - Zoma 14 MAI 2021</h3>
+                  <div>Fambolen-kazo atao eny amin'ny tanin'ny Synodamparitany Manakambahiny, amin'ny 09 ora ny fiaingana eo amin'ny Fiangonana Ambohimasina.</div>
+                </div>
+              </div>
+              <div className="itemSlick">
+                <div className="context">
+                  <h3>ALATSINAINY 23 - ZOMA 28 NOVAMBRA 2021</h3>
+                  <div>Lasym-paritra farany ataon'ny SAMPATI amin'ity taona 2021 ity, hotanterahina eny amin'ny Fiangonana FJKM Ambohimiangaly amin'ny 10 ora. Mitondra vary 4 kapoaka avy sy kitay fandrehitra.</div>
+                </div>
+              </div>
+              <div className="itemSlick">
+                <div className="context">
+                  A
+                </div>
+              </div>
+              <div className="itemSlick">
+                <div className="context">
+                  A
+                </div>
+              </div>
+              <div className="itemSlick">
+                <div className="context">
+                  A
+                </div>
+              </div>
+            </Slider>
           </div>
         </div>
       </div>

@@ -116,6 +116,20 @@ const useStyles = makeStyles((theme) => ({
                 padding: "20px",
                 border: "1px solid red"
             }
+        },
+        "& .slider": {
+            "& .itemSlick": {
+                "& .context": {
+                    borderRadius: "4px",
+                    boxShadow: "0 2px 5px 1px rgb(64 60 67 / 16%)",
+                    textAlign: "center",
+                    height: "150px",
+                    padding: "20px",
+                    "& h3": {
+                        marginTop: "0!important",
+                    }
+                }
+            }
         }
     },
     boxRed: {
