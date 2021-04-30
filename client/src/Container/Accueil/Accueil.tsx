@@ -178,18 +178,21 @@ const Accueil: FC = () => {
             <Slider {...settings} className="slider">
               <div className="itemSlick">
                 <div className="context">
+                  <div className="counter">1</div>
                   <h3>ALAHADY FAHA 12 APRILY 2021</h3>
                   <div>Fivoriamben'ny synodamparitany any amin'ny Fitandremana Antokazo</div>
                 </div>
               </div>
               <div className="itemSlick">
                 <div className="context">
+                  <div className="counter">2</div>
                   <h3>ALAKAMISY 13 - Zoma 14 MAI 2021</h3>
                   <div>Fambolen-kazo atao eny amin'ny tanin'ny Synodamparitany Manakambahiny, amin'ny 09 ora ny fiaingana eo amin'ny Fiangonana Ambohimasina.</div>
                 </div>
               </div>
               <div className="itemSlick">
                 <div className="context">
+                <div className="counter">3</div>
                   <h3>ALATSINAINY 23 - ZOMA 28 NOVAMBRA 2021</h3>
                   <div>Lasym-paritra farany ataon'ny SAMPATI amin'ity taona 2021 ity, hotanterahina eny amin'ny Fiangonana FJKM Ambohimiangaly amin'ny 10 ora. Mitondra vary 4 kapoaka avy sy kitay fandrehitra.</div>
                 </div>
@@ -210,6 +213,10 @@ const Accueil: FC = () => {
                 </div>
               </div>
             </Slider>
+          </div>
+          <div className="content">
+            <h1>VAOVAO ISAM-PITANDREMANA</h1>
+            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit maxime cum vel optio. Autem ab labore esse tenetur dolores incidunt voluptate est amet asperiores distinctio nobis quia cumque, quis mollitia.</div>
           </div>
         </div>
       </div>

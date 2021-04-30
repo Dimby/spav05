@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     },
     boxThree: {
         backgroundColor: "#E9EBEC",
-        height: "800px",
         display: "flex",
 
     },
@@ -97,7 +96,8 @@ const useStyles = makeStyles((theme) => ({
             padding: "1rem 2.5rem",
             color: "#004D80",
             "& h1": {
-                borderBottom: "2px solid #004D80"
+                color: "#F4C247",
+                padding: "20px 0"
             },
             "& .quote": {
                 display: "flex",
@@ -120,6 +120,7 @@ const useStyles = makeStyles((theme) => ({
         "& .slider": {
             "& .itemSlick": {
                 "& .context": {
+                    cursor: "pointer",
                     borderRadius: "4px",
                     boxShadow: "0 2px 5px 1px rgb(64 60 67 / 16%)",
                     textAlign: "center",
@@ -127,6 +128,15 @@ const useStyles = makeStyles((theme) => ({
                     padding: "20px",
                     "& h3": {
                         marginTop: "0!important",
+                    },
+                    "& .counter": {
+                        position: "absolute",
+                        zIndex: "-1",
+                        fontSize: "110px",
+                        opacity: "0.1",
+                        padding: "0 40px",
+                        backgroundColor: "rgb(0 0 0 / 20%)",
+                        fontWeight: "bold"
                     }
                 }
             }
