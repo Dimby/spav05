@@ -126,6 +126,10 @@ const Accueil : FC = () => {
                         </div>
                     </div>
                 </div>
+                <div className="content">
+                    <h1>VAOVAO FARANY</h1>
+                    
+                </div>
             </div>
         </div>
     </div>

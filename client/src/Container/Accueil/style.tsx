@@ -110,6 +110,12 @@ const useStyles = makeStyles((theme) => ({
                     }
                 }
             }
+        },
+        "& .slickCarousel": {
+            '& .item': {
+                padding: "20px",
+                border: "1px solid red"
+            }
         }
     },
     boxRed: {
