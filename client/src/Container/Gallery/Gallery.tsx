@@ -205,6 +205,21 @@ const Gallery : FC = () => {
                             </div>
                         </div>
                     </div>
+                    <div className="item">
+                            <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                                <Grid container>
+                            <Grid item>
+                                <div><h4 style={{margin: 0}}>VINA SY FANAMBY</h4></div>
+                                <div>vinasyfanamby.docx</div>
+                            </Grid>
+                            <Grid xs style={{textAlign: "right"}}>
+                                <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                    <ChevronRight />
+                                </IconButton>
+                            </Grid>
+                                </Grid>
+                            </div>
+                        </div>
                 </Grid>
             </Grid>
         </div>

@@ -1,4 +1,4 @@
-import { Grid, Link } from '@material-ui/core'
+import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Link, Typography } from '@material-ui/core'
 import React, { FC } from 'react'
 import useStyles from './style'
 
@@ -25,6 +25,12 @@ const About: FC = () => {
                                 <Link>PS nifandimby</Link>
                             </div>
                             <div className="menuItem">
+                                <Link>Mpitandrina</Link>
+                            </div>
+                            <div className="menuItem">
+                                <Link>VOMM</Link>
+                            </div>
+                            <div className="menuItem">
                                 <Link>Antontan'isa</Link>
                             </div>
                             <div className="menuItem">
@@ -34,7 +40,34 @@ const About: FC = () => {
                     </div>
                 </Grid>
                 <Grid className={classes.bRed} xs>
-                    <div>xs=6</div>
+                    <div>
+                    <Card className="root">
+                        <CardActionArea>
+                            <CardMedia
+                            className="media"
+                            image="/static/images/cards/contemplative-reptile.jpg"
+                            title="Contemplative Reptile"
+                            />
+                            <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                Lizard
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                                across all continents except Antarctica
+                            </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                        <CardActions>
+                            <Button size="small" color="primary">
+                            Share
+                            </Button>
+                            <Button size="small" color="primary">
+                            Learn More
+                            </Button>
+                        </CardActions>
+                    </Card>
+                    </div>
                 </Grid>
                 <Grid className={classes.bRed} xs={3}>
                     <div>xs</div>

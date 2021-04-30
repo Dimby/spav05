@@ -19,7 +19,7 @@ const Accueil : FC = () => {
                 <h2>Tit. 2:7a</h2>
             </div>
             <div className={classes.boxButton}>
-                <Link to="/">MOMBA NY SPAV5    </Link>
+                <Link to="/about">MOMBA NY SPAV5    </Link>
             </div>
         </div>
         <div className={classes.boxTwo}>
@@ -95,6 +95,21 @@ const Accueil : FC = () => {
                             <Grid item>
                                 <div><h4 style={{margin: 0}}>FITSIPIPIFEHEZANA</h4></div>
                                 <div>fitsipikaanatiny.docx</div>
+                            </Grid>
+                            <Grid xs style={{textAlign: "right"}}>
+                                <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                    <ChevronRight />
+                                </IconButton>
+                            </Grid>
+                                </Grid>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                                <Grid container>
+                            <Grid item>
+                                <div><h4 style={{margin: 0}}>VINA SY FANAMBY</h4></div>
+                                <div>vinasyfanamby.docx</div>
                             </Grid>
                             <Grid xs style={{textAlign: "right"}}>
                                 <IconButton style={{backgroundColor: "#F5F5F5"}}>
