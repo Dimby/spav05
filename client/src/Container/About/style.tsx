@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
         },
         "& .cardBirao": {
             margin: "auto",
+            height: '170px',
             "& .avatar": {
                 width: "50px",
                 height: "50px",
