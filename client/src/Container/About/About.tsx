@@ -9,6 +9,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import MUIDataTable from "mui-datatables";
 
 // Table for Antontan'isa
 function createData(name: string, counter: number) {
@@ -24,7 +25,18 @@ const rows = [
 ]
 
 // Table for Mpitandrina
+const columns = ["Name", "Company", "City", "State"];
 
+const data = [
+    ["Joe James", "Test Corp", "Yonkers", "NY"],
+    ["John Walsh", "Test Corp", "Hartford", "CT"],
+    ["Bob Herm", "Test Corp", "Tampa", "FL"],
+    ["James Houston", "Test Corp", "Dallas", "TX"],
+];
+
+const options = {
+    filterType: 'checkbox',
+};
 
 const About: FC = () => {
   const classes = useStyles()
@@ -218,6 +230,12 @@ const About: FC = () => {
                         </Grid>
                     </Grid>
                     <h1>MPITANDRINA</h1>
+                    <MUIDataTable
+                        title={"Employee List"}
+                        data={data}
+                        columns={columns}
+                        
+                        />
                     <h1>ANTONTAN'ISA TSARA HO FANTATRA</h1>
                     <div>
                     <TableContainer>
