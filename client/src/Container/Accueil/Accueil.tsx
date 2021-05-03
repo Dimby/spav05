@@ -14,6 +14,8 @@ const Accueil: FC = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000
   }
   return (
     <div>
@@ -27,7 +29,7 @@ const Accueil: FC = () => {
           <h2>Tit. 2:7a</h2>
         </div>
         <div className={classes.boxButton}>
-          <Link to="/">MOMBA NY SPAV5 </Link>
+          <Link to="/about">MOMBA NY SPAV5 </Link>
         </div>
       </div>
       <div className={classes.boxTwo}>
@@ -170,11 +172,12 @@ const Accueil: FC = () => {
                   quisquam voluptatem aperiam eius minus vitae harum? Vero, in
                   perspiciatis.
                 </div>
+                <div className="profil">---- Rasolonirina Robert, Mpitandrina, Président Synodal</div>
               </div>
             </div>
           </div>
           <div className="content">
-            <h1>VAOVAO FARANY</h1>
+            <h1>VAOVAO MISONGADINA</h1>
             <Slider {...settings} className="slider">
               <div className="itemSlick">
                 <div className="context">

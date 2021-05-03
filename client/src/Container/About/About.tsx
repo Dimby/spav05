@@ -1,7 +1,27 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Link, Typography } from '@material-ui/core'
-import React, { FC } from 'react'
+import { Avatar, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Link, Typography } from '@material-ui/core'
+import React, { createRef, FC } from 'react'
 import useStyles from './style'
+import avatar1 from '../../Images/ps.jpg';
+import avatar2 from '../../Images/avatar1.jpg';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
+function createData(name: string, counter: number) {
+    return {name, counter};
+}
+
+const rows = [
+    createData('Mpitandrina', 25),
+    createData('Katekista Delege', 36),
+    createData('Fitandremana', 45),
+    createData('Fiangonana', 78),
+    createData('Vondron\'olona miara-mivavaka', 85),
+    createData('Fiangonana tsy misy mpiahy', 96)
+]
 const About: FC = () => {
   const classes = useStyles()
   return <div>
@@ -39,34 +59,182 @@ const About: FC = () => {
                         </div>
                     </div>
                 </Grid>
-                <Grid className={classes.bRed} xs>
+                <Grid style={{padding: '20px'}} xs>
+                    <h1>BIRAO</h1>
+                    <Grid container>
+                        <Grid xs={3} style={{padding: "10px"}}>
+                            <Card className="cardBirao">
+                                <CardContent style={{margin: "auto", textAlign: "center"}}>
+                                    <Avatar alt="" className="avatar" src={avatar2}  style={{margin: "auto"}}/>
+                                    <Typography gutterBottom variant="body2" component="h1" style={{paddingTop: "10px"}}>
+                                        RASOLONIRINA Robert, Mpitandrina
+                                    </Typography>
+                                    <Typography gutterBottom variant="body2" component="p">
+                                        FILOHA
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid xs={3} style={{padding: "10px"}}>
+                            <Card className="cardBirao">
+                                <CardContent style={{margin: "auto", textAlign: "center"}}>
+                                    <Avatar alt="" className="avatar" src={avatar2}  style={{margin: "auto"}}/>
+                                    <Typography gutterBottom variant="body2" component="h1" style={{paddingTop: "10px"}}>
+                                        Rxxxxxxxxxx Txxxx, Mpitandrina
+                                    </Typography>
+                                    <Typography gutterBottom variant="body2" component="p">
+                                        FILOHA LEFITRA
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid xs={3} style={{padding: "10px"}}>
+                            <Card className="cardBirao">
+                                <CardContent style={{margin: "auto", textAlign: "center"}}>
+                                    <Avatar alt="" className="avatar" src={avatar2}  style={{margin: "auto"}}/>
+                                    <Typography gutterBottom variant="body2" component="h1" style={{paddingTop: "10px"}}>
+                                        Rxxxxxxxxxx Hxxxx
+                                    </Typography>
+                                    <Typography gutterBottom variant="body2" component="p">
+                                        MPITANTSORATRY NY VOLA
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid xs={3} style={{padding: "10px"}}>
+                            <Card className="cardBirao">
+                                <CardContent style={{margin: "auto", textAlign: "center"}}>
+                                    <Avatar alt="" className="avatar" src={avatar2}  style={{margin: "auto"}}/>
+                                    <Typography gutterBottom variant="body2" component="h1" style={{paddingTop: "10px"}}>
+                                        Rxxxxxxxxxxxx Axxxxxxx
+                                    </Typography>
+                                    <Typography gutterBottom variant="body2" component="p">
+                                        MPITAHIRY VOLA
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid xs={3} style={{padding: "10px"}}>
+                            <Card className="cardBirao">
+                                <CardContent style={{margin: "auto", textAlign: "center"}}>
+                                    <Avatar alt="" className="avatar" src={avatar2}  style={{margin: "auto"}}/>
+                                    <Typography gutterBottom variant="body2" component="h1" style={{paddingTop: "10px"}}>
+                                        Rxxxxxxxxxxxx Txxxxxxx
+                                    </Typography>
+                                    <Typography gutterBottom variant="body2" component="p">
+                                        MPANOLOTSAINA
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid xs={3} style={{padding: "10px"}}>
+                            <Card className="cardBirao">
+                                <CardContent style={{margin: "auto", textAlign: "center"}}>
+                                    <Avatar alt="" className="avatar" src={avatar2}  style={{margin: "auto"}}/>
+                                    <Typography gutterBottom variant="body2" component="h1" style={{paddingTop: "10px"}}>
+                                        Rxxxxxxxxxxxx Ixxxxxxx
+                                    </Typography>
+                                    <Typography gutterBottom variant="body2" component="p">
+                                        MPANDRAHARAHA
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                    </Grid>
+                    <h1>PRESIDENT SYNODAL NIFANDIMBY</h1>
+                    <Grid container>
+                        <Grid item xs={6} style={{ textAlign: 'center', padding: "20px"}} >
+                            <Card className="root" style={{maxWidth: "none"}}>
+                                <CardActionArea>
+                                    <CardMedia
+                                    className="media"
+                                    image={avatar1}
+                                    title="Contemplative Reptile"
+                                    />
+                                    <CardContent>
+                                        <Typography gutterBottom variant="h5" component="h1">
+                                            RASOLONIRINA Robert Mivady
+                                        </Typography>
+                                        <Typography gutterBottom variant="h6" component="h2">
+                                            Desambra 2017
+                                        </Typography>
+                                        <Typography variant="body2" color="textSecondary" component="p">
+                                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                                            across all continents except Antarctica
+                                        </Typography>
+                                    </CardContent>
+                                </CardActionArea>
+                            </Card>
+                        </Grid>
+                        <Grid item xs={6} style={{ textAlign: 'center', padding: "20px"}} >
+                            <Card className="root" style={{maxWidth: "none"}}>
+                                <CardActionArea>
+                                    <CardMedia
+                                    className="media"
+                                    image={avatar1}
+                                    title="Contemplative Reptile"
+                                    />
+                                    <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h1">
+                                        RASOLONIRINA Robert Mivady
+                                    </Typography>
+                                    <Typography gutterBottom variant="h6" component="h2">
+                                        Desambra 2017
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                                        across all continents except Antarctica
+                                    </Typography>
+                                    </CardContent>
+                                </CardActionArea>
+                            </Card>
+                        </Grid>
+                        <Grid item xs={6} style={{ textAlign: 'center', padding: "20px"}} >
+                            <Card className="root" style={{maxWidth: "none"}}>
+                                <CardActionArea>
+                                    <CardMedia
+                                    className="media"
+                                    image={avatar1}
+                                    title="Contemplative Reptile"
+                                    />
+                                    <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h1">
+                                        RASOLONIRINA Robert Mivady
+                                    </Typography>
+                                    <Typography gutterBottom variant="h6" component="h2">
+                                        Desambra 2017
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                                        across all continents except Antarctica
+                                    </Typography>
+                                    </CardContent>
+                                </CardActionArea>
+                            </Card>
+                        </Grid>
+                    </Grid>
+                    <h1>ANTONTAN'ISA TSARA HO FANTATRA</h1>
                     <div>
-                    <Card className="root">
-                        <CardActionArea>
-                            <CardMedia
-                            className="media"
-                            image="/static/images/cards/contemplative-reptile.jpg"
-                            title="Contemplative Reptile"
-                            />
-                            <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                Lizard
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica
-                            </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary">
-                            Share
-                            </Button>
-                            <Button size="small" color="primary">
-                            Learn More
-                            </Button>
-                        </CardActions>
-                    </Card>
+                    <TableContainer>
+                        <Table aria-label="simple table">
+                            <TableHead>
+                            <TableRow>
+                                <TableCell>Informations</TableCell>
+                                <TableCell align="right">Isa</TableCell>
+                            </TableRow>
+                            </TableHead>
+                            <TableBody>
+                            {rows.map((row) => (
+                                <TableRow key={row.name}>
+                                <TableCell component="th" scope="row">
+                                    {row.name}
+                                </TableCell>
+                                <TableCell align="right">{row.counter}</TableCell>
+                                </TableRow>
+                            ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                     </div>
                 </Grid>
                 <Grid className={classes.bRed} xs={3}>

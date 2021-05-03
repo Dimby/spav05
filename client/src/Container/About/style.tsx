@@ -17,9 +17,21 @@ const useStyles = makeStyles((theme) => ({
         "& .media": {
             height: 140,
         },
+        "& h1": {
+            color: "#006AB0"
+        },
+        "& .cardBirao": {
+            margin: "auto",
+            "& .avatar": {
+                width: "50px",
+                height: "50px",
+                border: "1px solid rgb(0 0 0 / 20%)"
+            }
+        }
     },
     bRed: {
-        border: "1px solid red"
+        border: "1px solid red",
+        padding: "20px"
     },
     item: {
         "& .menuItem": {
