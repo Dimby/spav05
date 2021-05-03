@@ -1,4 +1,4 @@
-import { Avatar, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Link, Typography } from '@material-ui/core'
+import { Avatar, Card, CardActionArea, CardContent, CardMedia, Grid, Link, Typography } from '@material-ui/core'
 import React, { createRef, FC } from 'react'
 import useStyles from './style'
 import avatar1 from '../../Images/ps.jpg';
@@ -10,10 +10,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
+// Table for Antontan'isa
 function createData(name: string, counter: number) {
     return {name, counter};
 }
-
 const rows = [
     createData('Mpitandrina', 25),
     createData('Katekista Delege', 36),
@@ -22,6 +22,10 @@ const rows = [
     createData('Vondron\'olona miara-mivavaka', 85),
     createData('Fiangonana tsy misy mpiahy', 96)
 ]
+
+// Table for Mpitandrina
+
+
 const About: FC = () => {
   const classes = useStyles()
   return <div>
@@ -213,6 +217,7 @@ const About: FC = () => {
                             </Card>
                         </Grid>
                     </Grid>
+                    <h1>MPITANDRINA</h1>
                     <h1>ANTONTAN'ISA TSARA HO FANTATRA</h1>
                     <div>
                     <TableContainer>
