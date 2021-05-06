@@ -34,14 +34,28 @@ const rows = [
 ]
 
 // Table for Mpitandrina
-const columns = ['Lah.', 'Anarana', 'Fitandremana', 'Fifandraisana']
+const columnsMpit = ['Lah.', 'Anarana', 'Fitandremana', 'Fifandraisana']
 
-const data = [
+const dataMpit = [
   ['1', 'ANDRIAMALAZA Otis  Patrice', 'Ambohitanibe Kristy Fahazavana', '0340585554 / 0337973196'],
   ['2', 'ANDRIAMPARANY Donna ', 'Antsangasanga Vavolombelona', '0340395454'],
   ['3', 'ANDRIAMAMPIANINA René Robin', 'Fanantenana Ambodinonoka', '0346452492 / 0336144586'],
   ['4', 'ANDRIAMIHAJA  Albert', 'Kristy Fahazavana Ilafy', '0348510087 / 0325013213'],
 ]
+
+//  Table for VOOM
+const columnsVomm = [
+  {name: "faritra", label: "Faritra"},
+  {name: "laharana", label: "Lah."},
+  {name: "siege", label: "Toerana"},
+  {name: "dateDebu", label: "Daty nijoroany"},
+  {name: "fondateur", label: "Nanagana"},
+  {name: "mpiahy", label: "Mpiahy azy"},
+];
+
+const dataVomm = [
+  { name: ""}
+];
 
 const options = {
   filterType: 'checkbox',
@@ -329,8 +343,8 @@ const About: FC = () => {
             <h1>MPITANDRINA</h1>
             <MUIDataTable
               title={'Lisitry ny Mpitandrina 2021'}
-              data={data}
-              columns={columns}
+              data={dataMpit}
+              columns={columnsMpit}
             />
             <h1>ANTONTAN'ISA TSARA HO FANTATRA</h1>
             <div>
