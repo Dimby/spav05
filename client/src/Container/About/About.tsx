@@ -46,15 +46,13 @@ const dataMpit = [
 //  Table for VOOM
 const columnsVomm = [
   {name: "faritra", label: "Faritra"},
-  {name: "laharana", label: "Lah."},
-  {name: "siege", label: "Toerana"},
-  {name: "dateDebu", label: "Daty nijoroany"},
-  {name: "fondateur", label: "Nanagana"},
-  {name: "mpiahy", label: "Mpiahy azy"},
-];
-
-const dataVomm = [
-  { name: ""}
+  [
+    {name: "laharana", label: "Lah."},
+    {name: "siege", label: "Toerana"},
+    {name: "dateDebut", label: "Daty nijoroany"},
+    {name: "fondateur", label: "Nanagana"},
+    {name: "mpiahy", label: "Mpiahy azy"},
+  ]
 ];
 
 const options = {
