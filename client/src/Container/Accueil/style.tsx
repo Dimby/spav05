@@ -122,7 +122,8 @@ const useStyles = makeStyles((theme) => ({
                 "& .context": {
                     cursor: "pointer",
                     borderRadius: "4px",
-                    boxShadow: "0 2px 5px 1px rgb(64 60 67 / 16%)",
+                    border: "1px solid rgb(0 0 0 / 10%)",
+                    margin: "10px",
                     textAlign: "center",
                     height: "150px",
                     padding: "20px",
