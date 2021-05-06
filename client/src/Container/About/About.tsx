@@ -34,13 +34,13 @@ const rows = [
 ]
 
 // Table for Mpitandrina
-const columns = ['Name', 'Company', 'City', 'State']
+const columns = ['Lah.', 'Anarana', 'Fitandremana', 'Fifandraisana']
 
 const data = [
-  ['Joe James', 'Test Corp', 'Yonkers', 'NY'],
-  ['John Walsh', 'Test Corp', 'Hartford', 'CT'],
-  ['Bob Herm', 'Test Corp', 'Tampa', 'FL'],
-  ['James Houston', 'Test Corp', 'Dallas', 'TX'],
+  ['1', 'ANDRIAMALAZA Otis  Patrice', 'Ambohitanibe Kristy Fahazavana', '0340585554 / 0337973196'],
+  ['2', 'ANDRIAMPARANY Donna ', 'Antsangasanga Vavolombelona', '0340395454'],
+  ['3', 'ANDRIAMAMPIANINA René Robin', 'Fanantenana Ambodinonoka', '0346452492 / 0336144586'],
+  ['4', 'ANDRIAMIHAJA  Albert', 'Kristy Fahazavana Ilafy', '0348510087 / 0325013213'],
 ]
 
 const options = {
@@ -328,7 +328,7 @@ const About: FC = () => {
             </Grid>
             <h1>MPITANDRINA</h1>
             <MUIDataTable
-              title={'Employee List'}
+              title={'Lisitry ny Mpitandrina 2021'}
               data={data}
               columns={columns}
             />
