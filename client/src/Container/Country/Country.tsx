@@ -104,7 +104,7 @@ const Country: FC = () => {
               <h1>AMBATONDRAZAKA</h1>
               <Grid container>
                 <Grid xs>
-                <Table aria-label="simple table">
+                <Table aria-label="simple table" size="small">
                   <TableHead>
                     <TableRow>
                       <TableCell>Lah. SP</TableCell>
@@ -141,7 +141,7 @@ const Country: FC = () => {
               <h1>ANDILAMENA</h1>
               <Grid container>
                 <Grid xs>
-                <Table aria-label="simple table">
+                <Table aria-label="simple table" size="small">
                   <TableHead>
                     <TableRow>
                       <TableCell>Lah. SP</TableCell>
