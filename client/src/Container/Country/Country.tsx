@@ -35,6 +35,14 @@ const Country: FC = () => {
             </Grid>
             <Grid style={{ padding: '20px' }} xs>
               <h1>AMBATONDRAZAKA</h1>
+              <Grid container>
+                <Grid xs>
+                  A
+                </Grid>
+                <Grid xs>
+                  B
+                </Grid>
+              </Grid>
               <h1>ANDILAMENA</h1>
               <h1>ANDILANATOBY</h1>
               <h1>ANDREBA</h1>
