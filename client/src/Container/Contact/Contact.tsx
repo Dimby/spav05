@@ -14,7 +14,8 @@ const Contact : FC = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 4000
+    autoplay: true,
+    autoplaySpeed: 3000
   }
     return <div>
       <div className={classes.boxOne}>
