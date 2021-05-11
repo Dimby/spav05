@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
             "& .button": {
                 margin: "10px 20px",
             },
+        },
+        "& .chipsItem": {
+            backgroundColor: "#fff",
+            padding: "10px", marginBottom: "10px"
         }
     }
 }));

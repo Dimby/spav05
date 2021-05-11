@@ -36,8 +36,16 @@ const Contact : FC = () => {
               </div>
             </Slider>
             </div>
-            <div style={{borderTop: "1px solid rgb(0 0 0 / 10%)", padding: "20px"}}>
-              hr
+            <div style={{borderTop: "1px solid rgb(0 0 0 / 10%)", padding: "15px", backgroundColor: "#F5F5F5"}}>
+              <div className="chipsItem">
+                PRESIDENT SYNODAL : <br /> 034 xx xxx xx / 033 xx xxx xx <br /> robertrasolonirina@gmail.com
+              </div>
+              <div className="chipsItem">
+                MPANDRAHARAHA : <br /> 034 xx xxx xx / 033 xx xxx xx <br /> mpandraharaha@gmail.com
+              </div>
+              <div className="chipsItem">
+                Eto hafa koa
+              </div>
             </div>
           </Grid>
           <Grid item xs={6} style={{padding: "30px"}}>
