@@ -119,6 +119,7 @@ const Contact : FC = () => {
                   >
                   Alefa
                 </Button>
+                <div>* Tsy maintsy fenoina.</div>
               </form>
             </div>
           </Grid>
