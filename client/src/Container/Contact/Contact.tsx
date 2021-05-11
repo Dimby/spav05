@@ -16,9 +16,16 @@ const Contact : FC = () => {
     slidesToScroll: 1,
     autoplaySpeed: 4000
   }
-    return <div style={{marginTop:'50px'}}>
+    return <div>
+      <div className={classes.boxOne}>
+        <div>
+          "FA FAHASOAVANA NO NAMONJENA ANAREO AMIN'NY FINOANA <br />
+          ARY TSY AVY AMINAREO IZANY, FA FAMONJENA AVY AMIN'ANDRIAMANITRA"
+        </div>
+        <p style={{ fontSize: '18px' }}>- Efesiana 2 : 8</p>
+      </div>
       <Box mx="10rem">
-       <Grid container className={classes.boxOne}>
+       <Grid container className={classes.boxTwo}>
           <Grid item xs={5} style={{padding: "30px"}}>
             <div style={{marginBottom: "40px"}}>
             <Slider {...settings}>
