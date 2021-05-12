@@ -5,6 +5,7 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  IconButton,
   Link,
   Typography,
 } from '@material-ui/core'
@@ -19,10 +20,15 @@ import TableContainer from '@material-ui/core/TableContainer'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import MUIDataTable from 'mui-datatables'
+import { ChevronRight } from '@material-ui/icons'
 
 // Table for Antontan'isa
 function createData(name: string, counter: number) {
   return { name, counter }
+}
+// Table for Fanamby
+function createDataForFanamby(karazany: string, text: string) {
+  return { karazany, text}
 }
 const rows = [
   createData('Mpitandrina', 25),
@@ -52,6 +58,14 @@ const columnsVomm = [
   {name: "fondateur", label: "Nanagana"},
   {name: "mpiahy", label: "Mpiahy azy"},
 ];
+
+const dataFanamby = [
+  createDataForFanamby("F1.", "Atao vaindohan-draharaha ny Asa fitoriana ny Filazantsara"),
+  createDataForFanamby("F2.", "Fiombonana tanteraka ho amin’ny asa fampandrosoana"),
+  createDataForFanamby("F3.", "Fahazakana tena ara-bola"),
+  createDataForFanamby("F4.", "Fanasongadinana fisiana sy fiiziana miavaka"),
+  createDataForFanamby("F5.", "Voakarakara tsara ny mpiasa"),
+]
 
 const options = {
   filterType: 'checkbox',
@@ -95,7 +109,7 @@ const About: FC = () => {
               </div>
             </div>
           </Grid>
-          <Grid style={{ padding: '20px' }} xs>
+          <Grid style={{ padding: '30px', borderLeft: "1px solid rgb(0 0 0 / 10%)", borderRight: "1px solid rgb(0 0 0 / 10%)" }} xs>
             <h1>BIRAO</h1>
             <Grid container>
               <Grid xs={3} style={{ padding: '10px' }}>
@@ -365,9 +379,129 @@ const About: FC = () => {
                 </Table>
               </TableContainer>
             </div>
+            <h1>TANTARAN'NY SYNODAMPARITANY</h1>
+            <div>
+              B
+            </div>
           </Grid>
-          <Grid className={classes.bRed} xs={3}>
-            <div>xs</div>
+          <Grid xs={3}>
+            <div className="section">
+              <div className="news">
+                  <div><h2 style={{marginLeft: "15px", color: "#F4C247"}}>JEREO KOA</h2></div>
+                  <div>
+                      <div className="item">
+                          <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                              <Grid container>
+                          <Grid item>
+                              <div><h4 style={{margin: 0}}>14 Juin 2021</h4></div>
+                              <div>Fambolenkazo teny Manakambahiny </div>
+                          </Grid>
+                          <Grid xs style={{textAlign: "right"}}>
+                              <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                  <ChevronRight />
+                              </IconButton>
+                          </Grid>
+                              </Grid>
+                          </div>
+                      </div>
+                      <div className="item">
+                          <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                              <Grid container>
+                          <Grid item>
+                              <div><h4 style={{margin: 0}}>TETIKANDRO</h4></div>
+                              <div>tetikandro2021.docx</div>
+                          </Grid>
+                          <Grid xs style={{textAlign: "right"}}>
+                              <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                  <ChevronRight />
+                              </IconButton>
+                          </Grid>
+                              </Grid>
+                          </div>
+                      </div>
+                      <div className="item">
+                          <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                              <Grid container>
+                          <Grid item>
+                              <div><h4 style={{margin: 0}}>FITSIPIPIFEHEZANA</h4></div>
+                              <div>fitsipikaanatiny.docx</div>
+                          </Grid>
+                          <Grid xs style={{textAlign: "right"}}>
+                              <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                  <ChevronRight />
+                              </IconButton>
+                          </Grid>
+                              </Grid>
+                          </div>
+                      </div>
+                      <div className="item">
+                          <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                              <Grid container>
+                          <Grid item>
+                              <div><h4 style={{margin: 0}}>VINA SY FANAMBY</h4></div>
+                              <div>vinasyfanamby.docx</div>
+                          </Grid>
+                          <Grid xs style={{textAlign: "right"}}>
+                              <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                  <ChevronRight />
+                              </IconButton>
+                          </Grid>
+                              </Grid>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div><br />
+            <div className="section" style={{padding: "0 20px", borderTop: "1px solid rgb(0 0 0 / 10%)"}}>
+              <div><h2 style={{marginLeft: "0px", color: "#F4C247"}}>HIRA FANEVAN'NY SPAV05</h2></div>
+              <br />
+              <div>
+                  1. Isaorana tokoa ny anaranao <br />
+                  Ry Andriamanitra tsitoha mahery <br />
+                  Mitantana ny dia hatramin’izao <br />
+                  Ny dera anie ho Anao irery <br /><br />
+
+                  <div style={{paddingLeft: "20px", fontStyle: "italic"}}>
+                    Miorina amin’ny fanantenana <br />
+                    Isika mino an’I Jesoa Kristy <br />
+                    Finoana marina ny teny mana <br />
+                    No amonjena antsika doria. <br /><br />
+                  </div> 
+                  
+                  2. O! mifalia amin’ny fanompoana <br />
+                  Ka mandrosoa fa aza mora kivy <br />
+                  Dia tano ny ampingan’ny  finoana <br />
+                  Ka tanteraho ireo adidy <br /><br />
+              </div>
+            </div>
+            <div className="section" style={{padding: "0 20px", borderTop: "1px solid rgb(0 0 0 / 10%)"}}>
+              <div><h2 style={{marginLeft: "0px", color: "#F4C247"}}>VINA</h2></div>
+              <div className="vina">
+                "SPAV 05, fianarana amin’ny asa tsara" - Titosy 2:7a
+              </div>
+              <div><h2 style={{marginLeft: "0px", color: "#F4C247"}}>FANAMBY</h2></div>
+              <div className="fanamby">
+                <Table aria-label="simple table" size="small">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell align="left">Karazany</TableCell>
+                      <TableCell align="left">Fanamby</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {dataFanamby.map((row) => (
+                      <TableRow key={row.karazany}>
+                        <TableCell align="left">{row.karazany}</TableCell>
+                        <TableCell align="left">{row.text}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div><br />
+              <div className="vina">
+                <Link>vinasyfanamby.docx</Link>
+              </div>
+            </div>
           </Grid>
         </Grid>
       </div>
