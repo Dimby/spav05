@@ -502,6 +502,57 @@ const About: FC = () => {
                 <Link>vinasyfanamby.docx</Link>
               </div>
             </div>
+            <br /><br />
+            <div className="section" style={{padding: "0 20px", borderTop: "1px solid rgb(0 0 0 / 10%)"}}>
+              <div><h2 style={{marginLeft: "0px", color: "#F4C247"}}>HAFA</h2></div>
+              <div className="news">
+                <div className="item">
+                    <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                        <Grid container>
+                    <Grid item>
+                        <div><h4 style={{margin: 0}}>Dépliant 2021</h4></div>
+                        <div>depliant2021.docx</div>
+                    </Grid>
+                    <Grid xs style={{textAlign: "right"}}>
+                        <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                            <ChevronRight />
+                        </IconButton>
+                    </Grid>
+                        </Grid>
+                    </div>
+                </div>
+                <div className="item">
+                    <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                        <Grid container>
+                    <Grid item>
+                        <div><h4 style={{margin: 0}}>Dépliant 2020</h4></div>
+                        <div>depliant2020.docx</div>
+                    </Grid>
+                    <Grid xs style={{textAlign: "right"}}>
+                        <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                            <ChevronRight />
+                        </IconButton>
+                    </Grid>
+                        </Grid>
+                    </div>
+                </div>
+                <div className="item">
+                    <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                        <Grid container>
+                    <Grid item>
+                        <div><h4 style={{margin: 0}}>Dépliant 2019</h4></div>
+                        <div>depliant2019.docx</div>
+                    </Grid>
+                    <Grid xs style={{textAlign: "right"}}>
+                        <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                            <ChevronRight />
+                        </IconButton>
+                    </Grid>
+                        </Grid>
+                    </div>
+                </div>
+              </div>
+            </div>
           </Grid>
         </Grid>
       </div>
