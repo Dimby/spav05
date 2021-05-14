@@ -33,6 +33,9 @@ const WrapperComponent = (props: WrapperComponentProps) => {
         </nav>
       </div>
     { children }
+    <div style={{backgroundColor: "#006AB0", padding: "20px", marginTop: "40px", color: "#fff", textAlign: "center"}}>
+      SPAV05 [ Synodamparitany Ambatondrazaka Vaovao 05 ] | Copyright 2021
+    </div>
   </div>
   );
 };

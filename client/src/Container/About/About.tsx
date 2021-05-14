@@ -98,6 +98,9 @@ const About: FC = () => {
                   <Link>Mpitandrina</Link>
                 </div>
                 <div className="menuItem">
+                  <Link>Katekista Delege</Link>
+                </div>
+                <div className="menuItem">
                   <Link>VOMM</Link>
                 </div>
                 <div className="menuItem">
@@ -350,7 +353,14 @@ const About: FC = () => {
                 </Card>
               </Grid>
             </Grid>
+
             <h1>MPITANDRINA</h1>
+            <MUIDataTable
+              title={'Lisitry ny Mpitandrina 2021'}
+              data={dataMpit}
+              columns={columnsMpit}
+            />
+            <h1>KATEKISTA DELEGE</h1>
             <MUIDataTable
               title={'Lisitry ny Mpitandrina 2021'}
               data={dataMpit}
