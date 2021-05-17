@@ -1,10 +1,15 @@
-function verset(toko: string, fehezanteny: string) {
-    return {toko, fehezanteny}
-}
 const versets = [
-    verset("", ""),
-    verset("", ""),
-    verset("", ""),
+  { id: '1', toko: 'A', fehezanteny: 'A' },
+  { id: '2', toko: 'B', fehezanteny: 'B' },
+  { id: '3', toko: 'B', fehezanteny: 'B' },
+  { id: '4', toko: 'B', fehezanteny: 'B' },
 ]
 
-export default versets;
+const getRandomInt = (max: number) => {
+  return Math.floor(Math.random() * max)
+}
+
+export const verset = () => {
+  const indice = getRandomInt(versets.length - 1)
+  return versets[indice]
+}
