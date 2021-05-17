@@ -12,13 +12,14 @@ import {
 import React, { createRef, FC } from 'react'
 import useStyles from './style'
 
-import avatar1 from '../../Images/ps.jpg'
-import avatar2 from '../../Images/avatar1.jpg'
+// Birao
 import Filoha from '../../Images/Birao/Filoha.png';
 import FilohaMpanampy from '../../Images/Birao/FilohaMpanampy.svg';
 import Mpanolotsaina from '../../Images/Birao/Mpanolotsaina.svg';
 import MpitantsoratryNyFivoriana from '../../Images/Birao/MpitantsoratryNyFivoriana.svg';
 import MpitantsoratryNyVola from '../../Images/Birao/MpitantsoratryNyVola.svg';
+// PS
+import RRobert from '../../Images/PS/RasolonirinaRobert.jpg'
 
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -33,10 +34,35 @@ import { ChevronRight } from '@material-ui/icons'
 function createData(name: string, counter: number) {
   return { name, counter }
 }
+const rows = [
+  createData('Mpitandrina', 25),
+  createData('Katekista Delege', 36),
+  createData('Fitandremana', 45),
+  createData('Fiangonana', 78),
+  createData("Vondron'olona miara-mivavaka", 85),
+  createData('Fiangonana tsy misy mpiahy', 96),
+]
+
 // Table for Fanamby
 function createDataForFanamby(karazany: string, text: string) {
   return { karazany, text}
 }
+const dataFanamby = [
+  createDataForFanamby("F1.", "Atao vaindohan-draharaha ny Asa fitoriana ny Filazantsara"),
+  createDataForFanamby("F2.", "Fiombonana tanteraka ho amin’ny asa fampandrosoana"),
+  createDataForFanamby("F3.", "Fahazakana tena ara-bola"),
+  createDataForFanamby("F4.", "Fanasongadinana fisiana sy fiiziana miavaka"),
+  createDataForFanamby("F5.", "Voakarakara tsara ny mpiasa"),
+]
+
+// Data for PS
+function createDataPS(avatar: string, name: string, firstname: string, status: string, dateDebut: string, dateFin: string, description: string) {
+  return {avatar, name, firstname, status, dateDebut, dateFin, description}
+}
+const dataPS = [
+  createDataPS(RRobert, "RASOLONIRINA", "Robert", "Mivady", "Desambra 2017", "Ankehitriny", "Blablabla"),
+]
+
 // Data for Birao
 function createDataBirao(avatar: string, name: string, firstname: string, asa: string, fonction: string, toerana: string) {
   return {avatar, name, firstname, asa, fonction, toerana}
@@ -51,19 +77,18 @@ const dataBirao = [
   createDataBirao(MpitantsoratryNyVola, "RAOELISON", "Andrianaivo", "Diakona", "Mpitahirivola", "FJKM ANDILANOMBY FIRAISANA"),
 ]
 
-const rows = [
-  createData('Mpitandrina', 25),
-  createData('Katekista Delege', 36),
-  createData('Fitandremana', 45),
-  createData('Fiangonana', 78),
-  createData("Vondron'olona miara-mivavaka", 85),
-  createData('Fiangonana tsy misy mpiahy', 96),
-]
-
 // Table for Mpitandrina
 const columnsMpit = ['Lah.', 'Anarana', 'Fitandremana', 'Fifandraisana']
-
 const dataMpit = [
+  ['1', 'ANDRIAMALAZA Otis  Patrice', 'Ambohitanibe Kristy Fahazavana', '0340585554 / 0337973196'],
+  ['2', 'ANDRIAMPARANY Donna ', 'Antsangasanga Vavolombelona', '0340395454'],
+  ['3', 'ANDRIAMAMPIANINA René Robin', 'Fanantenana Ambodinonoka', '0346452492 / 0336144586'],
+  ['4', 'ANDRIAMIHAJA  Albert', 'Kristy Fahazavana Ilafy', '0348510087 / 0325013213'],
+]
+
+// Table for KD
+const columnsKD = ['Lah.', 'Anarana', 'Fitandremana', 'Fifandraisana']
+const dataKD = [
   ['1', 'ANDRIAMALAZA Otis  Patrice', 'Ambohitanibe Kristy Fahazavana', '0340585554 / 0337973196'],
   ['2', 'ANDRIAMPARANY Donna ', 'Antsangasanga Vavolombelona', '0340395454'],
   ['3', 'ANDRIAMAMPIANINA René Robin', 'Fanantenana Ambodinonoka', '0346452492 / 0336144586'],
@@ -80,13 +105,6 @@ const columnsVomm = [
   {name: "mpiahy", label: "Mpiahy azy"},
 ];
 
-const dataFanamby = [
-  createDataForFanamby("F1.", "Atao vaindohan-draharaha ny Asa fitoriana ny Filazantsara"),
-  createDataForFanamby("F2.", "Fiombonana tanteraka ho amin’ny asa fampandrosoana"),
-  createDataForFanamby("F3.", "Fahazakana tena ara-bola"),
-  createDataForFanamby("F4.", "Fanasongadinana fisiana sy fiiziana miavaka"),
-  createDataForFanamby("F5.", "Voakarakara tsara ny mpiasa"),
-]
 
 const options = {
   filterType: 'checkbox',
@@ -165,102 +183,39 @@ const About: FC = () => {
             </Grid>
             <h1>PRESIDENT SYNODAL NIFANDIMBY</h1>
             <Grid container>
-              <Grid
-                item
-                xs={6}
-                style={{ textAlign: 'center', padding: '20px' }}
-              >
-                <Card className="root" style={{ maxWidth: 'none' }}>
-                  <CardActionArea>
-                    <CardMedia
-                      className="media"
-                      image={avatar1}
-                      title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="h1">
-                        RASOLONIRINA Robert Mivady
-                      </Typography>
-                      <Typography gutterBottom variant="h6" component="h2">
-                        Desambra 2017
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                      >
-                        Lizards are a widespread group of squamate reptiles,
-                        with over 6,000 species, ranging across all continents
-                        except Antarctica
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-              <Grid
-                item
-                xs={6}
-                style={{ textAlign: 'center', padding: '20px' }}
-              >
-                <Card className="root" style={{ maxWidth: 'none' }}>
-                  <CardActionArea>
-                    <CardMedia
-                      className="media"
-                      image={avatar1}
-                      title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="h1">
-                        RASOLONIRINA Robert Mivady
-                      </Typography>
-                      <Typography gutterBottom variant="h6" component="h2">
-                        Desambra 2017
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                      >
-                        Lizards are a widespread group of squamate reptiles,
-                        with over 6,000 species, ranging across all continents
-                        except Antarctica
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-              <Grid
-                item
-                xs={6}
-                style={{ textAlign: 'center', padding: '20px' }}
-              >
-                <Card className="root" style={{ maxWidth: 'none' }}>
-                  <CardActionArea>
-                    <CardMedia
-                      className="media"
-                      image={avatar1}
-                      title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="h1">
-                        RASOLONIRINA Robert Mivady
-                      </Typography>
-                      <Typography gutterBottom variant="h6" component="h2">
-                        Desambra 2017
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                      >
-                        Lizards are a widespread group of squamate reptiles,
-                        with over 6,000 species, ranging across all continents
-                        except Antarctica
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
+              {dataPS.map((row) => (
+                <Grid
+                  item
+                  xs={6}
+                  style={{ textAlign: 'center', padding: '20px' }}
+                  key={row.avatar}
+                >
+                  <Card className="root" style={{ maxWidth: 'none'}}>
+                    <CardActionArea>
+                      <CardMedia
+                        className="media"
+                        image={row.avatar}
+                        title="Contemplative Reptile"
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="h1">
+                          {row.name.toUpperCase()} {row.firstname} {row.status}
+                        </Typography>
+                        <Typography gutterBottom variant="h6" component="h2">
+                          {row.dateDebut} - {row.dateFin}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                        >
+                          {row.description}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Grid>
+              ))}
             </Grid>
 
             <h1>MPITANDRINA</h1>
@@ -271,9 +226,9 @@ const About: FC = () => {
             />
             <h1>KATEKISTA DELEGE</h1>
             <MUIDataTable
-              title={'Lisitry ny Mpitandrina 2021'}
-              data={dataMpit}
-              columns={columnsMpit}
+              title={'Lisitry ny Katekista Delege 2021'}
+              data={dataKD}
+              columns={columnsKD}
             />
             <h1>ANTONTAN'ISA TSARA HO FANTATRA</h1>
             <div>

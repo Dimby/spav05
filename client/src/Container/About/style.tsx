@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
             maxWidth: 345,
         },
         "& .media": {
-            height: 140,
+            height: 240,
         },
         "& h1": {
             color: "#006AB0"
