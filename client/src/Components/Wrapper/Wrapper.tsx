@@ -12,6 +12,8 @@ interface WrapperComponentProps {
 const WrapperComponent = (props: WrapperComponentProps) => {
   const { children } = props;
   const classes = useStyles()
+  const start = new Date();
+  const years = start.getFullYear();
 
   return (
     <div>
@@ -34,7 +36,7 @@ const WrapperComponent = (props: WrapperComponentProps) => {
       </div>
     { children }
     <div style={{backgroundColor: "#006AB0", padding: "20px", marginTop: "40px", color: "#fff", textAlign: "center"}}>
-      SPAV05 [ Synodamparitany Ambatondrazaka Vaovao 05 ] | Copyright 2021
+      SPAV05 [ Synodamparitany Ambatondrazaka Vaovao 05 ] | Copyright {years}
     </div>
   </div>
   );

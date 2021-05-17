@@ -11,8 +11,15 @@ import {
 } from '@material-ui/core'
 import React, { createRef, FC } from 'react'
 import useStyles from './style'
+
 import avatar1 from '../../Images/ps.jpg'
 import avatar2 from '../../Images/avatar1.jpg'
+import Filoha from '../../Images/Birao/Filoha.png';
+import FilohaMpanampy from '../../Images/Birao/FilohaMpanampy.svg';
+import Mpanolotsaina from '../../Images/Birao/Mpanolotsaina.svg';
+import MpitantsoratryNyFivoriana from '../../Images/Birao/MpitantsoratryNyFivoriana.svg';
+import MpitantsoratryNyVola from '../../Images/Birao/MpitantsoratryNyVola.svg';
+
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -30,6 +37,20 @@ function createData(name: string, counter: number) {
 function createDataForFanamby(karazany: string, text: string) {
   return { karazany, text}
 }
+// Data for Birao
+function createDataBirao(avatar: string, name: string, firstname: string, asa: string, fonction: string, toerana: string) {
+  return {avatar, name, firstname, asa, fonction, toerana}
+}
+const dataBirao = [
+  createDataBirao(Filoha, "RASOLONIRINA", "Robert", "Mpitandrina", "Filoha", "Prezida Synodaly"),
+  createDataBirao(FilohaMpanampy, "RABEARIVELO", "Lalarimana", "Mpitandrina", "Filoha Mpanampy", "FJKM ANOSINDRAFILO"),
+  createDataBirao("", "RAVOAJARISOA", "Jean Claude", "Diakona", "Filoha Mpanampy", "FJKM ANDILAMENA FANAVAOZANA"),
+  createDataBirao(Mpanolotsaina, "RANDRIALIVA", "Soanirina Seheno", "Mpitandrina", "Mpanolotsaina", "Talen'ny TPM AMBOHIMIANGALY"),
+  createDataBirao(MpitantsoratryNyFivoriana, "RATOVONAJASONA", "Robelina", "Mpitandrina", "Mpitantsoratry ny fivoriana", "FJKM ANDINGADINGANA"),
+  createDataBirao("", "RANJAKASAINA", "Armand", "Diakona", "Mpitantsoratry ny vola", "FJKM AMBOHIMIANGALY ZOARA"),
+  createDataBirao(MpitantsoratryNyVola, "RAOELISON", "Andrianaivo", "Diakona", "Mpitahirivola", "FJKM ANDILANOMBY FIRAISANA"),
+]
+
 const rows = [
   createData('Mpitandrina', 25),
   createData('Katekista Delege', 36),
@@ -115,144 +136,32 @@ const About: FC = () => {
           <Grid style={{ padding: '30px', borderLeft: "1px solid rgb(0 0 0 / 10%)", borderRight: "1px solid rgb(0 0 0 / 10%)" }} xs>
             <h1>BIRAO</h1>
             <Grid container>
-              <Grid xs={3} style={{ padding: '10px' }}>
-                <Card className="cardBirao">
-                  <CardContent style={{ margin: 'auto', textAlign: 'center' }}>
-                    <Avatar
-                      alt=""
-                      className="avatar"
-                      src={avatar2}
-                      style={{ margin: 'auto' }}
-                    />
-                    <Typography
-                      gutterBottom
-                      variant="body2"
-                      component="h1"
-                      style={{ paddingTop: '10px' }}
-                    >
-                      RASOLONIRINA Robert, Mpitandrina
-                    </Typography>
-                    <Typography gutterBottom variant="body2" component="p">
-                      FILOHA
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid xs={3} style={{ padding: '10px' }}>
-                <Card className="cardBirao">
-                  <CardContent style={{ margin: 'auto', textAlign: 'center' }}>
-                    <Avatar
-                      alt=""
-                      className="avatar"
-                      src={avatar2}
-                      style={{ margin: 'auto' }}
-                    />
-                    <Typography
-                      gutterBottom
-                      variant="body2"
-                      component="h1"
-                      style={{ paddingTop: '10px' }}
-                    >
-                      Rxxxxxxxxxx Txxxx, Mpitandrina
-                    </Typography>
-                    <Typography gutterBottom variant="body2" component="p">
-                      FILOHA LEFITRA
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid xs={3} style={{ padding: '10px' }}>
-                <Card className="cardBirao">
-                  <CardContent style={{ margin: 'auto', textAlign: 'center' }}>
-                    <Avatar
-                      alt=""
-                      className="avatar"
-                      src={avatar2}
-                      style={{ margin: 'auto' }}
-                    />
-                    <Typography
-                      gutterBottom
-                      variant="body2"
-                      component="h1"
-                      style={{ paddingTop: '10px' }}
-                    >
-                      Rxxxxxxxxxx Hxxxx
-                    </Typography>
-                    <Typography gutterBottom variant="body2" component="p">
-                      MPITANTSORATRY NY VOLA
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid xs={3} style={{ padding: '10px' }}>
-                <Card className="cardBirao">
-                  <CardContent style={{ margin: 'auto', textAlign: 'center' }}>
-                    <Avatar
-                      alt=""
-                      className="avatar"
-                      src={avatar2}
-                      style={{ margin: 'auto' }}
-                    />
-                    <Typography
-                      gutterBottom
-                      variant="body2"
-                      component="h1"
-                      style={{ paddingTop: '10px' }}
-                    >
-                      Rxxxxxxxxxxxx Axxxxxxx
-                    </Typography>
-                    <Typography gutterBottom variant="body2" component="p">
-                      MPITAHIRY VOLA
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid xs={3} style={{ padding: '10px' }}>
-                <Card className="cardBirao">
-                  <CardContent style={{ margin: 'auto', textAlign: 'center' }}>
-                    <Avatar
-                      alt=""
-                      className="avatar"
-                      src={avatar2}
-                      style={{ margin: 'auto' }}
-                    />
-                    <Typography
-                      gutterBottom
-                      variant="body2"
-                      component="h1"
-                      style={{ paddingTop: '10px' }}
-                    >
-                      Rxxxxxxxxxxxx Txxxxxxx
-                    </Typography>
-                    <Typography gutterBottom variant="body2" component="p">
-                      MPANOLOTSAINA
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid xs={3} style={{ padding: '10px' }}>
-                <Card className="cardBirao">
-                  <CardContent style={{ margin: 'auto', textAlign: 'center' }}>
-                    <Avatar
-                      alt=""
-                      className="avatar"
-                      src={avatar2}
-                      style={{ margin: 'auto' }}
-                    />
-                    <Typography
-                      gutterBottom
-                      variant="body2"
-                      component="h1"
-                      style={{ paddingTop: '10px' }}
-                    >
-                      Rxxxxxxxxxxxx Ixxxxxxx
-                    </Typography>
-                    <Typography gutterBottom variant="body2" component="p">
-                      MPANDRAHARAHA
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+              {dataBirao.map((row) => (
+                <Grid xs={3} style={{ padding: '10px' }} key={row.avatar}>
+                  <Card className="cardBirao">
+                    <CardContent style={{ margin: 'auto', textAlign: 'center' }}>
+                      <Avatar
+                        alt=""
+                        className="avatar"
+                        src={row.avatar}
+                        style={{ margin: 'auto' }}
+                      />
+                      <Typography
+                        gutterBottom
+                        variant="body2"
+                        component="h1"
+                        style={{ paddingTop: '10px' }}
+                      >
+                        {row.name} {row.firstname}, {row.asa} <br />
+                        {row.toerana}
+                      </Typography>
+                      <Typography gutterBottom variant="body2" component="p">
+                        {row.fonction}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
             </Grid>
             <h1>PRESIDENT SYNODAL NIFANDIMBY</h1>
             <Grid container>
