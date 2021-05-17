@@ -5,6 +5,7 @@ import useStyles from './style'
 import SendIcon from '@material-ui/icons/Send'
 import Slider from 'react-slick'
 import image1 from '../../Images/Faritra 1.png';
+import { verset } from '../../Lib/verset'
 
 const Contact : FC = () => {
   const classes = useStyles()
@@ -17,13 +18,13 @@ const Contact : FC = () => {
     autoplay: true,
     autoplaySpeed: 3000
   }
+  const versetRandom = verset()
     return <div>
       <div className={classes.boxOne}>
-        <div>
-          "FA FAHASOAVANA NO NAMONJENA ANAREO AMIN'NY FINOANA <br />
-          ARY TSY AVY AMINAREO IZANY, FA FAMONJENA AVY AMIN'ANDRIAMANITRA"
+      <div>
+          " {versetRandom.fehezanteny.toUpperCase()} "
         </div>
-        <p style={{ fontSize: '18px' }}>- Efesiana 2 : 8</p>
+        <p style={{ fontSize: '18px' }}>- {versetRandom.toko}</p>
       </div>
       <Box mx="10rem">
        <Grid container className={classes.boxTwo}>

@@ -63,15 +63,14 @@ const dataGallery = [
 
 const Gallery: FC = () => {
   const classes = useStyles()
+  const versetRandom = verset()
   return (
     <div>
       <div className={classes.boxOne}>
         <div>
-          "FA FAHASOAVANA NO NAMONJENA ANAREO AMIN'NY FINOANA <br />
-          ARY TSY AVY AMINAREO IZANY, FA FAMONJENA AVY AMIN'ANDRIAMANITRA"
-          {verset().fehezanteny}
+          " {versetRandom.fehezanteny.toUpperCase()} "
         </div>
-        <p style={{ fontSize: '18px' }}>- Efesiana 2 : 8</p>
+        <p style={{ fontSize: '18px' }}>- {versetRandom.toko}</p>
       </div>
       <div className={classes.boxTwo}>
         <Grid container spacing={0} className="listImage">

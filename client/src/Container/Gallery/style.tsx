@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme: Theme) =>
             textAlign: "center",
             color: "#006AB0",
             padding: "2rem 2rem 0.5rem 2rem",
-            fontSize: "30px",
+            fontSize: "25px",
             backgroundColor: "#fff",
             boxShadow: "0px 1px rgba(0, 0, 0, 0.1)",
         },
