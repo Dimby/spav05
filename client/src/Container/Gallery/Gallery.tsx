@@ -38,11 +38,11 @@ const Gallery : FC = () => {
         <div className={classes.boxTwo}>
             <Grid container spacing={0} className="listImage">
                 <Grid xs style={{borderRight: "1px solid rgb(0 0 0 / 10%)"}}>
-                    <Grid container style={{display: "flex"}}>
+                    <Grid container style={{paddingRight: "40px"}}>
                         <Grid xs={7}>
                             <h2 style={{marginLeft: "15px", color: "#F4C247"}}>SARY SY HORONANTSARY TAHIRY</h2>
                         </Grid>
-                        <Grid xs={4} style={{display: "flex", justifyContent: "flex-end", alignItems: "center"}}>
+                        <Grid xs={5} style={{display: "flex", justifyContent: "flex-end", alignItems: "center"}}>
                             <form noValidate autoComplete="off" style={{width: "80%"}}>
                                 <TextField id="outlined-basic" fullWidth label="Recherche..." variant="outlined" size="small" />
                             </form>
