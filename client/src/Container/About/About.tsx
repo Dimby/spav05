@@ -152,7 +152,7 @@ const About: FC = () => {
                         component="h1"
                         style={{ paddingTop: '10px' }}
                       >
-                        {row.name} {row.firstname}, {row.asa} <br />
+                        {row.name} {row.firstname} <br /> {row.asa} <br />
                         {row.toerana}
                       </Typography>
                       <Typography gutterBottom variant="body2" component="p">
