@@ -1,10 +1,27 @@
-import { Grid, IconButton } from '@material-ui/core';
+import { Button, Grid, IconButton } from '@material-ui/core';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import { ChevronRight } from '@material-ui/icons';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import useStyles from "./style";
 import Slider from 'react-slick'
 import { verset } from '../../Lib/verset'
+
+function createDataMisongadina(id: number, title: string, desc: string) {
+  return { id, title, desc }
+}
+const rowsMisongadin = [
+  createDataMisongadina(1, "ALAHADY FAHA 12 APRILY 2021", "Fivoriamben'ny Synodamparitany any amin'ny fitandremana Antokazo"),
+  createDataMisongadina(2, "ALAKAMISY 13 - Zoma 14 MAI 2021", "Fambolen-kazo atao eny amin'ny tanin'ny Synodamparitany Manakambahiny, amin'ny 09 ora ny fiaingana eo amin'ny Fiangonana Ambohimasina."),
+  createDataMisongadina(3, "ALATSINAINY 23 - ZOMA 28 NOVAMBRA 2021", "Lasym-paritra farany ataon'ny SAMPATI amin'ity taona 2021 ity, hotanterahina eny amin'ny Fiangonana FJKM Ambohimiangaly amin'ny 10 ora. Mitondra vary 4 kapoaka avy sy kit..."),
+  createDataMisongadina(4, "ALAHADY FAHA 12 APRILY 2021", "Fivoriamben'ny Synodamparitany any amin'ny fitandremana Antokazo"),
+  createDataMisongadina(5, "ALAKAMISY 13 - Zoma 14 MAI 2021", "Fambolen-kazo atao eny amin'ny tanin'ny Synodamparitany Manakambahiny, amin'ny 09 ora ny fiaingana eo amin'ny Fiangonana Ambohimasina."),
+  createDataMisongadina(6, "ALATSINAINY 23 - ZOMA 28 NOVAMBRA 2021", "Lasym-paritra farany ataon'ny SAMPATI amin'ity taona 2021 ity, hotanterahina eny amin'ny Fiangonana FJKM Ambohimiangaly amin'ny 10 ora. Mitondra vary 4 kapoaka avy sy kit..."),
+]
 
 const Accueil: FC = () => {
   const classes = useStyles()
@@ -18,6 +35,14 @@ const Accueil: FC = () => {
     autoplaySpeed: 4000
   }
   const versetRandom = verset()
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div>
       <div className={classes.boxOne} style={{ height: height, zIndex: 2 }}>
@@ -186,47 +211,47 @@ const Accueil: FC = () => {
           <div className="content">
             <h1>VAOVAO MISONGADINA</h1>
             <Slider {...settings} className="slider">
-              <div className="itemSlick">
-                <div className="context">
-                  <div className="counter">1</div>
-                  <h3>ALAHADY FAHA 12 APRILY 2021</h3>
-                  <div>Fivoriamben'ny synodamparitany any amin'ny Fitandremana Antokazo</div>
+              {rowsMisongadin.map((row) => (
+                <div className="itemSlick" onClick={handleClickOpen}>
+                  <div className="context">
+                    <div className="counter">{row.id}</div>
+                    <h3>{row.title}</h3>
+                    <div>{row.desc}</div>
+                  </div>
                 </div>
-              </div>
-              <div className="itemSlick">
-                <div className="context">
-                  <div className="counter">2</div>
-                  <h3>ALAKAMISY 13 - Zoma 14 MAI 2021</h3>
-                  <div>Fambolen-kazo atao eny amin'ny tanin'ny Synodamparitany Manakambahiny, amin'ny 09 ora ny fiaingana eo amin'ny Fiangonana Ambohimasina.</div>
-                </div>
-              </div>
-              <div className="itemSlick">
-                <div className="context">
-                <div className="counter">3</div>
-                  <h3>ALATSINAINY 23 - ZOMA 28 NOVAMBRA 2021</h3>
-                  <div>Lasym-paritra farany ataon'ny SAMPATI amin'ity taona 2021 ity, hotanterahina eny amin'ny Fiangonana FJKM Ambohimiangaly amin'ny 10 ora. Mitondra vary 4 kapoaka avy sy kitay fandrehitra.</div>
-                </div>
-              </div>
-              <div className="itemSlick">
-                <div className="context">
-                  A
-                </div>
-              </div>
-              <div className="itemSlick">
-                <div className="context">
-                  A
-                </div>
-              </div>
-              <div className="itemSlick">
-                <div className="context">
-                  A
-                </div>
-              </div>
+              ))}
             </Slider>
+            <div>
+              <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+              >
+                <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+                <DialogContent>
+                  <DialogContentText id="alert-dialog-description">
+                    Let Google help apps determine location. This means sending anonymous location data to
+                    Google, even when no apps are running.
+                  </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={handleClose} color="primary">
+                    Disagree
+                  </Button>
+                  <Button onClick={handleClose} color="primary" autoFocus>
+                    Agree
+                  </Button>
+                </DialogActions>
+              </Dialog>
+            </div>
           </div>
           <div className="content">
             <h1>VAOVAO ISAM-PITANDREMANA</h1>
             <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit maxime cum vel optio. Autem ab labore esse tenetur dolores incidunt voluptate est amet asperiores distinctio nobis quia cumque, quis mollitia.</div>
+            <div>
+              Alert
+            </div>
           </div>
         </div>
       </div>
