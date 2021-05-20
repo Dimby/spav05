@@ -6,11 +6,11 @@ import {
   CardMedia,
   Grid,
   IconButton,
-  Link,
   Typography,
 } from '@material-ui/core'
 import React, { createRef, FC } from 'react'
 import useStyles from './style'
+import { Link } from 'react-router-dom';
 
 // Birao
 import Filoha from '../../Images/Birao/Filoha.png';
@@ -129,25 +129,25 @@ const About: FC = () => {
               <h2 style={{ marginLeft: '15px', color: '#F4C247' }}>LOHATENY</h2>
               <div className={classes.item} style={{ marginLeft: '20px' }}>
                 <div className="menuItem">
-                  <Link>Birao</Link>
+                  <Link to="">Birao</Link>
                 </div>
                 <div className="menuItem">
-                  <Link>PS nifandimby</Link>
+                  <Link to="">PS nifandimby</Link>
                 </div>
                 <div className="menuItem">
-                  <Link>Mpitandrina</Link>
+                  <Link to="">Mpitandrina</Link>
                 </div>
                 <div className="menuItem">
-                  <Link>Katekista Delege</Link>
+                  <Link to="">Katekista Delege</Link>
                 </div>
                 <div className="menuItem">
-                  <Link>VOMM</Link>
+                  <Link to="">VOMM</Link>
                 </div>
                 <div className="menuItem">
-                  <Link>Antontan'isa</Link>
+                  <Link to="">Antontan'isa</Link>
                 </div>
                 <div className="menuItem">
-                  <Link>Tantaran'ny SP</Link>
+                  <Link to="">Tantaran'ny SP</Link>
                 </div>
               </div>
             </div>
@@ -281,47 +281,53 @@ const About: FC = () => {
                       </div>
                       <div className="item">
                           <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                            <Link to="/contact" style={{color: "#004D80", textDecoration: "none"}}>
                               <Grid container>
-                          <Grid item>
-                              <div><h4 style={{margin: 0}}>TETIKANDRO</h4></div>
-                              <div>tetikandro2021.docx</div>
-                          </Grid>
-                          <Grid xs style={{textAlign: "right"}}>
-                              <IconButton style={{backgroundColor: "#F5F5F5"}}>
-                                  <ChevronRight />
-                              </IconButton>
-                          </Grid>
+                                <Grid item>
+                                    <div><h4 style={{margin: 0}}>TETIKANDRO</h4></div>
+                                    <div>tetikandro2021.docx</div>
+                                </Grid>
+                                <Grid xs style={{textAlign: "right"}}>
+                                    <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                        <ChevronRight />
+                                    </IconButton>
+                                </Grid>
                               </Grid>
+                            </Link>
                           </div>
                       </div>
                       <div className="item">
                           <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                            <Link to="/contact" style={{color: "#004D80", textDecoration: "none"}}>
                               <Grid container>
-                          <Grid item>
-                              <div><h4 style={{margin: 0}}>FITSIPIPIFEHEZANA</h4></div>
-                              <div>fitsipikaanatiny.docx</div>
-                          </Grid>
-                          <Grid xs style={{textAlign: "right"}}>
-                              <IconButton style={{backgroundColor: "#F5F5F5"}}>
-                                  <ChevronRight />
-                              </IconButton>
-                          </Grid>
+                                <Grid item>
+                                    <div><h4 style={{margin: 0}}>FITSIPIPIFEHEZANA</h4></div>
+                                    <div>fitsipikaanatiny.docx</div>
+                                </Grid>
+                                <Grid xs style={{textAlign: "right"}}>
+                                    <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                        <ChevronRight />
+                                    </IconButton>
+                                </Grid>
                               </Grid>
+                            </Link>
                           </div>
                       </div>
                       <div className="item">
                           <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                            <Link to="/contact" style={{color: "#004D80", textDecoration: "none"}}>
                               <Grid container>
-                          <Grid item>
-                              <div><h4 style={{margin: 0}}>VINA SY FANAMBY</h4></div>
-                              <div>vinasyfanamby.docx</div>
-                          </Grid>
-                          <Grid xs style={{textAlign: "right"}}>
-                              <IconButton style={{backgroundColor: "#F5F5F5"}}>
-                                  <ChevronRight />
-                              </IconButton>
-                          </Grid>
+                                <Grid item>
+                                    <div><h4 style={{margin: 0}}>VINA SY FANAMBY</h4></div>
+                                    <div>vinasyfanamby.docx</div>
+                                </Grid>
+                                <Grid xs style={{textAlign: "right"}}>
+                                    <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                        <ChevronRight />
+                                    </IconButton>
+                                </Grid>
                               </Grid>
+                            </Link>
                           </div>
                       </div>
                   </div>
@@ -374,7 +380,7 @@ const About: FC = () => {
                 </Table>
               </div><br />
               <div className="vina">
-                <Link>vinasyfanamby.docx</Link>
+                <Link to="/contact">vinasyfanamby.docx</Link>
               </div>
             </div>
             <br /><br />
@@ -382,50 +388,56 @@ const About: FC = () => {
               <div><h2 style={{marginLeft: "0px", color: "#F4C247"}}>HAFA</h2></div>
               <div className="news">
                 <div className="item">
-                    <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
-                        <Grid container>
-                    <Grid item>
-                        <div><h4 style={{margin: 0}}>Dépliant 2021</h4></div>
-                        <div>depliant2021.docx</div>
-                    </Grid>
-                    <Grid xs style={{textAlign: "right"}}>
-                        <IconButton style={{backgroundColor: "#F5F5F5"}}>
-                            <ChevronRight />
-                        </IconButton>
-                    </Grid>
+                  <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                    <Link to="/contact" style={{color: "#004D80", textDecoration: "none"}}>
+                      <Grid container>
+                        <Grid item>
+                            <div><h4 style={{margin: 0}}>TETIKANDRO</h4></div>
+                            <div>tetikandro2021.docx</div>
                         </Grid>
-                    </div>
-                </div>
-                <div className="item">
-                    <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
-                        <Grid container>
-                    <Grid item>
-                        <div><h4 style={{margin: 0}}>Dépliant 2020</h4></div>
-                        <div>depliant2020.docx</div>
-                    </Grid>
-                    <Grid xs style={{textAlign: "right"}}>
-                        <IconButton style={{backgroundColor: "#F5F5F5"}}>
-                            <ChevronRight />
-                        </IconButton>
-                    </Grid>
+                        <Grid xs style={{textAlign: "right"}}>
+                            <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                <ChevronRight />
+                            </IconButton>
                         </Grid>
-                    </div>
-                </div>
-                <div className="item">
-                    <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
-                        <Grid container>
-                    <Grid item>
-                        <div><h4 style={{margin: 0}}>Dépliant 2019</h4></div>
-                        <div>depliant2019.docx</div>
-                    </Grid>
-                    <Grid xs style={{textAlign: "right"}}>
-                        <IconButton style={{backgroundColor: "#F5F5F5"}}>
-                            <ChevronRight />
-                        </IconButton>
-                    </Grid>
+                      </Grid>
+                    </Link>
+                  </div>
+              </div>
+              <div className="item">
+                  <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                    <Link to="/contact" style={{color: "#004D80", textDecoration: "none"}}>
+                      <Grid container>
+                        <Grid item>
+                            <div><h4 style={{margin: 0}}>FITSIPIPIFEHEZANA</h4></div>
+                            <div>fitsipikaanatiny.docx</div>
                         </Grid>
-                    </div>
-                </div>
+                        <Grid xs style={{textAlign: "right"}}>
+                            <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                <ChevronRight />
+                            </IconButton>
+                        </Grid>
+                      </Grid>
+                    </Link>
+                  </div>
+              </div>
+              <div className="item">
+                  <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
+                    <Link to="/contact" style={{color: "#004D80", textDecoration: "none"}}>
+                      <Grid container>
+                        <Grid item>
+                            <div><h4 style={{margin: 0}}>VINA SY FANAMBY</h4></div>
+                            <div>vinasyfanamby.docx</div>
+                        </Grid>
+                        <Grid xs style={{textAlign: "right"}}>
+                            <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                <ChevronRight />
+                            </IconButton>
+                        </Grid>
+                      </Grid>
+                    </Link>
+                  </div>
+              </div>
               </div>
             </div>
           </Grid>

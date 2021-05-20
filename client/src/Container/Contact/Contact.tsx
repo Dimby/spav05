@@ -58,11 +58,18 @@ const Contact : FC = () => {
             </div>
           </Grid>
           <Grid item xs={6} style={{padding: "30px"}}>
-            <h1>Raha mila fanazavana fanampiny na misy fanamarihana manokana tiana ampitahana,</h1>
+            <h1>Raha : </h1>
+            <h3>
+              <ul style={{margin: "0"}}>
+                <li>Mila fanazavana fanampiny na misy fanamarihana manokana tiana ampitahana,</li>
+                <li>Haka 'fichier word' (tetikandro.docx, vinasyfanamby.docx, fitsipikaanatiny.docx, ...)</li>
+              </ul>
+            </h3>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dia manorata aminay amin'ny alalan'ny adiresy mailaka eo ambany na afaka miantso
               mivantana amin'ny laharana etsy ankavia. Azonao atao koa ny manatona eny amin'ny Biraon'ny Mpandraharaha
               eny amin'ny Station FJKM Ambohimiangaly Ambatondrazaka 503.
             </div>
+            <p><u>Fanamarihana</u> : Soraty mazava eo amin'ny Fanamarihana ny antony hilanao ny 'fichier word'.</p>
             <br />
             <div>
               <form className="root" noValidate autoComplete="off">
