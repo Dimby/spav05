@@ -36,7 +36,9 @@ const WrapperComponent = (props: WrapperComponentProps) => {
       </div>
     { children }
     <div style={{backgroundColor: "#006AB0", padding: "20px", marginTop: "40px", color: "#fff", textAlign: "center"}}>
-      SPAV05 [ Synodamparitany Ambatondrazaka Vaovao 05 ] | Copyright {years}
+      SPAV05 [ Synodamparitany Ambatondrazaka Vaovao 05 ] | Copyright {years} <br /><br />
+      STATION FJKM Ambohimiangaly, Ambatondrazaka 503 <br />
+      spav5fjkm@gmail.com
     </div>
   </div>
   );
