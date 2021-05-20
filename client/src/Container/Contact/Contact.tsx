@@ -104,6 +104,14 @@ const Contact : FC = () => {
                   variant="outlined"
                 />
                 <TextField
+                  disabled
+                  id="filled-disabled"
+                  label="Adiresy handefasana"
+                  defaultValue="spav5fjkm@gmail.com"
+                  variant="outlined"
+                  style={{width: "74ch"}}
+                />
+                <TextField
                   required
                   multiline
                   rows={4}

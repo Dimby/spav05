@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import useStyles from "./style";
 import Slider from 'react-slick'
+import { verset } from '../../Lib/verset'
 
 const Accueil: FC = () => {
   const classes = useStyles()
@@ -16,6 +17,7 @@ const Accueil: FC = () => {
     slidesToScroll: 1,
     autoplaySpeed: 4000
   }
+  const versetRandom = verset()
   return (
     <div>
       <div className={classes.boxOne} style={{ height: height, zIndex: 2 }}>
@@ -37,15 +39,15 @@ const Accueil: FC = () => {
           SYNODAMPARITANY AMBATONDRAZAKA VAOVAO
         </div>
         <p style={{ fontSize: '18px' }}>
-          "Mifalia mandrakariva ao amin'ny Tompo, hoy izaho indray, mifalia."
-          Fil. 4:4
+          " {versetRandom.fehezanteny} "
+          - {versetRandom.toko}
         </p>
       </div>
       <div className={classes.boxThree}>
             <div className={classes.boxThree1}>
                 <div className="content">
-                    <div style={{backgroundColor: "#F4C247", paddingLeft: "50px"}}>
-                        <div style={{backgroundColor: "#fff", width: "50%", textAlign: "center", fontSize: "30px"}}>MOFON'AINA</div>
+                    <div style={{backgroundColor: "#F4C247"}}>
+                        <div style={{backgroundColor: "#fff", width: "75%", textAlign: "center", fontSize: "30px", margin: "auto"}}>MOFON'AINA</div>
                     </div>
                     <div style={{padding: "30px", textAlign: "center"}}>Talata 02 Febroary 2021</div>
                     <div className="boxVerset" style={{textAlign: "center"}}>
