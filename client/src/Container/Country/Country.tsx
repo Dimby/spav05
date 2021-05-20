@@ -30,11 +30,6 @@ const tileDataAmbato = [
 ]
 const rowsAmbato = [
   createData('001-A', '01', 'AMBALABAKO ZIONA'),
-  createData('002-A', '02', 'AMBALAVATO EBENEZERA'),
-  createData('003-A', '03', 'AMBANDRIKA  FILADELFIA'),
-  createData('004-A', '04', 'AMBARARATA'),
-  createData('005-A', '05', 'AMBATONDRAZAKA  FITIAVANA'),
-  createData('006-A', '06', 'AMBOHIBOATAVO HERMONA'),
 ]
 // End
 
