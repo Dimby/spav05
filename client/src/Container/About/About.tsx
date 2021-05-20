@@ -32,16 +32,45 @@ import { ChevronRight } from '@material-ui/icons'
 import { verset } from '../../Lib/verset'
 
 // Table for Antontan'isa
-function createData(name: string, counter: number) {
-  return { name, counter }
+function createData(sokajy: string, taona1: number, taona2: number) {
+  return { sokajy, taona1, taona2 }
 }
 const rows = [
-  createData('Mpitandrina', 25),
-  createData('Katekista Delege', 36),
-  createData('Fitandremana', 45),
-  createData('Fiangonana', 78),
-  createData("Vondron'olona miara-mivavaka", 85),
-  createData('Fiangonana tsy misy mpiahy', 96),
+  createData('Fitandremana', 101, 101),
+  createData('Fiangonana', 170, 169),
+  createData('VOMM', 24, 24),
+  createData('Mpitandrina', 52, 51),
+  createData("Katekista Delege", 28, 28),
+  createData('Kristiana', 39200, 39200),
+  createData('Diakona sy Loholona', 2026, 2026),
+  createData('Vita Batisa', 24800, 24800),
+  createData('Mpandray', 10500, 10500),
+]
+
+// Table for VOMM
+function createDataVomm(taona1: number, nijoro: number, fitambarany: number) {
+  return { taona1, nijoro, fitambarany }
+}
+const rowsVomm = [
+  createDataVomm(24, 0, 24)
+]
+
+// Table for Mpitandrina
+function createDataMpitandrina(isa: number, lahy: number, vavy: number, off: number, natolotra: number, noraisina: number, die: number) {
+  return { isa, lahy, vavy, off, natolotra, noraisina, die }
+}
+const rowsMpitandrina = [
+  createDataMpitandrina(51, 34, 17, 0, 5, 2, 0)
+]
+
+// Table for Sefala
+function createDataSefala(sokajy: string, taona1: number, taona2: number, fitambarany: number) {
+  return { sokajy, taona1, taona2, fitambarany }
+}
+const rowsSefala = [
+  createDataSefala("KATEKISTA", 95, 0, 95),
+  createDataSefala("MPIANDRY", 819, 0, 819),
+  createDataSefala("MPITORITENY", 591, 0, 591),
 ]
 
 // Table for Fanamby
@@ -129,25 +158,19 @@ const About: FC = () => {
               <h2 style={{ marginLeft: '15px', color: '#F4C247' }}>LOHATENY</h2>
               <div className={classes.item} style={{ marginLeft: '20px' }}>
                 <div className="menuItem">
-                  <Link to="">Birao</Link>
+                  <Link to="/about">Birao</Link>
                 </div>
                 <div className="menuItem">
-                  <Link to="">PS nifandimby</Link>
+                  <Link to="/about">PS nifandimby</Link>
                 </div>
                 <div className="menuItem">
-                  <Link to="">Mpitandrina</Link>
+                  <Link to="/about">Mpitandrina</Link>
                 </div>
                 <div className="menuItem">
-                  <Link to="">Katekista Delege</Link>
+                  <Link to="/about">Katekista Delege</Link>
                 </div>
                 <div className="menuItem">
-                  <Link to="">VOMM</Link>
-                </div>
-                <div className="menuItem">
-                  <Link to="">Antontan'isa</Link>
-                </div>
-                <div className="menuItem">
-                  <Link to="">Tantaran'ny SP</Link>
+                  <Link to="/about">Antontan'isa</Link>
                 </div>
               </div>
             </div>
@@ -231,32 +254,123 @@ const About: FC = () => {
               data={dataKD}
               columns={columnsKD}
             />
-            <h1>ANTONTAN'ISA TSARA HO FANTATRA</h1>
+            <h1>ANTONTAN'ISA VOARAY NY TAONA 2020</h1>
             <div>
               <TableContainer>
-                <Table aria-label="simple table">
+                <Table aria-label="simple table" size="small">
                   <TableHead>
                     <TableRow>
-                      <TableCell>Informations</TableCell>
-                      <TableCell align="right">Isa</TableCell>
+                      <TableCell>Sokajy</TableCell>
+                      <TableCell align="right">2019</TableCell>
+                      <TableCell align="right">2020</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {rows.map((row) => (
-                      <TableRow key={row.name}>
+                      <TableRow key={row.sokajy}>
                         <TableCell component="th" scope="row">
-                          {row.name}
+                          {row.sokajy}
                         </TableCell>
-                        <TableCell align="right">{row.counter}</TableCell>
+                        <TableCell align="right">{row.taona1}</TableCell>
+                        <TableCell align="right">{row.taona2}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
                 </Table>
               </TableContainer>
             </div>
-            <h1>TANTARAN'NY SYNODAMPARITANY</h1>
+            {/* VOMM */}
             <div>
-              B
+              <h2>VOMM</h2>
+              <TableContainer>
+                <Table aria-label="simple table" size="small">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>TAONA 2019</TableCell>
+                      <TableCell align="right">VAO NIJORO (2020)</TableCell>
+                      <TableCell align="right">FITAMBARANY</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {rowsVomm.map((row) => (
+                      <TableRow key={row.taona1}>
+                        <TableCell component="th" scope="row">
+                          {row.taona1}
+                        </TableCell>
+                        <TableCell align="right">{row.nijoro}</TableCell>
+                        <TableCell align="right">{row.fitambarany}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
+            {/* Mpitandrina */}
+            <div>
+              <h2>MPITANDRINA 2020</h2>
+              <TableContainer>
+                <Table aria-label="simple table" size="small">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>FITAMBARANY</TableCell>
+                      <TableCell align="right">LAHY</TableCell>
+                      <TableCell align="right">VAVY</TableCell>
+                      <TableCell align="right">MISOTRO RONONO</TableCell>
+                      <TableCell align="right">NATOLOTRA FOIBE</TableCell>
+                      <TableCell align="right">NORAISINA</TableCell>
+                      <TableCell align="right">NODIMANDRY</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {rowsMpitandrina.map((row) => (
+                      <TableRow key={row.isa}>
+                        <TableCell component="th" scope="row">
+                          {row.isa}
+                        </TableCell>
+                        <TableCell align="right">{row.lahy}</TableCell>
+                        <TableCell align="right">{row.vavy}</TableCell>
+                        <TableCell align="right">{row.off}</TableCell>
+                        <TableCell align="right">{row.natolotra}</TableCell>
+                        <TableCell align="right">{row.noraisina}</TableCell>
+                        <TableCell align="right">{row.die}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
+            <div>
+              <h2>FIAINAN'NY SEFALA</h2>
+              <TableContainer>
+                <Table aria-label="simple table" size="small">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>SOKAJY</TableCell>
+                      <TableCell align="right">2019</TableCell>
+                      <TableCell align="right">2020</TableCell>
+                      <TableCell align="right">Fitambarany</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {rowsSefala.map((row) => (
+                      <TableRow key={row.sokajy}>
+                        <TableCell component="th" scope="row">
+                          {row.sokajy}
+                        </TableCell>
+                        <TableCell align="right">{row.taona1}</TableCell>
+                        <TableCell align="right">{row.taona2}</TableCell>
+                        <TableCell align="right">{row.fitambarany}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
+            <br /><br />
+            <div>
+            Tsy nisy ny fianarana tany amin’ireo ivon-toerana miisa 8 ny taona 2019 : Befinoana
+            Ambatondrazaka, Ambohimiangaly, Manakambahiny, Andilanatoby, Andreba, Imerimandroso, Didy,
+            Andilamena. Tsy nisy koa, noho izany, ny famoahana Katekista sy Mpiandry ary Mpitoriteny.
             </div>
           </Grid>
           <Grid xs={3}>
