@@ -11,11 +11,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        "& .boxPerikopa": {
-            padding: "20px",
-            fontSize: "21px",
-            textAlign: "center"
-        }
     },
     boxText: {
         width: "60%",

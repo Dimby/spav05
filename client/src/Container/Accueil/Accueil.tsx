@@ -79,7 +79,7 @@ const Accueil: FC = () => {
           - {versetRandom.toko}
         </p>
       </div>
-      <div className="boxPerikopa" style={{color: "#006AB0", padding: "20px", textAlign: "center", fontSize: "21px"}}>
+      <div style={{color: "#006AB0", padding: "20px", textAlign: "center", fontSize: "21px"}}>
           PERIKOPA VOLANA MEY : <span style={{ fontWeight: "bold"}}>"MAMPIORINA NY MINO NY HERIN'NY FANAHY MASINA"</span>
       </div>
       <div className={classes.boxThree}>
