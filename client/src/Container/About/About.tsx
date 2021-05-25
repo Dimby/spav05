@@ -16,12 +16,18 @@ import Slider from 'react-slick';
 // Birao
 import Filoha from '../../Images/Birao/Filoha.png';
 import FilohaMpanampy from '../../Images/Birao/FilohaMpanampy.svg';
+import FilohaMpanampy2 from '../../Images/Birao/FilohaMpanampy2.svg';
 import Mpanolotsaina from '../../Images/Birao/Mpanolotsaina.svg';
 import MpitantsoratryNyFivoriana from '../../Images/Birao/MpitantsoratryNyFivoriana.svg';
-import MpitantsoratryNyVola from '../../Images/Birao/MpitantsoratryNyVola.svg';
+import MpitantsoratryNyVola from '../../Images/Birao/MpitantsoratryNyVola.jpg';
+import MpitahiryVola from '../../Images/Birao/MpitahiryVola.jpg'
 import biraoImage from '../../Images/Birao/birao.jpg'
 // PS
 import RRobert from '../../Images/PS/RasolonirinaRobert.jpg'
+import RFelix from '../../Images/PS/RalaivelomangaMamy.jpg'
+import RMamy from '../../Images/PS/RalaivelomangaMamy.jpg'
+import TSalomon from '../../Images/PS/TrimozafySalomon.jpg'
+import Randrianahova from '../../Images/PS/Randrianahova.jpg'
 
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -93,6 +99,10 @@ function createDataPS(avatar: string, name: string, firstname: string, status: s
 }
 const dataPS = [
   createDataPS(RRobert, "RASOLONIRINA", "Robert", "Mivady", "Desambra 2017", "Ankehitriny", "Blablabla"),
+  createDataPS("", "RAKOTONOELY", "Félix", "Mivady", "-", "-", "Blablabla"),
+  createDataPS(RMamy, "RALAIVELOMANGA", "Mamy", "", "-", "-", "Blablabla"),
+  createDataPS(TSalomon, "TRIMOZAFY", "Salomon", "Mivady", "-", "-", "Blablabla"),
+  createDataPS(Randrianahova, "RANDRIANAHOVA", "", "", "-", "-", "Blablabla"),
 ]
 
 // Data for Birao
@@ -102,11 +112,11 @@ function createDataBirao(avatar: string, name: string, firstname: string, asa: s
 const dataBirao = [
   createDataBirao(Filoha, "RASOLONIRINA", "Robert", "Mpitandrina", "Filoha", "Prezida Synodaly"),
   createDataBirao(FilohaMpanampy, "RABEARIVELO", "Lalarimana", "Mpitandrina", "Filoha Mpanampy", "FJKM ANOSINDRAFILO"),
-  createDataBirao("", "RAVOAJARISOA", "Jean Claude", "Diakona", "Filoha Mpanampy", "FJKM ANDILAMENA FANAVAOZANA"),
+  createDataBirao(FilohaMpanampy2, "RAVOAJARISOA", "Jean Claude", "Diakona", "Filoha Mpanampy", "FJKM ANDILAMENA FANAVAOZANA"),
   createDataBirao(Mpanolotsaina, "RANDRIALIVA", "Soanirina Seheno", "Mpitandrina", "Mpanolotsaina", "Talen'ny TPM AMBOHIMIANGALY"),
   createDataBirao(MpitantsoratryNyFivoriana, "RATOVONAJASONA", "Robelina", "Mpitandrina", "Mpitantsoratry ny fivoriana", "FJKM ANDINGADINGANA"),
-  createDataBirao("", "RANJAKASAINA", "Armand", "Diakona", "Mpitantsoratry ny vola", "FJKM AMBOHIMIANGALY ZOARA"),
-  createDataBirao(MpitantsoratryNyVola, "RAOELISON", "Andrianaivo", "Diakona", "Mpitahirivola", "FJKM ANDILANOMBY FIRAISANA"),
+  createDataBirao(MpitantsoratryNyVola, "RANJAKASAINA", "Armand", "Diakona", "Mpitantsoratry ny vola", "FJKM AMBOHIMIANGALY ZOARA"),
+  createDataBirao(MpitahiryVola, "RAOELISON", "Andrianaivo", "Diakona", "Mpitahiry vola", "FJKM ANDILANOMBY FIRAISANA"),
 ]
 
 // Table for Mpitandrina
@@ -229,6 +239,7 @@ const About: FC = () => {
                         className="media"
                         image={row.avatar}
                         title="Contemplative Reptile"
+                        style={{backgroundPosition: "top"}}
                       />
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="h1">
