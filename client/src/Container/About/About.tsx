@@ -11,6 +11,7 @@ import {
 import React, { createRef, FC } from 'react'
 import useStyles from './style'
 import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
 
 // Birao
 import Filoha from '../../Images/Birao/Filoha.png';
@@ -18,6 +19,7 @@ import FilohaMpanampy from '../../Images/Birao/FilohaMpanampy.svg';
 import Mpanolotsaina from '../../Images/Birao/Mpanolotsaina.svg';
 import MpitantsoratryNyFivoriana from '../../Images/Birao/MpitantsoratryNyFivoriana.svg';
 import MpitantsoratryNyVola from '../../Images/Birao/MpitantsoratryNyVola.svg';
+import biraoImage from '../../Images/Birao/birao.jpg'
 // PS
 import RRobert from '../../Images/PS/RasolonirinaRobert.jpg'
 
@@ -143,6 +145,7 @@ const options = {
 const About: FC = () => {
   const classes = useStyles()
   const versetRandom = verset()
+
   return (
     <div>
       <div className={classes.boxOne}>
@@ -205,6 +208,12 @@ const About: FC = () => {
                 </Grid>
               ))}
             </Grid>
+            <Grid container>
+                <Grid style={{textAlign: "center"}}>
+                  <img src={biraoImage} alt="Sarin'ny birao" style={{width: "50%"}}/>
+                </Grid>
+            </Grid>
+            <br />
             <h1>PRESIDENT SYNODAL NIFANDIMBY</h1>
             <Grid container>
               {dataPS.map((row) => (

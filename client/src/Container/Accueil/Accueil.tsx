@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import useStyles from "./style";
 import Slider from 'react-slick'
 import { verset } from '../../Lib/verset'
+import image1 from '../../Images/Faritra 1.png';
 
 function createDataMisongadina(id: number, title: string, desc: string) {
   return { id, title, desc }
@@ -33,6 +34,16 @@ const Accueil: FC = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplaySpeed: 4000
+  }
+  
+  const settings2 = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000
   }
   const versetRandom = verset()
   const [open, setOpen] = React.useState(false);
@@ -60,7 +71,7 @@ const Accueil: FC = () => {
       </div>
       <div className={classes.boxTwo}>
         <div>
-          TONGA SOA ETO AMIN'NY TRANONKALAM-PIFANDRAISAN'NY <br />{' '}
+          TONGA SOA ETO AMIN'NY TRANONKALAM-PIFANDRAISAN'NY <br />
           SYNODAMPARITANY AMBATONDRAZAKA VAOVAO
         </div>
         <p style={{ fontSize: '18px' }}>
@@ -68,7 +79,12 @@ const Accueil: FC = () => {
           - {versetRandom.toko}
         </p>
       </div>
+      <div className="boxPerikopa" style={{color: "#006AB0", padding: "20px", textAlign: "center", fontSize: "21px"}}>
+          PERIKOPA VOLANA MEY : <span style={{ fontWeight: "bold"}}>"MAMPIORINA NY MINO NY HERIN'NY FANAHY MASINA"</span>
+      </div>
       <div className={classes.boxThree}>
+        <Grid container>
+          <Grid xs={3}>
             <div className={classes.boxThree1}>
                 <div className="content">
                     <div style={{backgroundColor: "#F4C247"}}>
@@ -102,7 +118,7 @@ const Accueil: FC = () => {
                                 <Grid container>
                                   <Grid item>
                                       <div><h4 style={{margin: 0}}>14 Juin 2021</h4></div>
-                                      <div>Fambolenkazo teny Manakambahiny </div>
+                                      <div style={{width: "235px"}}>Fambolenkazo teny Manakambahiny </div>
                                   </Grid>
                                   <Grid xs style={{textAlign: "right"}}>
                                       <IconButton style={{backgroundColor: "#F5F5F5"}}>
@@ -118,7 +134,7 @@ const Accueil: FC = () => {
                                 <Grid container>
                                   <Grid item>
                                       <div><h4 style={{margin: 0}}>TETIKANDRO</h4></div>
-                                      <div>tetikandro2021.docx</div>
+                                      <div style={{width: "235px"}}>tetikandro2021.docx</div>
                                   </Grid>
                                   <Grid xs style={{textAlign: "right"}}>
                                       <IconButton style={{backgroundColor: "#F5F5F5"}}>
@@ -135,7 +151,7 @@ const Accueil: FC = () => {
                                 <Grid container>
                                   <Grid item>
                                       <div><h4 style={{margin: 0}}>FITSIPIPIFEHEZANA</h4></div>
-                                      <div>fitsipikaanatiny.docx</div>
+                                      <div style={{width: "235px"}}>fitsipikaanatiny.docx</div>
                                   </Grid>
                                   <Grid xs style={{textAlign: "right"}}>
                                       <IconButton style={{backgroundColor: "#F5F5F5"}}>
@@ -152,7 +168,7 @@ const Accueil: FC = () => {
                                 <Grid container>
                                   <Grid item>
                                       <div><h4 style={{margin: 0}}>VINA SY FANAMBY</h4></div>
-                                      <div>vinasyfanamby.docx</div>
+                                      <div style={{width: "235px"}}>vinasyfanamby.docx</div>
                                   </Grid>
                                   <Grid xs style={{textAlign: "right"}}>
                                       <IconButton style={{backgroundColor: "#F5F5F5"}}>
@@ -166,6 +182,8 @@ const Accueil: FC = () => {
                     </div>
                 </div>
             </div>
+        </Grid>
+        <Grid xs={9}>
         <div className={classes.boxThree2}>
           <div className="content">
             <h1>HAFATRY NY PRESIDENT SYNODAL</h1>
@@ -248,12 +266,69 @@ const Accueil: FC = () => {
           </div>
           <div className="content">
             <h1>VAOVAO ISAM-PITANDREMANA</h1>
-            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit maxime cum vel optio. Autem ab labore esse tenetur dolores incidunt voluptate est amet asperiores distinctio nobis quia cumque, quis mollitia.</div>
-            <div>
-              Alert
-            </div>
+            <Slider {...settings2}>
+                <div style={{marginBottom: "4rem"}}>
+                  <Grid container>
+                    <Grid item xs={6}>
+                      <div style={{margin: "auto", maxWidth: "550px", textAlign: "right"}}>
+                        <h2>ALAHADY FAHA 12 Aprily 2021</h2>
+                        <h3>AMBOHIMASINA FIVAVAHANA</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, nesciunt non quas impedit iure, consequuntur 
+                          magni at officiis, aut laborum explicabo tempora. Repudiandae corrupti blanditiis earum deserunt magnam neque porro.
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quasi suscipit eligendi incidunt nulla, aspernatur cupiditate
+                          odit alias laboriosam rem eos maiores aliquid eius dolorem facere? Repellat dolore illo eum.</p>
+                      </div>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <div style={{textAlign: "left", paddingInline: "30px"}}>
+                        <img src={image1} alt="" style={{height: "300px", textAlign: "right"}} />
+                      </div>
+                    </Grid>
+                  </Grid>
+                </div> 
+                <div style={{marginBottom: "4rem"}}>
+                  <Grid container>
+                    <Grid item xs={6}>
+                      <div style={{margin: "auto", maxWidth: "550px", textAlign: "right"}}>
+                        <h2>ALAHADY FAHA 12 Aprily 2021</h2>
+                        <h3>AMBOHIMASINA FIVAVAHANA</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, nesciunt non quas impedit iure, consequuntur 
+                          magni at officiis, aut laborum explicabo tempora. Repudiandae corrupti blanditiis earum deserunt magnam neque porro.
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quasi suscipit eligendi incidunt nulla, aspernatur cupiditate
+                          odit alias laboriosam rem eos maiores aliquid eius dolorem facere? Repellat dolore illo eum.</p>
+                      </div>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <div style={{textAlign: "left", paddingInline: "30px"}}>
+                        <img src={image1} alt="" style={{height: "300px", textAlign: "right"}} />
+                      </div>
+                    </Grid>
+                  </Grid>
+                </div> 
+                <div style={{marginBottom: "4rem"}}>
+                  <Grid container>
+                    <Grid item xs={6}>
+                      <div style={{margin: "auto", maxWidth: "550px", textAlign: "right"}}>
+                        <h2>ALAHADY FAHA 12 Aprily 2021</h2>
+                        <h3>AMBOHIMASINA FIVAVAHANA</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, nesciunt non quas impedit iure, consequuntur 
+                          magni at officiis, aut laborum explicabo tempora. Repudiandae corrupti blanditiis earum deserunt magnam neque porro.
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quasi suscipit eligendi incidunt nulla, aspernatur cupiditate
+                          odit alias laboriosam rem eos maiores aliquid eius dolorem facere? Repellat dolore illo eum.</p>
+                      </div>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <div style={{textAlign: "left", paddingInline: "30px"}}>
+                        <img src={image1} alt="" style={{height: "300px", textAlign: "right"}} />
+                      </div>
+                    </Grid>
+                  </Grid>
+                </div> 
+            </Slider>
           </div>
         </div>
+        </Grid>
+        </Grid>
       </div>
     </div>
   )

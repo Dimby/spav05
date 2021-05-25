@@ -10,7 +10,12 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        flexDirection: "column"
+        flexDirection: "column",
+        "& .boxPerikopa": {
+            padding: "20px",
+            fontSize: "21px",
+            textAlign: "center"
+        }
     },
     boxText: {
         width: "60%",
@@ -48,7 +53,6 @@ const useStyles = makeStyles((theme) => ({
 
     },
     boxThree1: {
-        width: "30%",
         padding: "2rem",
         "& .content": {
             backgroundColor: "#fff",
@@ -89,7 +93,6 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     boxThree2: {
-        width: "70%",
         padding: "2rem 2rem 2rem 0rem",
         "& .content": {
             backgroundColor: "#fff",
@@ -141,7 +144,7 @@ const useStyles = makeStyles((theme) => ({
                     }
                 }
             }
-        }
+        },
     },
     boxRed: {
         border: "1px solid red"
