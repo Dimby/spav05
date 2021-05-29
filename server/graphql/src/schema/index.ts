@@ -12,6 +12,8 @@ import { Fifandraisana } from './Fifandraisana'
 import { Fitandremana } from './Fitandremana'
 import { Faritra } from './Faritra'
 import { Sary } from './Sary'
+import { PS, PSMutation, PSQuery } from './PS'
+import { DateScalar } from './DateScalar'
 
 export const schema = makeSchema({
   types: [
@@ -27,6 +29,10 @@ export const schema = makeSchema({
     Fitandremana,
     Faritra,
     Sary,
+    PS,
+    PSMutation,
+    PSQuery,
+    DateScalar,
   ],
   plugins: [nexusPrisma()],
   outputs: {

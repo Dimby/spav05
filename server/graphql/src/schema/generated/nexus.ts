@@ -5,8 +5,23 @@
 
 
 import { Context } from "./../../context"
-
-
+import { core } from "nexus"
+declare global {
+  interface NexusGenCustomInputMethods<TypeName extends string> {
+    /**
+     * Date custom scalar type
+     */
+    date<FieldName extends string>(fieldName: FieldName, opts?: core.CommonInputFieldConfig<TypeName, FieldName>): void // "Date";
+  }
+}
+declare global {
+  interface NexusGenCustomOutputMethods<TypeName extends string> {
+    /**
+     * Date custom scalar type
+     */
+    date<FieldName extends string>(fieldName: FieldName, ...opts: core.ScalarOutSpread<TypeName, FieldName>): void // "Date";
+  }
+}
 declare global {
   interface NexusGenCustomOutputProperties<TypeName extends string> {
     model: NexusPrisma<TypeName, 'model'>
@@ -31,6 +46,7 @@ export interface NexusGenScalars {
   Float: number
   Boolean: boolean
   ID: string
+  Date: any
   DateTime: any
 }
 
@@ -78,6 +94,20 @@ export interface NexusGenObjects {
     updatedAt: NexusGenScalars['DateTime']; // DateTime!
   }
   Mutation: {};
+  PS: { // root type
+    createdAt: NexusGenScalars['DateTime']; // DateTime!
+    dateEnd?: NexusGenScalars['DateTime'] | null; // DateTime
+    dateStart?: NexusGenScalars['DateTime'] | null; // DateTime
+    email?: string | null; // String
+    fifandraisanas?: Array<NexusGenRootTypes['Fifandraisana'] | null> | null; // [Fifandraisana]
+    firstName: string; // String!
+    id: string; // String!
+    name: string; // String!
+    nameWife?: string | null; // String
+    updatedAt: NexusGenScalars['DateTime']; // DateTime!
+    urlPicture?: string | null; // String
+    urlPicturePublic?: string | null; // String
+  }
   Query: {};
   Sary: { // root type
     id: string; // String!
@@ -146,12 +176,29 @@ export interface NexusGenFieldTypes {
   Mutation: { // field return type
     deleteBirao: NexusGenRootTypes['Birao'] | null; // Birao
     deleteMpitandrina: NexusGenRootTypes['Mpitandrina'] | null; // Mpitandrina
+    deletePS: NexusGenRootTypes['PS'] | null; // PS
     upsertBirao: NexusGenRootTypes['Birao'] | null; // Birao
     upsertMpitandrina: NexusGenRootTypes['Mpitandrina'] | null; // Mpitandrina
+    upsertPS: NexusGenRootTypes['PS'] | null; // PS
+  }
+  PS: { // field return type
+    createdAt: NexusGenScalars['DateTime']; // DateTime!
+    dateEnd: NexusGenScalars['DateTime'] | null; // DateTime
+    dateStart: NexusGenScalars['DateTime'] | null; // DateTime
+    email: string | null; // String
+    fifandraisanas: Array<NexusGenRootTypes['Fifandraisana'] | null> | null; // [Fifandraisana]
+    firstName: string; // String!
+    id: string; // String!
+    name: string; // String!
+    nameWife: string | null; // String
+    updatedAt: NexusGenScalars['DateTime']; // DateTime!
+    urlPicture: string | null; // String
+    urlPicturePublic: string | null; // String
   }
   Query: { // field return type
     getAllBirao: Array<NexusGenRootTypes['Birao'] | null> | null; // [Birao]
     getAllMpitandrina: Array<NexusGenRootTypes['Mpitandrina'] | null> | null; // [Mpitandrina]
+    getAllPS: Array<NexusGenRootTypes['PS'] | null> | null; // [PS]
   }
   Sary: { // field return type
     id: string; // String!
@@ -210,12 +257,29 @@ export interface NexusGenFieldTypeNames {
   Mutation: { // field return type name
     deleteBirao: 'Birao'
     deleteMpitandrina: 'Mpitandrina'
+    deletePS: 'PS'
     upsertBirao: 'Birao'
     upsertMpitandrina: 'Mpitandrina'
+    upsertPS: 'PS'
+  }
+  PS: { // field return type name
+    createdAt: 'DateTime'
+    dateEnd: 'DateTime'
+    dateStart: 'DateTime'
+    email: 'String'
+    fifandraisanas: 'Fifandraisana'
+    firstName: 'String'
+    id: 'String'
+    name: 'String'
+    nameWife: 'String'
+    updatedAt: 'DateTime'
+    urlPicture: 'String'
+    urlPicturePublic: 'String'
   }
   Query: { // field return type name
     getAllBirao: 'Birao'
     getAllMpitandrina: 'Mpitandrina'
+    getAllPS: 'PS'
   }
   Sary: { // field return type name
     id: 'String'
@@ -236,6 +300,9 @@ export interface NexusGenArgTypes {
     deleteMpitandrina: { // args
       id?: number | null; // Int
     }
+    deletePS: { // args
+      id?: string | null; // String
+    }
     upsertBirao: { // args
       firstName?: string | null; // String
       fitMis?: string | null; // String
@@ -251,6 +318,16 @@ export interface NexusGenArgTypes {
       id?: number | null; // Int
       name?: string | null; // String
       type: NexusGenEnums['type']; // type!
+    }
+    upsertPS: { // args
+      dateEnd?: string | null; // String
+      dateStart?: string | null; // String
+      email?: string | null; // String
+      fifandraisanaId?: string | null; // String
+      firstName?: string | null; // String
+      id?: string | null; // String
+      name?: string | null; // String
+      nameWife?: string | null; // String
     }
   }
 }

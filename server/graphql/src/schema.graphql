@@ -13,6 +13,9 @@ type Birao {
   urlPicturePublic: String
 }
 
+"""Date custom scalar type"""
+scalar Date
+
 scalar DateTime
 
 type Faritra {
@@ -54,13 +57,31 @@ type Mpitandrina {
 type Mutation {
   deleteBirao(id: String): Birao
   deleteMpitandrina(id: Int): Mpitandrina
+  deletePS(id: String): PS
   upsertBirao(firstName: String, fitMis: String, fonction: String, id: String, name: String, titre: String): Birao
   upsertMpitandrina(fifandraisanaId: String, firstName: String, fitandremanaId: String, id: Int, name: String, type: type!): Mpitandrina
+  upsertPS(dateEnd: String, dateStart: String, email: String, fifandraisanaId: String, firstName: String, id: String, name: String, nameWife: String): PS
+}
+
+type PS {
+  createdAt: DateTime!
+  dateEnd: DateTime
+  dateStart: DateTime
+  email: String
+  fifandraisanas: [Fifandraisana]
+  firstName: String!
+  id: String!
+  name: String!
+  nameWife: String
+  updatedAt: DateTime!
+  urlPicture: String
+  urlPicturePublic: String
 }
 
 type Query {
   getAllBirao: [Birao]
   getAllMpitandrina: [Mpitandrina]
+  getAllPS: [PS]
 }
 
 type Sary {
