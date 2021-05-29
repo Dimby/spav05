@@ -2,11 +2,79 @@
 ### Do not make changes to this file directly
 
 
+type Birao {
+  firstName: String
+  fitMis: String
+  fonction: String
+  id: String
+  name: String
+  titre: String
+  urlPicture: String
+  urlPicturePublic: String
+}
+
+scalar DateTime
+
+type Faritra {
+  fitandremanas: [Fitandremana]
+  id: String!
+  mpitandrina: Mpitandrina
+  sary: Sary
+  sokajy: String!
+}
+
+type Fifandraisana {
+  createdAt: DateTime!
+  fifandraisana: String!
+  id: String!
+  mpitandrina: Mpitandrina
+  updatedAt: DateTime!
+}
+
+type Fitandremana {
+  createdAt: DateTime!
+  id: String!
+  lahFar: String!
+  lahSp: String!
+  mpitandrina: Mpitandrina
+  updatedAt: DateTime!
+}
+
+type Mpitandrina {
+  createdAt: DateTime!
+  fifandraisanas: [Fifandraisana]
+  firstName: String!
+  fitandremana: Fitandremana
+  id: Int!
+  name: String!
+  type: type
+  updatedAt: DateTime!
+}
+
+type Mutation {
+  deleteBirao(id: String): Birao
+  deleteMpitandrina(id: Int): Mpitandrina
+  upsertBirao(firstName: String, fitMis: String, fonction: String, id: String, name: String, titre: String): Birao
+  upsertMpitandrina(fifandraisanaId: String, firstName: String, fitandremanaId: String, id: Int, name: String, type: type!): Mpitandrina
+}
+
 type Query {
-  me: User
+  getAllBirao: [Birao]
+  getAllMpitandrina: [Mpitandrina]
+}
+
+type Sary {
+  id: String!
+  urlPicture: String
+  urlPicturePublic: String
 }
 
 type User {
   email: String
   id: String
+}
+
+enum type {
+  KATEKISTA_DELEGUE
+  MPITANDRINA
 }

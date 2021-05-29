@@ -15,19 +15,37 @@ enum TypeUser {
   KATEKISTA_DELEGUE
 }
 
+
+model Email {
+  id        String  @id @default(uuid())
+  adress    String
+  content   String
+  user      User?   @relation(fields: [userId], references: [id])
+  userId    String? 
+}
+
 model User {
   id        String  @id @default(uuid())
-  email     String? @unique
-  firstName String
   name      String
+  firstName String
   phone     String?
   address   String?
+  email     Email?
+}
+
+model Sary {
+  id        String  @id @default(uuid())
+  urlPicture  String?
+  urlPicturePublic String? 
+  Faritra    Faritra?  @relation(fields: [faritraId], references: [id])
+  faritraId  String?
 }
 
 model Faritra {
   id        String  @id @default(uuid())
   sokajy    String
   fitandremanas Fitandremana[]
+  sary Sary[]
 }
 
 model Fitandremana {
