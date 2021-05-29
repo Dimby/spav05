@@ -33,11 +33,6 @@ export interface NexusGenScalars {
 }
 
 export interface NexusGenObjects {
-  AuthPayload: { // root type
-    accessToken?: string | null; // String
-    user?: NexusGenRootTypes['User'] | null; // User
-  }
-  Mutation: {};
   Query: {};
   User: { // root type
     email?: string | null; // String
@@ -56,13 +51,6 @@ export type NexusGenRootTypes = NexusGenObjects
 export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
-  AuthPayload: { // field return type
-    accessToken: string | null; // String
-    user: NexusGenRootTypes['User'] | null; // User
-  }
-  Mutation: { // field return type
-    login: NexusGenRootTypes['AuthPayload'] | null; // AuthPayload
-  }
   Query: { // field return type
     me: NexusGenRootTypes['User'] | null; // User
   }
@@ -73,13 +61,6 @@ export interface NexusGenFieldTypes {
 }
 
 export interface NexusGenFieldTypeNames {
-  AuthPayload: { // field return type name
-    accessToken: 'String'
-    user: 'User'
-  }
-  Mutation: { // field return type name
-    login: 'AuthPayload'
-  }
   Query: { // field return type name
     me: 'User'
   }
@@ -90,12 +71,6 @@ export interface NexusGenFieldTypeNames {
 }
 
 export interface NexusGenArgTypes {
-  Mutation: {
-    login: { // args
-      email?: string | null; // String
-      password?: string | null; // String
-    }
-  }
 }
 
 export interface NexusGenAbstractTypeMembers {

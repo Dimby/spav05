@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "dotenv -e .env.local -- ts-node-dev --respawn --transpile-only src/server.ts",
+    "start:dev": "dotenv -e .env -- ts-node-dev --respawn --transpile-only src/server.ts",
     "clean": "rm -rf dist",
     "build": "npm -s run clean && npm -s run generate && tsc",
     "generate": "npm -s run generate:prisma && npm -s run generate:nexus",

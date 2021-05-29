@@ -1,12 +1,12 @@
 import { extendType, objectType, stringArg } from 'nexus'
 
-export const AuthPayload = objectType({
-  name: 'AuthPayload',
-  definition(t) {
-    t.string('accessToken')
-    t.field('user', { type: 'User' })
-  },
-})
+// export const AuthPayload = objectType({
+//   name: 'AuthPayload',
+//   definition(t) {
+//     t.string('accessToken')
+//     t.field('user', { type: 'User' })
+//   },
+// })
 
 export const User = objectType({
   name: 'User',
@@ -28,18 +28,18 @@ export const UserQuery = extendType({
   },
 })
 
-export const UserMutation = extendType({
-  type: 'Mutation',
-  definition(t) {
-    t.field('login', {
-      args: {
-        email: stringArg(),
-        password: stringArg(),
-      },
-      type: 'AuthPayload',
-      resolve: (_, args, ctx) => {
-        return {} as any
-      },
-    })
-  },
-})
+// export const UserMutation = extendType({
+//   type: 'Mutation',
+//   definition(t) {
+//     t.field('login', {
+//       args: {
+//         email: stringArg(),
+//         password: stringArg(),
+//       },
+//       type: 'AuthPayload',
+//       resolve: (_, args, ctx) => {
+//         return {} as any
+//       },
+//     })
+//   },
+// })
