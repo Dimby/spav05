@@ -1,30 +1,17 @@
-import {
-  Grid,
-  IconButton,
-  TextField
-} from '@material-ui/core'
+import { Grid, IconButton, TextField } from '@material-ui/core'
 import ChevronRight from '@material-ui/icons/ChevronRight'
-<<<<<<< HEAD
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
-=======
-import { Link } from 'react-router-dom'
-
->>>>>>> 2ac8aba (component reutilisable)
 import sary1 from '../../Images/Gallery/Gallery (1).png'
 import sary2 from '../../Images/Gallery/Gallery (2).png'
 import sary3 from '../../Images/Gallery/Gallery (3).png'
 import sary4 from '../../Images/Gallery/Gallery (4).png'
 import sary5 from '../../Images/Gallery/Gallery (5).png'
 import { verset } from '../../Lib/verset'
-<<<<<<< HEAD
 import GalleryItem from './GalleryItem/GalleryItem'
 import GalleryModal from './GalleryModal/GalleryModal'
 import useStyles from './style'
-
-=======
 import ItemJereo from '../../Components/ItemJereo/ItemJereo'
->>>>>>> 2ac8aba (component reutilisable)
 
 function createDataGallery(
   link: string,
@@ -67,38 +54,43 @@ const dataGallery = [
   ),
 ]
 
-<<<<<<< HEAD
-=======
 const jereoKoa = [
   { title: 'TETIKANDRO', desc: 'tetikandro2021.docx', to: '/contact' },
   { title: 'FITSIPIPIFEHEZANA', desc: 'fitsipikaanatiny.docx', to: '/contact' },
   { title: 'VINA SY FANAMBY', desc: 'vinasyfanamby.docx', to: '/contact' },
 ]
->>>>>>> 2ac8aba (component reutilisable)
 
 const Gallery: FC = () => {
   const classes = useStyles()
   const versetRandom = verset()
-  const [title, setTitle] = React.useState('');
-  const [description, setDescription] = React.useState('');
-  const [url, setUrl] = React.useState('');
-  const [date, setDate] = React.useState('');
+  const [title, setTitle] = React.useState('')
+  const [description, setDescription] = React.useState('')
+  const [url, setUrl] = React.useState('')
+  const [date, setDate] = React.useState('')
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
   const handleClickOpen = (url: string, title: string, description: string) => {
     setOpen(true)
     setUrl(url)
     setTitle(title)
     setDescription(description)
     setDate(date)
-  };
+  }
   const handleClose = () => {
-    setOpen(false);
-  };
-  
+    setOpen(false)
+  }
+
   return (
     <div>
-      <GalleryModal url={url} title={title} date={date} description={description} open={open} setOpen={setOpen} handleClose={handleClose} />
+      <GalleryModal
+        url={url}
+        title={title}
+        date={date}
+        description={description}
+        open={open}
+        setOpen={setOpen}
+        handleClose={handleClose}
+      />
       <div className={classes.boxOne}>
         <div>" {versetRandom.fehezanteny.toUpperCase()} "</div>
         <p style={{ fontSize: '18px' }}>- {versetRandom.toko}</p>
@@ -133,39 +125,17 @@ const Gallery: FC = () => {
             </Grid>
             <Grid container spacing={0}>
               {dataGallery.map((row) => (
-<<<<<<< HEAD
                 <>
-                <GalleryItem 
-                  url={row.link}
-                  title={row.title}
-                  description={row.description}
-                  date={row.date}
-                  handleClickOpen={ () =>
-                    handleClickOpen(row.link, row.title, row.description)
-                  }
-                />
+                  <GalleryItem
+                    url={row.link}
+                    title={row.title}
+                    description={row.description}
+                    date={row.date}
+                    handleClickOpen={() =>
+                      handleClickOpen(row.link, row.title, row.description)
+                    }
+                  />
                 </>
-=======
-                <Grid xs={4} style={{ marginBottom: '20px' }} key={row.link}>
-                  <div className="responsive">
-                    <div className="gallery">
-                      <img src={row.link} alt="" />
-                      <Grid container className="desc">
-                        <Grid item>
-                          <div>
-                            <h4 style={{ margin: 0 }}>
-                              {row.title.toUpperCase()}
-                            </h4>
-                          </div>
-                          <div>
-                            {row.description} - {row.date}
-                          </div>
-                        </Grid>
-                      </Grid>
-                    </div>
-                  </div>
-                </Grid>
->>>>>>> 2ac8aba (component reutilisable)
               ))}
             </Grid>
           </Grid>
@@ -177,74 +147,101 @@ const Gallery: FC = () => {
             </div>
             <div className="news">
               <div>
-<<<<<<< HEAD
-                  <div className="item">
-                      <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
-                          <Grid container>
-                            <Grid item>
-                                <div><h4 style={{margin: 0}}>14 Juin 2021</h4></div>
-                                <div>Fambolenkazo teny Manakambahiny </div>
-                            </Grid>
-                            <Grid xs style={{textAlign: "right"}}>
-                                <IconButton style={{backgroundColor: "#F5F5F5"}}>
-                                    <ChevronRight />
-                                </IconButton>
-                            </Grid>
-                          </Grid>
-                      </div>
+                <div className="item">
+                  <div
+                    className="content"
+                    style={{ borderLeft: '5px solid #006AB0' }}
+                  >
+                    <Grid container>
+                      <Grid item>
+                        <div>
+                          <h4 style={{ margin: 0 }}>14 Juin 2021</h4>
+                        </div>
+                        <div>Fambolenkazo teny Manakambahiny </div>
+                      </Grid>
+                      <Grid xs style={{ textAlign: 'right' }}>
+                        <IconButton style={{ backgroundColor: '#F5F5F5' }}>
+                          <ChevronRight />
+                        </IconButton>
+                      </Grid>
+                    </Grid>
                   </div>
-                  <div className="item">
-                      <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
-                        <Link to="/contact" style={{color: "#004D80", textDecoration: "none"}}>
-                          <Grid container>
-                            <Grid item>
-                                <div><h4 style={{margin: 0}}>TETIKANDRO</h4></div>
-                                <div>tetikandro2021.docx</div>
-                            </Grid>
-                            <Grid xs style={{textAlign: "right"}}>
-                                <IconButton style={{backgroundColor: "#F5F5F5"}}>
-                                    <ChevronRight />
-                                </IconButton>
-                            </Grid>
-                          </Grid>
-                        </Link>
-                      </div>
+                </div>
+                <div className="item">
+                  <div
+                    className="content"
+                    style={{ borderLeft: '5px solid #006AB0' }}
+                  >
+                    <Link
+                      to="/contact"
+                      style={{ color: '#004D80', textDecoration: 'none' }}
+                    >
+                      <Grid container>
+                        <Grid item>
+                          <div>
+                            <h4 style={{ margin: 0 }}>TETIKANDRO</h4>
+                          </div>
+                          <div>tetikandro2021.docx</div>
+                        </Grid>
+                        <Grid xs style={{ textAlign: 'right' }}>
+                          <IconButton style={{ backgroundColor: '#F5F5F5' }}>
+                            <ChevronRight />
+                          </IconButton>
+                        </Grid>
+                      </Grid>
+                    </Link>
                   </div>
-                  <div className="item">
-                      <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
-                        <Link to="/contact" style={{color: "#004D80", textDecoration: "none"}}>
-                          <Grid container>
-                            <Grid item>
-                                <div><h4 style={{margin: 0}}>FITSIPIPIFEHEZANA</h4></div>
-                                <div>fitsipikaanatiny.docx</div>
-                            </Grid>
-                            <Grid xs style={{textAlign: "right"}}>
-                                <IconButton style={{backgroundColor: "#F5F5F5"}}>
-                                    <ChevronRight />
-                                </IconButton>
-                            </Grid>
-                          </Grid>
-                        </Link>
-                      </div>
+                </div>
+                <div className="item">
+                  <div
+                    className="content"
+                    style={{ borderLeft: '5px solid #006AB0' }}
+                  >
+                    <Link
+                      to="/contact"
+                      style={{ color: '#004D80', textDecoration: 'none' }}
+                    >
+                      <Grid container>
+                        <Grid item>
+                          <div>
+                            <h4 style={{ margin: 0 }}>FITSIPIPIFEHEZANA</h4>
+                          </div>
+                          <div>fitsipikaanatiny.docx</div>
+                        </Grid>
+                        <Grid xs style={{ textAlign: 'right' }}>
+                          <IconButton style={{ backgroundColor: '#F5F5F5' }}>
+                            <ChevronRight />
+                          </IconButton>
+                        </Grid>
+                      </Grid>
+                    </Link>
                   </div>
-                  <div className="item">
-                      <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
-                        <Link to="/contact" style={{color: "#004D80", textDecoration: "none"}}>
-                          <Grid container>
-                            <Grid item>
-                                <div><h4 style={{margin: 0}}>VINA SY FANAMBY</h4></div>
-                                <div>vinasyfanamby.docx</div>
-                            </Grid>
-                            <Grid xs style={{textAlign: "right"}}>
-                                <IconButton style={{backgroundColor: "#F5F5F5"}}>
-                                    <ChevronRight />
-                                </IconButton>
-                            </Grid>
-                          </Grid>
-                        </Link>
-                      </div>
+                </div>
+                <div className="item">
+                  <div
+                    className="content"
+                    style={{ borderLeft: '5px solid #006AB0' }}
+                  >
+                    <Link
+                      to="/contact"
+                      style={{ color: '#004D80', textDecoration: 'none' }}
+                    >
+                      <Grid container>
+                        <Grid item>
+                          <div>
+                            <h4 style={{ margin: 0 }}>VINA SY FANAMBY</h4>
+                          </div>
+                          <div>vinasyfanamby.docx</div>
+                        </Grid>
+                        <Grid xs style={{ textAlign: 'right' }}>
+                          <IconButton style={{ backgroundColor: '#F5F5F5' }}>
+                            <ChevronRight />
+                          </IconButton>
+                        </Grid>
+                      </Grid>
+                    </Link>
                   </div>
-=======
+                </div>
                 {jereoKoa.map((row) => (
                   <ItemJereo
                     title={row.title}
@@ -252,7 +249,6 @@ const Gallery: FC = () => {
                     to={row.to}
                   />
                 ))}
->>>>>>> 2ac8aba (component reutilisable)
               </div>
             </div>
           </Grid>

@@ -274,8 +274,8 @@ const columnsVomm = [
 ]
 
 const options = {
-  elevation: 0
-};
+  elevation: 0,
+}
 
 const About: FC = () => {
   const classes = useStyles()
@@ -289,7 +289,7 @@ const About: FC = () => {
       </div>
       <div className={classes.boxTwo}>
         <Grid container spacing={0}>
-          <Grid xs={2} style={{position: "sticky", top: "0"}}>
+          <Grid xs={2} style={{ position: 'sticky', top: '0' }}>
             <div>
               <h2 style={{ marginLeft: '15px', color: '#F4C247' }}>LOHATENY</h2>
               <div className={classes.item} style={{ marginLeft: '20px' }}>
@@ -311,11 +311,6 @@ const About: FC = () => {
               </div>
             </div>
           </Grid>
-<<<<<<< HEAD
-          <Grid style={{ padding: '30px', borderLeft: "1px solid rgb(0 0 0 / 10%)", borderRight: "1px solid rgb(0 0 0 / 10%)" }} xs>
-            <h1 id="birao">BIRAO</h1>
-            <Grid container>
-=======
           <Grid
             style={{
               padding: '30px',
@@ -326,7 +321,6 @@ const About: FC = () => {
           >
             <h1>BIRAO</h1>
             <Grid container style={{ justifyContent: 'center' }}>
->>>>>>> 2ac8aba (component reutilisable)
               {dataBirao.map((row) => (
                 <Birao
                   urlAvatar={row.avatar}
