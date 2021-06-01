@@ -217,53 +217,88 @@ const Accueil: FC = () => {
                   ))}
                 </div>
               </div>
+              <br />
+              <br />
+              <div className="news">
+                <div>
+                  <h2 style={{ marginLeft: '15px', color: '#F4C247' }}>
+                    FOIBE FJKM
+                  </h2>
+                </div>
+                <div>
+                  {jereoKoa.map((row) => (
+                    <ItemJereo
+                      title={row.title}
+                      description={row.desc}
+                      to={row.to}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </Grid>
           <Grid xs={9}>
             <div className={classes.boxThree2}>
               <div className="content">
                 <h1>HAFATRY NY PRESIDENT SYNODAL</h1>
-                <div className="quote">
-                  <div className="quoteIcon">
-                    <svg
-                      style={{ fill: '#004D80' }}
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="70"
-                      height="70"
-                      viewBox="0 0 18 18"
-                    >
-                      <path d="M10 5v5h2.75L11 13h2.25L15 10V5h-5zm-7 5h2.75L4 13h2.25L8 10V5H3v5z" />
-                    </svg>
-                  </div>
-                  <div className="quoteContent">
-                    <div className="text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Amet reiciendis excepturi inventore quam rerum iusto
-                      itaque eaque dignissimos ratione, doloribus quisquam
-                      voluptatem aperiam eius minus vitae harum? Vero, in
-                      perspiciatis. Lorem ipsum dolor sit amet, consectetur
-                      adipisicing elit. Amet reiciendis excepturi inventore quam
-                      rerum iusto itaque eaque dignissimos ratione, doloribus
-                      quisquam voluptatem aperiam eius minus vitae harum? Vero,
-                      in perspiciatis. Lorem ipsum dolor sit amet, consectetur
-                      adipisicing elit. Amet reiciendis excepturi inventore quam
-                      rerum iusto itaque eaque dignissimos ratione, doloribus
-                      quisquam voluptatem aperiam eius minus vitae harum? Vero,
-                      in perspiciatis. Lorem ipsum dolor sit amet, consectetur
-                      adipisicing elit. Amet reiciendis excepturi inventore quam
-                      rerum iusto itaque eaque dignissimos ratione, doloribus
-                      quisquam voluptatem aperiam eius minus vitae harum? Vero,
-                      in perspiciatis. Lorem ipsum dolor sit amet, consectetur
-                      adipisicing elit. Amet reiciendis excepturi inventore quam
-                      rerum iusto itaque eaque dignissimos ratione, doloribus
-                      quisquam voluptatem aperiam eius minus vitae harum? Vero,
-                      in perspiciatis.
+                <Grid container>
+                  <Grid xs={7}>
+                    <div className="quote">
+                      <div className="quoteIcon">
+                        <svg
+                          style={{ fill: '#004D80' }}
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="70"
+                          height="70"
+                          viewBox="0 0 18 18"
+                        >
+                          <path d="M10 5v5h2.75L11 13h2.25L15 10V5h-5zm-7 5h2.75L4 13h2.25L8 10V5H3v5z" />
+                        </svg>
+                      </div>
+                      <div className="quoteContent">
+                        <div className="text">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit. Amet reiciendis excepturi inventore quam rerum
+                          iusto itaque eaque dignissimos ratione, doloribus
+                          quisquam voluptatem aperiam eius minus vitae harum?
+                          Vero, in perspiciatis. Lorem ipsum dolor sit amet,
+                          consectetur adipisicing elit. Amet reiciendis
+                          excepturi inventore quam rerum iusto itaque eaque
+                          dignissimos ratione, doloribus quisquam voluptatem
+                          aperiam eius minus vitae harum? Vero, in perspiciatis.
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit. Amet reiciendis excepturi inventore quam rerum
+                          iusto itaque eaque dignissimos ratione, doloribus
+                          quisquam voluptatem aperiam eius minus vitae harum?
+                          Vero, in perspiciatis. Lorem ipsum dolor sit amet,
+                          consectetur adipisicing elit. Amet reiciendis
+                          excepturi inventore quam rerum iusto itaque eaque
+                          dignissimos ratione, doloribus quisquam voluptatem
+                          aperiam eius minus vitae harum? Vero, in perspiciatis.
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit. Amet reiciendis excepturi inventore quam rerum
+                          iusto itaque eaque dignissimos ratione, doloribus
+                          quisquam voluptatem aperiam eius minus vitae harum?
+                          Vero, in perspiciatis.
+                        </div>
+                        <div className="profil">
+                          Rasolonirina Robert, Mpitandrina, Président Synodal
+                        </div>
+                      </div>
                     </div>
-                    <div className="profil">
-                      ---- Rasolonirina Robert, Mpitandrina, Président Synodal
+                  </Grid>
+                  <Grid
+                    xs={5}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <div style={{ border: '1px solid red', width: '90%' }}>
+                      Video ici
                     </div>
-                  </div>
-                </div>
+                  </Grid>
+                </Grid>
               </div>
               <div className="content">
                 <h1>VAOVAO MISONGADINA</h1>

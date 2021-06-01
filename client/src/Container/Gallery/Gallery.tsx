@@ -251,6 +251,24 @@ const Gallery: FC = () => {
                 ))}
               </div>
             </div>
+            <br />
+            <br />
+            <div className="news">
+              <div>
+                <h2 style={{ marginLeft: '15px', color: '#F4C247' }}>
+                  FOIBE FJKM
+                </h2>
+              </div>
+              <div>
+                {jereoKoa.map((row) => (
+                  <ItemJereo
+                    title={row.title}
+                    description={row.desc}
+                    to={row.to}
+                  />
+                ))}
+              </div>
+            </div>
           </Grid>
         </Grid>
       </div>

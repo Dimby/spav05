@@ -32,6 +32,7 @@ import RRobert from '../../Images/PS/RasolonirinaRobert.jpg'
 import TSalomon from '../../Images/PS/TrimozafySalomon.jpg'
 import { verset } from '../../Lib/verset'
 import Birao from './Birao/Birao'
+import Ps from './PS/Ps'
 import useStyles from './style'
 
 // Table for Antontan'isa
@@ -320,7 +321,7 @@ const About: FC = () => {
             xs
           >
             <h1>BIRAO</h1>
-            <Grid container style={{ justifyContent: 'center' }}>
+            <Grid container style={{ justifyContent: 'space-around' }}>
               {dataBirao.map((row) => (
                 <Birao
                   urlAvatar={row.avatar}
@@ -346,38 +347,14 @@ const About: FC = () => {
             <h1 id="psnifandimby">PRESIDENT SYNODAL NIFANDIMBY</h1>
             <Grid container>
               {dataPS.map((row) => (
-                <Grid
-                  item
-                  xs={6}
-                  style={{ textAlign: 'center', padding: '20px' }}
-                  key={row.avatar}
-                >
-                  <Card className="root" style={{ maxWidth: 'none' }}>
-                    <CardActionArea>
-                      <CardMedia
-                        className="media"
-                        image={row.avatar}
-                        title="Contemplative Reptile"
-                        style={{ backgroundPosition: 'top' }}
-                      />
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="h1">
-                          {row.name.toUpperCase()} {row.firstname} {row.status}
-                        </Typography>
-                        <Typography gutterBottom variant="h6" component="h2">
-                          {row.dateDebut} - {row.dateFin}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          color="textSecondary"
-                          component="p"
-                        >
-                          {row.description}
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                  </Card>
-                </Grid>
+                <Ps
+                  urlPicture={row.avatar}
+                  name={row.name}
+                  firstname={row.firstname}
+                  dateStart={row.dateDebut}
+                  dateEnd={row.dateFin}
+                  status={row.status}
+                />
               ))}
             </Grid>
 
@@ -611,17 +588,13 @@ const About: FC = () => {
             </div>
             <br />
             <br />
-            <div
-              className="section"
-              style={{
-                padding: '0 20px',
-                borderTop: '1px solid rgb(0 0 0 / 10%)',
-              }}
-            >
+            <div className="news">
               <div>
-                <h2 style={{ marginLeft: '0px', color: '#F4C247' }}>HAFA</h2>
+                <h2 style={{ marginLeft: '15px', color: '#F4C247' }}>
+                  FOIBE FJKM
+                </h2>
               </div>
-              <div className="news">
+              <div>
                 {jereoKoa.map((row) => (
                   <ItemJereo
                     title={row.title}

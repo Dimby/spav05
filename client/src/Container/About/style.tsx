@@ -11,12 +11,6 @@ const useStyles = makeStyles((theme) => ({
   },
   boxTwo: {
     margin: '0 3rem',
-    '& .root': {
-      maxWidth: 345,
-    },
-    '& .media': {
-      height: 240,
-    },
     '& h1': {
       color: '#006AB0',
     },
