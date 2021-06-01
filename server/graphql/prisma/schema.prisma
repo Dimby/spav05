@@ -10,11 +10,117 @@ generator client {
   provider = "prisma-client-js"
 }
 
+enum TypeUser {
+  MPITANDRINA
+  KATEKISTA_DELEGUE
+}
+
+
+model Email {
+  id        String  @id @default(uuid())
+  adress    String
+  content   String
+  user      User?   @relation(fields: [userId], references: [id])
+  userId    String? 
+}
+
 model User {
   id        String  @id @default(uuid())
-  email     String? @unique
-  firstName String
   name      String
+  firstName String
   phone     String?
   address   String?
+  email     Email?
+}
+
+model Sary {
+  id        String  @id @default(uuid())
+  urlPicture  String?
+  urlPicturePublic String? 
+  Faritra    Faritra?  @relation(fields: [faritraId], references: [id])
+  faritraId  String?
+}
+
+model Faritra {
+  id        String  @id @default(uuid())
+  sokajy    String
+  fitandremanas Fitandremana[]
+  sary Sary[]
+}
+
+model Fitandremana {
+  id        String  @id @default(uuid())
+  lahSp     String
+  lahFar    String
+  name      String
+  mpitandrina    Mpitandrina?   @relation(fields: [mpitandrinaId], references: [id])
+  mpitandrinaId  Int?   
+  Faritra    Faritra?  @relation(fields: [faritraId], references: [id])
+  faritraId  String?
+  updatedAt DateTime             @updatedAt
+  createdAt DateTime             @default(now())
+
+}
+
+model Fifandraisana {
+  id        String  @id @default(uuid())
+  fifandraisana String
+  updatedAt DateTime             @updatedAt
+  createdAt DateTime             @default(now())
+  mpitandrina    Mpitandrina?   @relation(fields: [mpitandrinaId], references: [id])
+  mpitandrinaId  Int? 
+  ps    PS?   @relation(fields: [psId], references: [id])
+  psId  String? 
+}
+
+model Mpitandrina{
+  id        Int       @id @default(autoincrement())
+  name    String
+  firstName String
+  updatedAt DateTime             @updatedAt
+  createdAt DateTime             @default(now())
+  fitandremana Fitandremana?
+  fifandraisanas Fifandraisana[]
+  type TypeUser
+}
+
+model PS {
+  id        String  @id @default(uuid())
+  name      String
+  firstName String
+  email     String?
+  nameWife  String?
+  fifandraisanas Fifandraisana[]
+  urlPicture  String?
+  urlPicturePublic String?
+  dateStart DateTime?
+  dateEnd   DateTime?
+  updatedAt DateTime             @updatedAt
+  createdAt DateTime             @default(now())
+}
+
+model Birao {
+  id        String  @id @default(uuid())
+  name      String
+  firstName String
+  fonction  String
+  titre     String
+  fitMis    String
+  urlPicture  String?
+  urlPicturePublic String?
+}
+
+model VaovaoMisongadina {
+  id        Int       @id @default(autoincrement())
+  titre     String
+  description String
+}
+
+model vavaoIsampitandremana{
+  id        Int       @id @default(autoincrement())
+  titre     String
+  location  String
+  urlPicture  String?
+  urlPicturePublic String?
+  description String
 }

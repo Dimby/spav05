@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "dotenv -e .env.local -- ts-node-dev --respawn --transpile-only src/server.ts",
+    "start:dev": "dotenv -e .env -- ts-node-dev --respawn --transpile-only src/server.ts",
     "clean": "rm -rf dist",
     "build": "npm -s run clean && npm -s run generate && tsc",
     "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
@@ -30,6 +30,7 @@
   "dependencies": {
     "@prisma/client": "2.19.0",
     "@types/bcrypt": "^3.0.1",
+    "@types/graphql-iso-date": "^3.4.0",
     "@types/moment": "^2.13.0",
     "apollo-server": "^2.22.2",
     "bcrypt": "^5.0.1",
