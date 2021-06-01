@@ -149,8 +149,8 @@ const columnsVomm = [
 
 
 const options = {
-  filterType: 'checkbox',
-}
+  elevation: 0
+};
 
 const About: FC = () => {
   const classes = useStyles()
@@ -166,30 +166,30 @@ const About: FC = () => {
       </div>
       <div className={classes.boxTwo}>
         <Grid container spacing={0}>
-          <Grid xs={2}>
+          <Grid xs={2} style={{position: "sticky", top: "0"}}>
             <div>
               <h2 style={{ marginLeft: '15px', color: '#F4C247' }}>LOHATENY</h2>
               <div className={classes.item} style={{ marginLeft: '20px' }}>
                 <div className="menuItem">
-                  <Link to="/about">Birao</Link>
+                  <a href="#birao">Birao</a>
                 </div>
                 <div className="menuItem">
-                  <Link to="/about">PS nifandimby</Link>
+                  <a href="#psnifandimby">PS nifandimby</a>
                 </div>
                 <div className="menuItem">
-                  <Link to="/about">Mpitandrina</Link>
+                  <a href="#mpitandrina">Mpitandrina</a>
                 </div>
                 <div className="menuItem">
-                  <Link to="/about">Katekista Delege</Link>
+                  <a href="#katekistadelege">Katekista Delege</a>
                 </div>
                 <div className="menuItem">
-                  <Link to="/about">Antontan'isa</Link>
+                  <a href="#antontanisa">Antontan'isa</a>
                 </div>
               </div>
             </div>
           </Grid>
           <Grid style={{ padding: '30px', borderLeft: "1px solid rgb(0 0 0 / 10%)", borderRight: "1px solid rgb(0 0 0 / 10%)" }} xs>
-            <h1>BIRAO</h1>
+            <h1 id="birao">BIRAO</h1>
             <Grid container>
               {dataBirao.map((row) => (
                 <Grid xs={3} style={{ padding: '10px' }} key={row.avatar}>
@@ -224,7 +224,7 @@ const About: FC = () => {
                 </Grid>
             </Grid>
             <br />
-            <h1>PRESIDENT SYNODAL NIFANDIMBY</h1>
+            <h1 id="psnifandimby">PRESIDENT SYNODAL NIFANDIMBY</h1>
             <Grid container>
               {dataPS.map((row) => (
                 <Grid
@@ -262,19 +262,21 @@ const About: FC = () => {
               ))}
             </Grid>
 
-            <h1>MPITANDRINA</h1>
+            <h1 id="mpitandrina">MPITANDRINA</h1>
             <MUIDataTable
               title={'Lisitry ny Mpitandrina 2021'}
               data={dataMpit}
               columns={columnsMpit}
+              options={options}
             />
-            <h1>KATEKISTA DELEGE</h1>
+            <h1 id="katekistadelege">KATEKISTA DELEGE</h1>
             <MUIDataTable
               title={'Lisitry ny Katekista Delege 2021'}
               data={dataKD}
               columns={columnsKD}
+              options={options}
             />
-            <h1>ANTONTAN'ISA VOARAY NY TAONA 2020</h1>
+            <h1 id="antontanisa">ANTONTAN'ISA VOARAY NY TAONA 2020</h1>
             <div>
               <TableContainer>
                 <Table aria-label="simple table" size="small">
