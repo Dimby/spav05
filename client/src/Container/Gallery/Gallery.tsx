@@ -1,25 +1,29 @@
 import {
+  Button,
   Grid,
   IconButton,
-  Modal,
-  ownerDocument,
-  TextField,
-} from '@material-ui/core'
-import React, { FC } from 'react'
-import useStyles from './style'
-import fond from '../../Images/fond-1.jpg'
-import fg from '../../Images/pekin - Copie.jpg'
-import ambatondrazakaFitiavana from '../../Images/ambatondrazakaFitiavana.jpeg'
-import ZoomOutMapIcon from '@material-ui/icons/ZoomOutMap'
-import ChevronRight from '@material-ui/icons/ChevronRight'
-import { Link } from 'react-router-dom';
 
+
+  TextField
+} from '@material-ui/core'
+import Dialog from '@material-ui/core/Dialog'
+import DialogActions from '@material-ui/core/DialogActions'
+import DialogContent from '@material-ui/core/DialogContent'
+import ChevronLeft from '@material-ui/icons/ChevronLeft'
+import ChevronRight from '@material-ui/icons/ChevronRight'
+import ZoomOutMapIcon from '@material-ui/icons/ZoomOutMap'
+import React, { FC } from 'react'
+import { Link } from 'react-router-dom'
 import sary1 from '../../Images/Gallery/Gallery (1).png'
 import sary2 from '../../Images/Gallery/Gallery (2).png'
 import sary3 from '../../Images/Gallery/Gallery (3).png'
 import sary4 from '../../Images/Gallery/Gallery (4).png'
 import sary5 from '../../Images/Gallery/Gallery (5).png'
+import pekin from '../../Images/pekin - Copie.jpg'
 import { verset } from '../../Lib/verset'
+import useStyles from './style'
+
+
 
 function createDataGallery(
   link: string,
@@ -62,9 +66,19 @@ const dataGallery = [
   ),
 ]
 
+
 const Gallery: FC = () => {
   const classes = useStyles()
   const versetRandom = verset()
+  
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+  
   return (
     <div>
       <div className={classes.boxOne}>
@@ -119,7 +133,7 @@ const Gallery: FC = () => {
                           </div>
                         </Grid>
                         <Grid xs style={{ textAlign: 'right' }}>
-                          <IconButton>
+                          <IconButton  onClick={handleClickOpen}>
                             <ZoomOutMapIcon />
                           </IconButton>
                         </Grid>
@@ -128,6 +142,45 @@ const Gallery: FC = () => {
                   </div>
                 </Grid>
               ))}
+              <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+                maxWidth={"lg"}
+              >
+                <DialogContent>
+                  <img src={pekin} alt="" style={{ width: "100%", }} />
+                </DialogContent>
+                <DialogActions>
+                  <Grid container>
+                    <Grid item xs>
+                      <div>
+                        <IconButton style={{backgroundColor: "#F5F5F5", margin: "0px 15px"}}>
+                            <ChevronLeft />
+                        </IconButton>
+                        <IconButton style={{backgroundColor: "#F5F5F5", margin: "0px 15px"}}>
+                            <ChevronRight />
+                        </IconButton>
+                      </div>
+                    </Grid>
+                    <Grid item xs>
+                      <div style={{ textAlign: "center" }}>
+                        <div style={{ fontSize: "15px", fontWeight: "bold" }}>AMBATONDRAZAKA FITIAVANA</div>
+                        <div style={{ fontSize: "12px" }}>Janoary 2021</div>
+                        <div>Fivoriamben'ny synodamparitany 1</div>
+                      </div>
+                    </Grid>
+                    <Grid item xs style={{ textAlign: "right" }}>
+                      <div>
+                        <Button onClick={handleClose} color="primary">
+                          Ok
+                        </Button>
+                      </div>
+                    </Grid>
+                  </Grid>
+                </DialogActions>
+              </Dialog>
             </Grid>
           </Grid>
           <Grid xs={3} style={{ paddingLeft: '20px' }} className="news">
@@ -141,15 +194,15 @@ const Gallery: FC = () => {
                   <div className="item">
                       <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
                           <Grid container>
-                      <Grid item>
-                          <div><h4 style={{margin: 0}}>14 Juin 2021</h4></div>
-                          <div>Fambolenkazo teny Manakambahiny </div>
-                      </Grid>
-                      <Grid xs style={{textAlign: "right"}}>
-                          <IconButton style={{backgroundColor: "#F5F5F5"}}>
-                              <ChevronRight />
-                          </IconButton>
-                      </Grid>
+                            <Grid item>
+                                <div><h4 style={{margin: 0}}>14 Juin 2021</h4></div>
+                                <div>Fambolenkazo teny Manakambahiny </div>
+                            </Grid>
+                            <Grid xs style={{textAlign: "right"}}>
+                                <IconButton style={{backgroundColor: "#F5F5F5"}}>
+                                    <ChevronRight />
+                                </IconButton>
+                            </Grid>
                           </Grid>
                       </div>
                   </div>
