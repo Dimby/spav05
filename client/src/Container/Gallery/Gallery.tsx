@@ -1,8 +1,6 @@
 import {
   Grid,
   IconButton,
-
-
   TextField
 } from '@material-ui/core'
 import ChevronRight from '@material-ui/icons/ChevronRight'
@@ -120,15 +118,17 @@ const Gallery: FC = () => {
             </Grid>
             <Grid container spacing={0}>
               {dataGallery.map((row) => (
-                  <GalleryItem 
-                    url={row.link}
-                    title={row.title}
-                    description={row.description}
-                    date={row.date}
-                    handleClickOpen={ () =>
-                      handleClickOpen(row.link, row.title, row.description)
-                    }
-                  />
+                <>
+                <GalleryItem 
+                  url={row.link}
+                  title={row.title}
+                  description={row.description}
+                  date={row.date}
+                  handleClickOpen={ () =>
+                    handleClickOpen(row.link, row.title, row.description)
+                  }
+                />
+                </>
               ))}
             </Grid>
           </Grid>
