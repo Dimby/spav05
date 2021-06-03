@@ -1,17 +1,11 @@
 import {
-  Button,
   Grid,
   IconButton,
 
 
   TextField
 } from '@material-ui/core'
-import Dialog from '@material-ui/core/Dialog'
-import DialogActions from '@material-ui/core/DialogActions'
-import DialogContent from '@material-ui/core/DialogContent'
-import ChevronLeft from '@material-ui/icons/ChevronLeft'
 import ChevronRight from '@material-ui/icons/ChevronRight'
-import ZoomOutMapIcon from '@material-ui/icons/ZoomOutMap'
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 import sary1 from '../../Images/Gallery/Gallery (1).png'
@@ -19,10 +13,10 @@ import sary2 from '../../Images/Gallery/Gallery (2).png'
 import sary3 from '../../Images/Gallery/Gallery (3).png'
 import sary4 from '../../Images/Gallery/Gallery (4).png'
 import sary5 from '../../Images/Gallery/Gallery (5).png'
-import pekin from '../../Images/pekin - Copie.jpg'
 import { verset } from '../../Lib/verset'
+import GalleryItem from './GalleryItem/GalleryItem'
+import GalleryModal from './GalleryModal/GalleryModal'
 import useStyles from './style'
-
 
 
 function createDataGallery(
@@ -70,10 +64,18 @@ const dataGallery = [
 const Gallery: FC = () => {
   const classes = useStyles()
   const versetRandom = verset()
-  
+  const [title, setTitle] = React.useState('');
+  const [description, setDescription] = React.useState('');
+  const [url, setUrl] = React.useState('');
+  const [date, setDate] = React.useState('');
+
   const [open, setOpen] = React.useState(false);
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleClickOpen = (url: string, title: string, description: string) => {
+    setOpen(true)
+    setUrl(url)
+    setTitle(title)
+    setDescription(description)
+    setDate(date)
   };
   const handleClose = () => {
     setOpen(false);
@@ -81,6 +83,7 @@ const Gallery: FC = () => {
   
   return (
     <div>
+      <GalleryModal url={url} title={title} date={date} description={description} open={open} setOpen={setOpen} handleClose={handleClose} />
       <div className={classes.boxOne}>
         <div>
           " {versetRandom.fehezanteny.toUpperCase()} "
@@ -117,70 +120,16 @@ const Gallery: FC = () => {
             </Grid>
             <Grid container spacing={0}>
               {dataGallery.map((row) => (
-                <Grid xs={4} style={{ marginBottom: '20px' }} key={row.link}>
-                  <div className="responsive">
-                    <div className="gallery">
-                      <img src={row.link} alt="" />
-                      <Grid container className="desc">
-                        <Grid item>
-                          <div>
-                            <h4 style={{ margin: 0 }}>
-                              {row.title.toUpperCase()}
-                            </h4>
-                          </div>
-                          <div style={{ maxWidth: '300px' }}>
-                            {row.description} - {row.date}
-                          </div>
-                        </Grid>
-                        <Grid xs style={{ textAlign: 'right' }}>
-                          <IconButton  onClick={handleClickOpen}>
-                            <ZoomOutMapIcon />
-                          </IconButton>
-                        </Grid>
-                      </Grid>
-                    </div>
-                  </div>
-                </Grid>
+                  <GalleryItem 
+                    url={row.link}
+                    title={row.title}
+                    description={row.description}
+                    date={row.date}
+                    handleClickOpen={ () =>
+                      handleClickOpen(row.link, row.title, row.description)
+                    }
+                  />
               ))}
-              <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-                maxWidth={"lg"}
-              >
-                <DialogContent>
-                  <img src={pekin} alt="" style={{ width: "100%", }} />
-                </DialogContent>
-                <DialogActions>
-                  <Grid container>
-                    <Grid item xs>
-                      <div>
-                        <IconButton style={{backgroundColor: "#F5F5F5", margin: "0px 15px"}}>
-                            <ChevronLeft />
-                        </IconButton>
-                        <IconButton style={{backgroundColor: "#F5F5F5", margin: "0px 15px"}}>
-                            <ChevronRight />
-                        </IconButton>
-                      </div>
-                    </Grid>
-                    <Grid item xs>
-                      <div style={{ textAlign: "center" }}>
-                        <div style={{ fontSize: "15px", fontWeight: "bold" }}>AMBATONDRAZAKA FITIAVANA</div>
-                        <div style={{ fontSize: "12px" }}>Janoary 2021</div>
-                        <div>Fivoriamben'ny synodamparitany 1</div>
-                      </div>
-                    </Grid>
-                    <Grid item xs style={{ textAlign: "right" }}>
-                      <div>
-                        <Button onClick={handleClose} color="primary">
-                          Ok
-                        </Button>
-                      </div>
-                    </Grid>
-                  </Grid>
-                </DialogActions>
-              </Dialog>
             </Grid>
           </Grid>
           <Grid xs={3} style={{ paddingLeft: '20px' }} className="news">
