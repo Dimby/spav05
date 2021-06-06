@@ -4,18 +4,27 @@ import {
   TextField
 } from '@material-ui/core'
 import ChevronRight from '@material-ui/icons/ChevronRight'
+<<<<<<< HEAD
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
+=======
+import { Link } from 'react-router-dom'
+
+>>>>>>> 2ac8aba (component reutilisable)
 import sary1 from '../../Images/Gallery/Gallery (1).png'
 import sary2 from '../../Images/Gallery/Gallery (2).png'
 import sary3 from '../../Images/Gallery/Gallery (3).png'
 import sary4 from '../../Images/Gallery/Gallery (4).png'
 import sary5 from '../../Images/Gallery/Gallery (5).png'
 import { verset } from '../../Lib/verset'
+<<<<<<< HEAD
 import GalleryItem from './GalleryItem/GalleryItem'
 import GalleryModal from './GalleryModal/GalleryModal'
 import useStyles from './style'
 
+=======
+import ItemJereo from '../../Components/ItemJereo/ItemJereo'
+>>>>>>> 2ac8aba (component reutilisable)
 
 function createDataGallery(
   link: string,
@@ -58,6 +67,14 @@ const dataGallery = [
   ),
 ]
 
+<<<<<<< HEAD
+=======
+const jereoKoa = [
+  { title: 'TETIKANDRO', desc: 'tetikandro2021.docx', to: '/contact' },
+  { title: 'FITSIPIPIFEHEZANA', desc: 'fitsipikaanatiny.docx', to: '/contact' },
+  { title: 'VINA SY FANAMBY', desc: 'vinasyfanamby.docx', to: '/contact' },
+]
+>>>>>>> 2ac8aba (component reutilisable)
 
 const Gallery: FC = () => {
   const classes = useStyles()
@@ -83,9 +100,7 @@ const Gallery: FC = () => {
     <div>
       <GalleryModal url={url} title={title} date={date} description={description} open={open} setOpen={setOpen} handleClose={handleClose} />
       <div className={classes.boxOne}>
-        <div>
-          " {versetRandom.fehezanteny.toUpperCase()} "
-        </div>
+        <div>" {versetRandom.fehezanteny.toUpperCase()} "</div>
         <p style={{ fontSize: '18px' }}>- {versetRandom.toko}</p>
       </div>
       <div className={classes.boxTwo}>
@@ -118,6 +133,7 @@ const Gallery: FC = () => {
             </Grid>
             <Grid container spacing={0}>
               {dataGallery.map((row) => (
+<<<<<<< HEAD
                 <>
                 <GalleryItem 
                   url={row.link}
@@ -129,6 +145,27 @@ const Gallery: FC = () => {
                   }
                 />
                 </>
+=======
+                <Grid xs={4} style={{ marginBottom: '20px' }} key={row.link}>
+                  <div className="responsive">
+                    <div className="gallery">
+                      <img src={row.link} alt="" />
+                      <Grid container className="desc">
+                        <Grid item>
+                          <div>
+                            <h4 style={{ margin: 0 }}>
+                              {row.title.toUpperCase()}
+                            </h4>
+                          </div>
+                          <div>
+                            {row.description} - {row.date}
+                          </div>
+                        </Grid>
+                      </Grid>
+                    </div>
+                  </div>
+                </Grid>
+>>>>>>> 2ac8aba (component reutilisable)
               ))}
             </Grid>
           </Grid>
@@ -140,6 +177,7 @@ const Gallery: FC = () => {
             </div>
             <div className="news">
               <div>
+<<<<<<< HEAD
                   <div className="item">
                       <div className="content" style={{ borderLeft: "5px solid #006AB0",}}>
                           <Grid container>
@@ -206,8 +244,17 @@ const Gallery: FC = () => {
                         </Link>
                       </div>
                   </div>
+=======
+                {jereoKoa.map((row) => (
+                  <ItemJereo
+                    title={row.title}
+                    description={row.desc}
+                    to={row.to}
+                  />
+                ))}
+>>>>>>> 2ac8aba (component reutilisable)
               </div>
-          </div>
+            </div>
           </Grid>
         </Grid>
       </div>
