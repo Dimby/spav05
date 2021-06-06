@@ -87,6 +87,23 @@ const vaovaoFit = [
   },
 ]
 
+moment.updateLocale('fr', {
+  months: [
+    'Janoary',
+    'Febroary',
+    'Martsa',
+    'Aprily',
+    'Mey',
+    'Jona',
+    'Jolay',
+    'Aogositra',
+    'Septambra',
+    'Oktobra',
+    'Novambra',
+    'Desambra',
+  ],
+})
+
 const Accueil: FC = () => {
   const classes = useStyles()
   const height = '612px'
