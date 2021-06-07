@@ -9,6 +9,7 @@ import image1 from '../../Images/Faritra 1.png'
 import { getAndalana } from '../../Lib/perikopa2021'
 import { verset } from '../../Lib/verset'
 import DialogCustom from './DialogCustom'
+import DialogJobily from './DialogJobily'
 import Mofonaina from './Mofonaina/Mofonaina'
 import useStyles from './style'
 import VaovaoIsampitandremana from './VaovaoIsampitandremana'
@@ -149,6 +150,13 @@ const Accueil: FC = () => {
         setOpen={setOpen}
         handleClose={handleClose}
       />
+      <DialogJobily
+        title={title}
+        description={description}
+        open={open}
+        setOpen={setOpen}
+        handleClose={handleClose}
+      />
       <div className={classes.boxOne} style={{ height: height, zIndex: 2 }}>
         <div className={classes.boxText}>
           <p
@@ -169,6 +177,11 @@ const Accueil: FC = () => {
         </div>
         <div className={classes.boxButton}>
           <Link to="/about">MOMBA NY SPAV5 </Link>
+          <Link to="" style={{ marginLeft: "20px" }}
+            onClick={() => {
+              
+            }}
+          >JOBILY 25e</Link>
         </div>
       </div>
       <div className={classes.boxTwo}>
@@ -190,7 +203,7 @@ const Accueil: FC = () => {
       >
         PERIKOPA VOLANA {moment().format('MMMM').toUpperCase()} :{' '}
         {/* 0 Janoary - 1 Febroary ... 11 Desambra */}
-        <span style={{ fontWeight: 'bold' }}>"{getAndalana(4).andalana}"</span>
+        <span style={{ fontWeight: 'bold' }}>"{getAndalana(5).andalana}"</span>
       </div>
       <div className={classes.boxThree}>
         <Grid container>
