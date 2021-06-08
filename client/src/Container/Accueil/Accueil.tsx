@@ -141,6 +141,7 @@ const Accueil: FC = () => {
   }
   const versetRandom = verset()
   const [open, setOpen] = React.useState(false)
+  const [openJobily, setOpenJobily] = React.useState(false)
   const [title, setTitle] = React.useState('')
   const [description, setDescription] = React.useState('')
 
@@ -150,10 +151,11 @@ const Accueil: FC = () => {
     setDescription(description)
   }
   const handleClose = () => {
+    setOpenJobily(false)
     setOpen(false)
   }
   const handleClickOpenJobily = () => {
-    setOpen(true)
+    setOpenJobily(true)
   }
 
   return (
@@ -166,8 +168,8 @@ const Accueil: FC = () => {
         handleClose={handleClose}
       />
       <DialogJobily
-        open={open}
-        setOpen={setOpen}
+        open={openJobily}
+        setOpen={setOpenJobily}
         handleClose={handleClose}
       />
       <div className={classes.boxOne} style={{ height: height, zIndex: 2 }}>
