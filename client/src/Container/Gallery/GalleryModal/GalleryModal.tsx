@@ -19,44 +19,44 @@ interface GalleryModalProps {
 const GalleryModal: FC<GalleryModalProps> = ({url, title, description, date, open, handleClose }) => {
     return <>
         <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-                maxWidth={"lg"}
-              >
-                <DialogContent>
-                  <img src={url} alt="" style={{ width: "100%", }} />
-                </DialogContent>
-                <DialogActions>
-                  <Grid container>
-                    <Grid item xs>
-                      <div>
-                        <IconButton style={{backgroundColor: "#F5F5F5", margin: "0px 15px"}}>
-                            <ChevronLeft />
-                        </IconButton>
-                        <IconButton style={{backgroundColor: "#F5F5F5", margin: "0px 15px"}}>
-                            <ChevronRight />
-                        </IconButton>
-                      </div>
-                    </Grid>
-                    <Grid item xs>
-                      <div style={{ textAlign: "center" }}>
-                        <div style={{ fontSize: "15px", fontWeight: "bold" }}>{title}</div>
-                        <div style={{ fontSize: "12px" }}>{date}</div>
-                        <div>{description}</div>
-                      </div>
-                    </Grid>
-                    <Grid item xs style={{ textAlign: "right" }}>
-                      <div>
-                        <Button onClick={handleClose} color="primary">
-                          Ok
-                        </Button>
-                      </div>
-                    </Grid>
-                  </Grid>
-                </DialogActions>
-              </Dialog>
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+          maxWidth={"lg"}
+        >
+          <DialogContent>
+            <img src={url} alt="" style={{ width: "100%", }} />
+          </DialogContent>
+          <DialogActions>
+            <Grid container>
+              <Grid item xs>
+                <div>
+                  <IconButton style={{backgroundColor: "#F5F5F5", margin: "0px 15px"}}>
+                      <ChevronLeft />
+                  </IconButton>
+                  <IconButton style={{backgroundColor: "#F5F5F5", margin: "0px 15px"}}>
+                      <ChevronRight />
+                  </IconButton>
+                </div>
+              </Grid>
+              <Grid item xs>
+                <div style={{ textAlign: "center" }}>
+                  <div style={{ fontSize: "15px", fontWeight: "bold" }}>{title}</div>
+                  <div style={{ fontSize: "12px" }}>{date}</div>
+                  <div>{description}</div>
+                </div>
+              </Grid>
+              <Grid item xs style={{ textAlign: "right" }}>
+                <div>
+                  <Button onClick={handleClose} color="primary">
+                    Ok
+                  </Button>
+                </div>
+              </Grid>
+            </Grid>
+          </DialogActions>
+        </Dialog>
     </>
 }
 

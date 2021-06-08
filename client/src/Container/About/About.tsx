@@ -31,6 +31,7 @@ import Randrianahova from '../../Images/PS/Randrianahova.jpg'
 import RRobert from '../../Images/PS/RasolonirinaRobert.jpg'
 import TSalomon from '../../Images/PS/TrimozafySalomon.jpg'
 import { verset } from '../../Lib/verset'
+import GalleryModal from '../Gallery/GalleryModal'
 import Birao from './Birao/Birao'
 import Ps from './PS/Ps'
 import useStyles from './style'
@@ -281,9 +282,27 @@ const options = {
 const About: FC = () => {
   const classes = useStyles()
   const versetRandom = verset()
+  
+  const [open, setOpen] = React.useState(false)
 
+  const handleClickOpen = () => {
+    setOpen(true)
+  }
+  const handleClose = () => {
+    setOpen(false)
+  }
+  
   return (
     <div>
+      <GalleryModal 
+        url={biraoImage}
+        title={"Biraon'ny SPAV 5"}
+        description={""}
+        date={""}
+        open={open}
+        setOpen={setOpen}
+        handleClose={handleClose}
+      />
       <div className={classes.boxOne}>
         <div>" {versetRandom.fehezanteny.toUpperCase()} "</div>
         <p style={{ fontSize: '18px' }}>- {versetRandom.toko}</p>
@@ -339,7 +358,10 @@ const About: FC = () => {
                 <img
                   src={biraoImage}
                   alt="Sarin'ny birao"
-                  style={{ width: '50%' }}
+                  style={{ width: '50%', cursor: "pointer" }}
+                  onClick={() =>
+                    handleClickOpen()
+                  }
                 />
               </Grid>
             </Grid>
