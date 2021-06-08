@@ -140,6 +140,9 @@ const Accueil: FC = () => {
   const handleClose = () => {
     setOpen(false)
   }
+  const handleClickOpenJobily = () => {
+    setOpen(true)
+  }
 
   return (
     <div>
@@ -151,8 +154,8 @@ const Accueil: FC = () => {
         handleClose={handleClose}
       />
       <DialogJobily
-        title={title}
-        description={description}
+        title={"title"}
+        description={"Rakoto a dit"}
         open={open}
         setOpen={setOpen}
         handleClose={handleClose}
@@ -179,7 +182,7 @@ const Accueil: FC = () => {
           <Link to="/about">MOMBA NY SPAV5 </Link>
           <Link to="" style={{ marginLeft: "20px" }}
             onClick={() => {
-              
+              handleClickOpenJobily()
             }}
           >JOBILY 25e</Link>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useStyles from './style'
-import logo from '../../Images/logoSPAV05.png';
+import logo from '../../Images/Logo25e.png';
 
 interface WrapperComponentProps {
   children?: any;
@@ -18,9 +18,9 @@ const WrapperComponent = (props: WrapperComponentProps) => {
   return (
     <div>
       <div style={{background: "#006AB0", padding: "20px 0px"}}>
-        <nav style={{display:"flex", justifyContent: "space-between", width: "90%", margin: "auto"}}>
+        <nav style={{display:"flex", justifyContent: "space-between", alignItems: "center", width: "90%", margin: "auto"}}>
           <div style={{color: "#fff"}}>
-            <span className={classes.logo} style={{fontWeight: "bold"}}><img src={logo} width="12%" alt="" style={{margin: "0px 10px"}}/>
+            <span className={classes.logo} style={{fontWeight: "bold"}}><img src={logo} width="9%" alt="" style={{margin: "0px 10px"}}/>
               <Link to="/" style={{position: "absolute", color: "#fff", fontWeight: "bold", textDecoration: "none"}}>SPAV5</Link>
             </span>
           </div>
