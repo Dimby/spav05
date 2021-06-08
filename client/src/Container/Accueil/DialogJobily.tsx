@@ -26,11 +26,10 @@ const DialogJobily: FC<DialogJobilyProps> = ({
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
         maxWidth={"md"}
-        style={{ textAlign: "center" }}
         scroll={'body'}
       >
-        <DialogTitle id="alert-dialog-title">JOBILY FAHA 25 TAONA ( 1996 - 2021 )</DialogTitle>
-        <DialogContent>
+        <DialogTitle style={{ textAlign: "center" }} id="alert-dialog-title">JOBILY FAHA 25 TAONA ( 1996 - 2021 )</DialogTitle>
+        <DialogContent style={{ textAlign: "center" }}>
           <DialogContentText id="alert-dialog-description">
           <hr style={{ width: "70%" }} />
               <h4>Logo</h4>
@@ -43,7 +42,7 @@ const DialogJobily: FC<DialogJobilyProps> = ({
           <hr style={{ width: "70%" }} />
           </DialogContentText>
         </DialogContent>
-        <DialogContent>
+        <DialogContent style={{ textAlign: "center" }}>
           <DialogContentText id="alert-dialog-description">
             <h4>Hira Faneva 25 Taona</h4>
             <p>
@@ -78,7 +77,7 @@ const DialogJobily: FC<DialogJobilyProps> = ({
             </p>
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
+        <DialogActions style={{ textAlign: "center" }}>
           <Button onClick={handleClose} color="primary" autoFocus>
             Ok
           </Button>

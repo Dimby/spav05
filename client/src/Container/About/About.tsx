@@ -291,13 +291,13 @@ const About: FC = () => {
   const handleClose = () => {
     setOpen(false)
   }
-  
+
   return (
     <div>
       <GalleryModal 
         url={biraoImage}
         title={"Biraon'ny SPAV 5"}
-        description={""}
+        description={"Ny PS Rasolonirina Robert Mivady sy ny Birao"}
         date={""}
         open={open}
         setOpen={setOpen}

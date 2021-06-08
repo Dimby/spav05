@@ -44,17 +44,17 @@ const useStyles = makeStyles((theme) => ({
   },
   boxThree: {
     backgroundColor: '#E9EBEC',
-    display: 'flex',
-    '& .boxVerset': {
       display: 'flex',
-      justifyContent: 'center',
-      '& .verset': {
-        padding: '20px',
-        width: '50%',
-        fontSize: '25px',
-        backgroundColor: '#f7f7f7',
+      '& .boxVerset': {
+        display: 'flex',
+        justifyContent: 'center',
+        '& .verset': {
+          padding: '20px',
+          width: '70%',
+          fontSize: '25px',
+          backgroundColor: '#f7f7f7',
+        },
       },
-    },
   },
   boxThree1: {
     padding: '2rem',

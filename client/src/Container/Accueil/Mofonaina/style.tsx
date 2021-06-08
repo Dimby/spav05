@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     '& .verset': {
       padding: '20px',
-      width: '50%',
+      width: '60%',
       fontSize: '25px',
       backgroundColor: '#f7f7f7',
     },

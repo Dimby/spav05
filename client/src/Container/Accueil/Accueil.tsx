@@ -15,6 +15,8 @@ import useStyles from './style'
 import VaovaoIsampitandremana from './VaovaoIsampitandremana'
 import VaovaoMisongadina from './VaovaoMisongadina'
 
+import VideoPS from '../../Images/Videos/ps.mp4'
+
 function createDataMisongadina(id: number, title: string, desc: string) {
   return { id, title, desc }
 }
@@ -52,10 +54,20 @@ const rowsMisongadin = [
 ]
 
 const mofonainaAnio = {
-  date: 'Talata 12 Febroary 2021',
-  andininy: 'Hosea 12 : 1 - 15',
+  date: 'Sabotsy 12 Jona 2021',
+  andininy: 'I Samoela 15: 16-26',
   andalana:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, nesciunt non quas impedit iure, consequuntur magni at officiis, aut laborum explicabo tempora. Repudiandae corrupti blanditiis earum deserunt magnam neque porro. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quasi suscipit eligendi incidunt nulla, aspernatur cupiditate odit alias laboriosam rem eos maiores aliquid eius dolorem facere? Repellat dolore illo eum.',
+    `16	Dia hoy Samoela tamin'i Saoly: Aoka izay, fa hambarako aminao izay nolazain'i Jehovah tamiko halina. Ary hoy izy taminy: Ambarao ary.
+    17	Dia hoy Samoela: Na dia noheverinao ho kely aza ny tenanao, moa tsy tonga lohan'ny firenen'Isiraely va? Ary Jehovah nanosotra anao ho mpanjakan'ny Isiraely;
+    18	ary Jehovah naniraka anao ka nanao hoe: Mandehana, ka aringano* avokoa ny Amalekita mpanota, ary miadia aminy ambara-paharingany.[Heb. ataovy herema]
+    19	Koa nahoana ianao no tsy nihaino ny feon'i Jehovah, fa nanao an-kazakazaka tamin'ny babo ka nanao izay ratsy eo imason'i Jehovah?
+    20	Fa hoy Saoly tamin'i Samoela: Efa nihaino ny feon'i Jehovah ihany aho ka nandeha tamin'izay nanirahan'i Jehovah ahy ary nitondra an'i Agaga, mpanjakan'ny Amalekita, sady nandringana ny Amalekita rehetra.
+    21	Nefa nangalan'ny olona ondry aman'osy sy omby ny babo, dia izay soa avy tamin'ny zavatra haringana,1 mba hovonoina hatao fanatitra ho an'i Jehovah Andriamanitrao ao Gilgala.
+    22	Fa hoy Samoela: Sitrak'i Jehovah moa ny fanatitra dorana sy ny fanatitra hafa alatsa-drà mihoatra noho ny mihaino ny feon'i Jehovah? He! ny manafaka no tsara noho ny fanatitra, ary ny mihaino no tsara noho ny saboran'ondrilahy.
+    23	Fa ny miodina dia toy ny heloka amin'ny fankatovana, ary ny ditra dia toy ny manompo sampy sy terafima. Satria nandà ny tenin'i Jehovah ianao, dia nolaviny tsy ho mpanjaka kosa.
+    24	Ary hoy Saoly tamin'i Samoela: Efa nanota aho, fa efa nandika ny tenin'i Jehovah sy ny teninao; fa natahotra ny vahoaka aho ka nihaino ny feony.
+    25	Koa ankehitriny, masìna ianao, mamelà ny heloko ary miverena amiko indray mba hiankohofako eo anatrehan'i Jehovah.
+    26	Fa hoy Samoela tamin'i Saoly: Tsy hiverina aminao aho; fa ianao efa nandà ny tenin'i Jehovah, ary Jehovah kosa efa nandà anao tsy ho mpanjakan'ny Isiraely intsony.`,
 }
 
 const jereoKoa = [
@@ -210,7 +222,7 @@ const Accueil: FC = () => {
         <Grid container>
           <Grid xs={3}>
             <div className={classes.boxThree1}>
-              <div className="content">
+              <div className="content" style={{ height: "500px", overflow: "hidden", position: "relative" }}>
                 <div style={{ backgroundColor: '#F4C247' }}>
                   <div
                     style={{
@@ -229,6 +241,13 @@ const Accueil: FC = () => {
                   andininy={mofonainaAnio.andininy}
                   andalana={mofonainaAnio.andalana}
                 />
+                <div style={{ 
+                  position: "absolute",
+                  zIndex: 1, bottom: "0",
+                  backgroundColor: "#fff",
+                  width: "90%",
+                  padding: "20px",
+                  textAlign: "center" }}>SOKAFANA MANONTOLO</div>
               </div>
               <br />
               <br />
@@ -325,8 +344,8 @@ const Accueil: FC = () => {
                       justifyContent: 'center',
                     }}
                   >
-                    <div style={{ border: '1px solid red', width: '90%' }}>
-                      Video ici
+                    <div style={{ width: '90%' }}>
+                      <video src={VideoPS} width="480" height="300" controls={true} />
                     </div>
                   </Grid>
                 </Grid>
