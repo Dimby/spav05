@@ -154,8 +154,6 @@ const Accueil: FC = () => {
         handleClose={handleClose}
       />
       <DialogJobily
-        title={"title"}
-        description={"Rakoto a dit"}
         open={open}
         setOpen={setOpen}
         handleClose={handleClose}

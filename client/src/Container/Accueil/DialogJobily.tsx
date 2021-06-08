@@ -7,33 +7,13 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 import { Button } from '@material-ui/core'
 import logo from '../../Images/Logo25e.png';
 
-import Table from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
-import TableContainer from '@material-ui/core/TableContainer'
-import TableHead from '@material-ui/core/TableHead'
-import TableRow from '@material-ui/core/TableRow'
-
 interface DialogJobilyProps {
-  title: string
-  description: string
   open: boolean
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
   handleClose: () => void
 }
 
-// Table for Antontan'isa
-function createPerson(fifaninanana: string, name: string, firstname: string, fonction: string, church: string) {
-    return { fifaninanana, name, firstname, fonction, church }
-  }
-  const rows = [
-    createPerson('Logo', 'ANDRIANOMENJANAHARY', 'Nehemia', 'Diakona', 'FJKM Ambohimasina Fivavahana'),
-    createPerson('Hira Faneva', 'RANDRIANARINASY', 'Maurille', 'Diakona', 'FJKM Ambohimiangaly Zoara'),
-  ]
-
 const DialogJobily: FC<DialogJobilyProps> = ({
-  title,
-  description,
   open,
   handleClose,
 }) => {
@@ -52,13 +32,20 @@ const DialogJobily: FC<DialogJobilyProps> = ({
         <DialogTitle id="alert-dialog-title">JOBILY FAHA 25 TAONA ( 1996 - 2021 )</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
+          <hr style={{ width: "70%" }} />
               <h4>Logo</h4>
           <img src={logo} width="" alt="" style={{margin: "0px 10px"}}/>
+          <p>
+              Namorona : <br />
+              <b>ANDRIANOMENJANAHARY Nehemia</b> <br />
+              <b>Diakona</b> ao amin'ny <b>FJKM Ambohimasina Fivavahana</b>
+          </p>
+          <hr style={{ width: "70%" }} />
           </DialogContentText>
         </DialogContent>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            <h4>Hira Faneva</h4>
+            <h4>Hira Faneva 25 Taona</h4>
             <p>
                 1. Ny hira fiderana sy ny haja <br />
                 No entinay misaotra Anao <br />
@@ -84,33 +71,12 @@ const DialogJobily: FC<DialogJobilyProps> = ({
                 Ny fitoriana Filazantsara <br />
                 No vina sy fampandrosoana <br />
             </p>
+            <p>
+                Namorona : <br />
+                <b>RANDRIANARINASY Maurille</b> <br />
+                <b>Diakona</b> ao amin'ny <b>FJKM Ambohimiangaly Zoara</b>
+            </p>
           </DialogContentText>
-        </DialogContent>
-        <DialogContent>
-            <TableContainer>
-                <Table aria-label="simple table" size="small">
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>Fifaninanana</TableCell>
-                      <TableCell>Anarana</TableCell>
-                      <TableCell>Asa</TableCell>
-                      <TableCell>Fiangonana niaviana</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {rows.map((row) => (
-                      <TableRow key={row.name}>
-                        <TableCell>{row.fifaninanana}</TableCell>
-                        <TableCell component="th" scope="row">
-                          {row.name} {row.firstname}
-                        </TableCell>
-                        <TableCell>{row.fonction}</TableCell>
-                        <TableCell>{row.church}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary" autoFocus>
