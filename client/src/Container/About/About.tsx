@@ -550,22 +550,28 @@ const About: FC = () => {
               </div>
               <br />
               <div>
-                1. Isaorana tokoa ny anaranao <br />
-                Ry Andriamanitra tsitoha mahery <br />
-                Mitantana ny dia hatramin’izao <br />
-                Ny dera anie ho Anao irery <br />
+                1. Ny hira fiderana sy ny haja <br />
+                No entinay misaotra Anao <br />
+                Ny fonay mino sady mankalaza <br />
+                Dia taratry ny fitiavanao <br />
+                <br />
+                2. Ny Tenin’Andriamanitra mahery <br />
+                Sakafon’ny fanahinay <br />
+                Ny fiombonana no mampahery <br />
+                Sy hanefana ireo adidinay <br />
+                <br />
+                3. Tahio ho mendrika sy mahatoky <br />
+                Izay mino Anao Jesoa <br />
+                Ho voasoratra ao anaty boky <br />
+                Handova lanitra sy lapasoa <br />
                 <br />
                 <div style={{ paddingLeft: '20px', fontStyle: 'italic' }}>
-                  Miorina amin’ny fanantenana <br />
-                  Isika mino an’I Jesoa Kristy <br />
-                  Finoana marina ny teny mana <br />
-                  No amonjena antsika doria. <br />
+                  Fiv. Ho fianarana amin’ny asa tsara <br />
+                  Sy mihavao ny anjara fanompoana <br />
+                  Ny fitoriana Filazantsara <br />
+                  No vina sy fampandrosoana <br />
                   <br />
                 </div>
-                2. O! mifalia amin’ny fanompoana <br />
-                Ka mandrosoa fa aza mora kivy <br />
-                Dia tano ny ampingan’ny finoana <br />
-                Ka tanteraho ireo adidy <br />
                 <br />
               </div>
             </div>

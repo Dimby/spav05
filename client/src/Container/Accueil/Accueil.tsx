@@ -5,7 +5,7 @@ import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
 import ItemJereo from '../../Components/ItemJereo'
-import image1 from '../../Images/Faritra 1.png'
+import image1 from '../../Images/Gallery/Gallery (4).jpg'
 import { getAndalana } from '../../Lib/perikopa2021'
 import { verset } from '../../Lib/verset'
 import DialogCustom from './DialogCustom'
@@ -75,13 +75,21 @@ const jereoKoa = [
   { title: 'FITSIPIPIFEHEZANA', desc: 'fitsipikaanatiny.docx', to: '/contact' },
   { title: 'VINA SY FANAMBY', desc: 'vinasyfanamby.docx', to: '/contact' },
 ]
+const fjkmVaovao = [
+  { title: 'HAFATRY NY FILOHA', desc: 'Vaovao Covid-19', to: '/contact' },
+  { title: 'SEKOLY ALAHADY', desc: 'Fivoriambe 1 - Jereo eto', to: '/contact' },
+  { title: 'DORKASY FJKM', desc: 'Zaika Be atao any Antsiranana', to: '/contact' },
+]
 
 const vaovaoFit = [
   {
-    title: 'ALAHADY FAHA 12 Aprily 2021',
+    title: 'MARAIM-BAOVAO ISANANDRO',
     subtitle: 'AMBOHIMASINA FIVAVAHANA',
     desc:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, nesciunt non quas impedit iure, consequuntur magni at officiis, aut laborum explicabo tempora. Repudiandae corrupti blanditiis earum deserunt magnam neque porro. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quasi suscipit eligendi incidunt nulla, aspernatur cupiditate odit alias laboriosam rem eos maiores aliquid eius dolorem facere? Repellat dolore illo eum.',
+      `Manomboka amin’ny 6 ora sy sasany mifarana amin’ny 7 ora sy fahefany, dia samy mavitrika, matanjaka mamonjy ny asa aman-draharaha, ny fianarana.
+      Hoy ny Soratra Masina « Mifankazara amin’ny Tsitoha ianao dia hiadana, izany no hahatongavan’ny soa aminao ».Joba22 :21
+      Ny Faniriantsika dia hiara-dàlana amin’ny TOMPO mandrakariva, manompo AZY amin’ny fifaliana, midera sy mankalaza ny anarany masina ; manao ny Sitrapony.
+      « Voninahitra anie amin’ny avo indrindra ho an’Andriamanitra ! ary fiadanana ho ety ambonin’ny tany amin’ny olona ankasitrahany ». AMENA`,
     url: image1,
   },
   {
@@ -136,11 +144,12 @@ const Accueil: FC = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
   }
   const versetRandom = verset()
   const [open, setOpen] = React.useState(false)
+  const [openMofonaina, setOpenMofonaina] = React.useState(false)
   const [openJobily, setOpenJobily] = React.useState(false)
   const [title, setTitle] = React.useState('')
   const [description, setDescription] = React.useState('')
@@ -153,6 +162,10 @@ const Accueil: FC = () => {
   const handleClose = () => {
     setOpenJobily(false)
     setOpen(false)
+    setOpenMofonaina(false)
+  }
+  const handleClickMofonaina = () => {
+    setOpenMofonaina(true)
   }
   const handleClickOpenJobily = () => {
     setOpenJobily(true)
@@ -164,6 +177,13 @@ const Accueil: FC = () => {
         title={title}
         description={description}
         open={open}
+        setOpen={setOpenMofonaina}
+        handleClose={handleClose}
+      />
+      <DialogCustom
+        title={mofonainaAnio.date+" : "+mofonainaAnio.andininy}
+        description={mofonainaAnio.andalana}
+        open={openMofonaina}
         setOpen={setOpen}
         handleClose={handleClose}
       />
@@ -249,7 +269,11 @@ const Accueil: FC = () => {
                   backgroundColor: "#fff",
                   width: "90%",
                   padding: "20px",
-                  textAlign: "center" }}>SOKAFANA MANONTOLO</div>
+                  textAlign: "center" }}>
+                    <Link to="" style={{ color: "#004D80", textDecoration: "none" }} onClick={() => {
+              handleClickMofonaina()
+            }} >SOKAFANA MANONTOLO</Link>
+                  </div>
               </div>
               <br />
               <br />
@@ -278,7 +302,7 @@ const Accueil: FC = () => {
                   </h2>
                 </div>
                 <div>
-                  {jereoKoa.map((row) => (
+                  {fjkmVaovao.map((row) => (
                     <ItemJereo
                       title={row.title}
                       description={row.desc}
@@ -309,29 +333,23 @@ const Accueil: FC = () => {
                       </div>
                       <div className="quoteContent">
                         <div className="text">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Amet reiciendis excepturi inventore quam rerum
-                          iusto itaque eaque dignissimos ratione, doloribus
-                          quisquam voluptatem aperiam eius minus vitae harum?
-                          Vero, in perspiciatis. Lorem ipsum dolor sit amet,
-                          consectetur adipisicing elit. Amet reiciendis
-                          excepturi inventore quam rerum iusto itaque eaque
-                          dignissimos ratione, doloribus quisquam voluptatem
-                          aperiam eius minus vitae harum? Vero, in perspiciatis.
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Amet reiciendis excepturi inventore quam rerum
-                          iusto itaque eaque dignissimos ratione, doloribus
-                          quisquam voluptatem aperiam eius minus vitae harum?
-                          Vero, in perspiciatis. Lorem ipsum dolor sit amet,
-                          consectetur adipisicing elit. Amet reiciendis
-                          excepturi inventore quam rerum iusto itaque eaque
-                          dignissimos ratione, doloribus quisquam voluptatem
-                          aperiam eius minus vitae harum? Vero, in perspiciatis.
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Amet reiciendis excepturi inventore quam rerum
-                          iusto itaque eaque dignissimos ratione, doloribus
-                          quisquam voluptatem aperiam eius minus vitae harum?
-                          Vero, in perspiciatis.
+                        Ry havana malala,
+                        Velona i JESOA! –Eny, velona tokoa i JESOA!
+                        Koa miarahaba antsika rehetra nomen’Andriamanitra izao Paska 2021 izao: Ho aminao anie ny fiadanana, araka ny fiarahaban’i JESOA nitsangana tamin’ny maty.
+                        Ary ny fitsanganany tamin’ny maty dia fandresen’ny Fiainana!
+                        Roahin’ny finoana ny fitsanganan’i Kristy tamin’ny maty ny toetra maty fahavelona, maty eritreritra, rehetra.
+                        Ongotan’ny finoana ny fitsanganan’i Kristy tamin’ny maty ny filavoana lefona eo anoloan’ny fahotana sy ny fahazaran-dratsy rehetra.
+                        Arodan’ny finoana ny fitsanganan’i Kristy tamin’ny maty ny manda fito soson’ny fahakiviana rehetra .
+                        “fa efa natsangana tamin’ny maty tokoa i Kristy” (I Kor.15.20)
+                        Nisy nitantara hoe: I Martin Luther, ilay mpanitsy fivavahana tamin’ny Taonjato faha-16 niteraka ny “Fiangonana Loterana”, dia nisedra ady mangotraka tamin’ny fanaovana izany fanitsiam-pivavahana izany. Ary tahaka ny nanjo an’i Elia, ao amin’ny Baiboly, dia latsaka tao amin’ny fahakiviana lalina izy. Rehefa nahita izany ny vadiny, dia lasa nanao akanjo mainty, dia nankao an’efitranony. Gaga i Luther raha nahita azy ka velom-panontaniana hoe:
+                        -Fa iza no maty no misaona be toy izao ianao?
+                        –Maty Andriamanitra! hoy ny vadiny .
+                        -Aza miteniteny foana ianao! hoy i Luther tezitra !
+                        Fa namaly mora Ramatoa vadiny ka nanao hoe:
+                        -Ka raha tsy maty ve Andriamanitra, ho kivy toy izao i Luther mpanompony?
+                        Izay no  nampiredareda ny finoana tao am-pon’i Luther  indray fa hay tsy maty tokoa Andriamanitra, ka nahoana izy no ho kivy? Dia nanohy ny fijoroany izy.
+                        Ary ny Andriamanitrao: maty sa velona ?
+                                    Mirary Paska sambatra, ry Havana.
                         </div>
                         <div className="profil">
                           Rasolonirina Robert, Mpitandrina, Président Synodal
