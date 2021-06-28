@@ -173,20 +173,23 @@ const Accueil: FC = () => {
 
   return (
     <div>
+      {/* Modal for Vaovao misongadina */}
       <DialogCustom
         title={title}
         description={description}
         open={open}
-        setOpen={setOpenMofonaina}
+        setOpen={setOpen}
         handleClose={handleClose}
       />
+      {/* Modal for Mofonaina */}
       <DialogCustom
         title={mofonainaAnio.date+" : "+mofonainaAnio.andininy}
         description={mofonainaAnio.andalana}
         open={openMofonaina}
-        setOpen={setOpen}
+        setOpen={setOpenMofonaina}
         handleClose={handleClose}
       />
+      {/* Modal for Jobily */}
       <DialogJobily
         open={openJobily}
         setOpen={setOpenJobily}
