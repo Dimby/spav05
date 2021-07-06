@@ -1,8 +1,8 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import Routes from '../Components/Routes';
 
 const App = () => {
-  return <div>Bienvenu</div>;
+  return <Routes />;
 };
 
 export default App;
