@@ -18,26 +18,24 @@ const VaovaoIsampitandremana: FC<VaovaoIsampitandremanaProps> = ({
     <>
       <div style={{ marginBottom: '4rem' }}>
         <Grid container>
-          <Grid item xl={6} lg={6} md={12} xs={12} style={{ padding: '0 50px' }}>
+          <Grid item xl={12} lg={12} md={12} xs={12} style={{ padding: '0 50px' }}>
             <div
               style={{
                 margin: 'auto',
                 maxWidth: '550px',
-                textAlign: 'right',
+                textAlign: 'center',
               }}
             >
               <h2>{title}</h2>
               <h3>{subtitle}</h3>
               <p style={{ textAlign: "justify" }}>{description}</p>
-            </div>
-          </Grid>
-          <Grid item xl={6} lg={6} md={12} xs={12}>
-            <div style={{ textAlign: 'left'}}>
-              <img
-                src={url}
-                alt=""
-                style={{ width: '90%', textAlign: 'right' }}
-              />
+              <p>
+                <img
+                  src={url}
+                  alt=""
+                  style={{ width: '100%'}}
+                />
+              </p>
             </div>
           </Grid>
         </Grid>
