@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0px 1px rgba(0, 0, 0, 0.1)',
   },
   boxTwo: {
-    margin: '0 3rem',
+    margin: '0 1rem',
     '& h1': {
       color: '#006AB0',
     },

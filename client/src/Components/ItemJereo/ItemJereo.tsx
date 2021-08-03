@@ -14,7 +14,7 @@ const ItemJereo: FC<ItemJereoProps> = ({ title, description, to }) => {
     <div className="item">
       <div className="content" style={{ borderLeft: '5px solid #006AB0' }}>
         <Grid container>
-          <Grid item>
+          <Grid item xl={12} lg={12} md={12} xs={12}>
             <Link
               to={to}
               style={{
