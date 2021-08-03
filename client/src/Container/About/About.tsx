@@ -310,7 +310,7 @@ const About: FC = () => {
       <div className={classes.boxTwo}>
         <Grid container>
           <Grid item xs={12} md={2} lg={3} xl={2}>
-            <div>
+            <div  style={{ position: 'fixed'}}>
               <h2 style={{ marginLeft: '15px', color: '#F4C247' }}>LOHATENY</h2>
               <div className={classes.item} style={{ marginLeft: '20px' }}>
                 <div className="menuItem">

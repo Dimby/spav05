@@ -1,4 +1,4 @@
-import { Grid, GridList, GridListTile } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import React, { FC } from 'react'
 import useStyles from './style'
 
@@ -10,27 +10,21 @@ import TableRow from '@material-ui/core/TableRow'
 
 interface FaritraProFaritra {
   name: string
-  sokajy: string
+  id: string
   rows: {
     id: string
     idFaritra: string
     fit: string
   }[]
-  tileData: {
-    img: string
-    title: string
-    author: string
-    cols: number
-  }[]
 }
 
-const Faritra: FC<FaritraProFaritra> = ({ name, sokajy, rows, tileData }) => {
+const Faritra: FC<FaritraProFaritra> = ({ name, id, rows }) => {
   const classes = useStyles()
   return (
     <>
-      <h1>{name}</h1>
+      <h1 id={id}>{name}</h1>
       <Grid container>
-        <Grid xs>
+        <Grid item xs={12}>
           <Table aria-label="simple table" size="small">
             <TableHead>
               <TableRow>
@@ -49,19 +43,6 @@ const Faritra: FC<FaritraProFaritra> = ({ name, sokajy, rows, tileData }) => {
               ))}
             </TableBody>
           </Table>
-        </Grid>
-        <Grid xs>
-          <div style={{ padding: '10px' }}>
-            <div className={classes.root}>
-              <GridList cellHeight={160} className={classes.gridList} cols={3}>
-                {tileData.map((tile) => (
-                  <GridListTile key={tile.img} cols={tile.cols || 1}>
-                    <img src={tile.img} alt={tile.title} />
-                  </GridListTile>
-                ))}
-              </GridList>
-            </div>
-          </div>
         </Grid>
       </Grid>
     </>

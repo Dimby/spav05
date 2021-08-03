@@ -9,8 +9,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 500,
-    height: 450,
+    width: '80%',
+    height: '20%',
   },
 }))
 
