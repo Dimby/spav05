@@ -32,7 +32,7 @@ const VaovaoMisongadina: FC<VaovaoMisongadinaProps> = ({
             <ZoomOutMapIcon />
           </div>
           <h3>{title}</h3>
-          <div style={{ overflow: 'hidden', height: '90px' }}>
+          <div style={{ overflow: 'hidden', height: '45px' }} className="description">
             {description}
           </div>
         </div>

@@ -308,9 +308,9 @@ const About: FC = () => {
         <p style={{ fontSize: '18px' }}>- {versetRandom.toko}</p>
       </div>
       <div className={classes.boxTwo}>
-        <Grid container spacing={0}>
-          <Grid xs={2} style={{ position: 'sticky', top: '0' }}>
-            <div>
+        <Grid container>
+          <Grid item xs={12} md={2} lg={3} xl={2}>
+            <div  style={{ position: 'fixed'}}>
               <h2 style={{ marginLeft: '15px', color: '#F4C247' }}>LOHATENY</h2>
               <div className={classes.item} style={{ marginLeft: '20px' }}>
                 <div className="menuItem">
@@ -331,13 +331,12 @@ const About: FC = () => {
               </div>
             </div>
           </Grid>
-          <Grid
+          <Grid item xs={12} md={7} lg={7} xl={7}
             style={{
               padding: '30px',
               borderLeft: '1px solid rgb(0 0 0 / 10%)',
               borderRight: '1px solid rgb(0 0 0 / 10%)',
             }}
-            xs
           >
             <h1>BIRAO</h1>
             <Grid container style={{ justifyContent: 'space-around' }}>
@@ -516,7 +515,7 @@ const About: FC = () => {
               Mpitoriteny.
             </div>
           </Grid>
-          <Grid xs={3}>
+          <Grid item xs={12} md={2} lg={2} xl={3}>
             <div className="section">
               <div className="news">
                 <div>

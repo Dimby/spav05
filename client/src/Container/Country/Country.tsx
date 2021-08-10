@@ -1,73 +1,128 @@
-import { Grid, Link } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
+import MUIDataTable from 'mui-datatables'
 import React, { FC } from 'react'
-import image1 from '../../Images/Gallery/Gallery (1).jpg'
-import image2 from '../../Images/Gallery/Gallery (2).jpg'
-import image3 from '../../Images/Gallery/Gallery (3).jpg'
-import image4 from '../../Images/Gallery/Gallery (4).jpg'
-import image5 from '../../Images/Gallery/Gallery (5).jpg'
 import Faritra from './Faritra/Faritra'
 import useStyles from './style'
 
-function createData(id: string, idFaritra: string, fit: string) {
-  return { id, idFaritra, fit }
-}
-// Data for Faritra Ambatondrazaka
-const tileDataAmbato = [
-  { img: image1, title: 'Image 1', author: 'Author 1', cols: 1 },
-  { img: image2, title: 'Image 2', author: 'Author 2', cols: 2 },
-  { img: image3, title: 'Image 1', author: 'Author 1', cols: 2 },
-  { img: image4, title: 'Image 1', author: 'Author 1', cols: 1 },
-  { img: image5, title: 'Image 1', author: 'Author 1', cols: 1 },
-]
+const columnsCountry = ['Lah sp.', 'Lah Fit.', 'Fitandremana']
 const rowsAmbato = [
-  createData('001-A', '01', 'AMBALABAKO ZIONA'),
-  createData('002-A', '02', 'AMBALAVATO EBENEZERA'),
-  createData('003-A', '03', 'AMBANDRIKA FILADEDLIFIA'),
-  createData('004-A', '04', 'AMBARARATA'),
-  createData('005-A', '05', 'AMBATONDRAZAKA FITIAVANA'),
-  createData('006-A', '06', 'AMBOHIBOATAVO HERMONA'),
-  createData('007-A', '07', 'AMBOHIBOROMANGA SALEMA'),
-  createData('008-A', '08', 'AMBOHIDEHILAHY 3F'),
-  createData('009-A', '09', 'AMBOHIMASINA FIVAVAHANA'),
-  createData('010-A', '10', 'AMBOHIMENA FANANTENANA'),
-  createData('011-A', '11', 'AMBOHIMIANGALY ZOARA'),
-  createData('012-A', '12', 'AMBOHITANIBE'),
-  createData('013-A', '13', 'AMBOHITRANJAKANA'),
-  createData('014-A', '14', 'AMPONGABE SAHA VAOVAO'),
-  // createData('015-A', '15', 'AMPITATSIMO MIHAVAO'),
-  // createData('016-A', '16', 'ANDILANOMBY FIRAISANA'),
-  // createData('017-A', '17', 'ANDINGADINGANA FANANTENANA'),
-  // createData('018-A', '18', 'ANDRANOVELONA'),
-  // createData('019-A', '19', 'ANDRARABARY FITIAVANA'),
-  // createData('020-A', '20', 'ANKAZOTSARAVOLO'),
-  // createData('021-A', '21', 'ANOSINDRAFILO RASALAMA'),
-  // createData('022-A', '22', 'ANTANIMENA-TANAMBAO'),
-  // createData('023-A', '23', 'ANTSANGASANGA VAVOLOMBELONA'),
-  // createData('024-A', '24', 'FERAMANGA AVARATRA'),
-  // createData('025-A', '25', 'FERAMANGA ATSIMO'),
-  // createData('026-A', '26', 'ILAFY KRISTY FAHAZAVANA'),
-  // createData('027-A', '27', 'MANAKAMBAHINY ZOARA'),
-  // createData('028-A', '28', 'MANGALAHALA'),
-  // createData('029-A', '29', 'MANGALAZA NAZARETA'),
+  ['001-A', '01', 'AMBALABAKO ZIONA'],
+  ['002-A', '02', 'AMBALAVATO EBENEZERA'],
+  ['003-A', '03', 'AMBANDRIKA FILADEDLIFIA'],
+  ['004-A', '04', 'AMBARARATA'],
+  ['005-A', '05', 'AMBATONDRAZAKA FITIAVANA'],
+  ['006-A', '06', 'AMBOHIBOATAVO HERMONA'],
+  ['007-A', '07', 'AMBOHIBOROMANGA SALEMA'],
+  ['008-A', '08', 'AMBOHIDEHILAHY 3F'],
+  ['009-A', '09', 'AMBOHIMASINA FIVAVAHANA'],
+  ['010-A', '10', 'AMBOHIMENA FANANTENANA'],
+  ['011-A', '11', 'AMBOHIMIANGALY ZOARA'],
+  ['012-A', '12', 'AMBOHITANIBE'],
+  ['013-A', '13', 'AMBOHITRANJAKANA'],
+  ['014-A', '14', 'AMPONGABE SAHA VAOVAO'],
+  ['015-A', '15', 'AMPITATSIMO MIHAVAO'],
+  ['016-A', '16', 'ANDILANOMBY FIRAISANA'],
+  ['017-A', '17', 'ANDINGADINGANA FANANTENANA'],
+  ['018-A', '18', 'ANDRANOVELONA'],
+  ['019-A', '19', 'ANDRARABARY FITIAVANA'],
+  ['020-A', '20', 'ANKAZOTSARAVOLO'],
+  ['021-A', '21', 'ANOSINDRAFILO RASALAMA'],
+  ['022-A', '22', 'ANTANIMENA-TANAMBAO'],
+  ['023-A', '23', 'ANTSANGASANGA VAVOLOMBELONA'],
+  ['024-A', '24', 'FERAMANGA AVARATRA'],
+  ['025-A', '25', 'FERAMANGA ATSIMO'],
+  ['026-A', '26', 'ILAFY KRISTY FAHAZAVANA'],
+  ['027-A', '27', 'MANAKAMBAHINY ZOARA'],
+  ['028-A', '28', 'MANGALAHALA'],
+  ['029-A', '29', 'MANGALAZA NAZARETA'],
 ]
 // End
 
-// Data for Faritra Andilamena
-const tileDataAndilamena = [
-  { img: image1, title: 'Image 1', author: 'Author 1', cols: 2 },
-  { img: image2, title: 'Image 2', author: 'Author 2', cols: 1 },
-  { img: image3, title: 'Image 1', author: 'Author 1', cols: 1 },
-  { img: image4, title: 'Image 1', author: 'Author 1', cols: 2 },
-  { img: image5, title: 'Image 1', author: 'Author 1', cols: 1 },
+const rowsAndilamena = [
+  ['030-B', '01', 'AMBALABE(MIARINARIVO)'],
+  ['031-B', '02', 'AMBATOHARANANA'],
+  ['032-B', '03', 'AMBATOBE'],
+  ['033-B', '04', 'AMPONDRABE(MIARINARIVO)'],
+  ['034-B', '05', 'ANDILAMENA FANAVOZANA'],
+  ['035-B', '06', 'ANDILAMENA FINOANA'],
+  ['036-B', '07', 'ANKAIAFO SUD'],
+  ['037-B', '08', 'ANTANIMENABAKA'],
+  ['038-B', '09', 'ANTSEVAKELY'],
+  ['039-B', '10', 'BEMAITSO'],
+  ['040-B', '11', 'MAROMANDIA'],
+  ['041-B', '12', 'MIARINARIVO'],
+  ['042-B', '13', 'SAHAVOLO'],
+  ['043-B', '14', 'TANANANIFOLOLAHY(MIARINARIVO)'],
+  ['044-B', '15', 'DIHIZANA'],
+  ['045-B', '16', 'AMBATOLAMPY FIORENANA'],
 ]
 
-const rowsAndilamena = [
-  createData('030-B', '01', 'AMBALABE (MIARINARIVO)'),
-  createData('031-B', '02', 'AMBATOHARANANA'),
-  createData('032-B', '03', 'AMBATOBE'),
-  createData('033-B', '04', 'AMPONDRABE (MIARINARIVO)'),
-  createData('034-B', '05', 'ANDILAMENA FANAVAOZANA'),
-  createData('035-B', '06', 'ANDILAMENA FINOANA'),
+const rowsAndilanatoby = [
+  ['046-D', '01', 'AMBODINONOKA'],
+  ['047-D', '02', 'AMBOHIMIARINA'],
+  ['048-D', '03', 'ANDILANATOBY ZIONA'],
+  ['049-D', '04', 'ANDRANOKOBAKA RANOFOTSY'],
+  ['050-D', '05', 'MANGATANY'],
+  ['051-D', '06', 'VOHIDIALA'],
+  ['052-D', '07', 'SAHANIDINGANA'],
+]
+
+const rowsAndreba = [
+  ['053-E', '01', 'AMBOHIMANJAKA SALEMA'],
+  ['054-E', '02', 'AMBATOSORATRA'],
+  ['055-E', '03', 'AMBOHIDAVA'],
+  ['056-E', '04', 'AMBOHIMANGA FINOANA'],
+  ['057-E', '05', 'AMBOHITSILAOZANA'],
+  ['058-E', '06', 'AMPARIHINTSOKATRA'],
+  ['059-E', '07', 'ANALAVORY'],
+  ['060-E', '08', 'ANDREBA ZIONA'],
+  ['061-E', '09', 'ANTANDROKOMBY '],
+  ['062-E', '10', 'ANTOKAZO'],
+  ['063-E', '11', 'LOHAFASIKA'],
+  ['064-E', '12', 'MAHATSINJO KARMELA'],
+  ['065-E', '13', 'MANAKAMBAHINY EST'],
+  ['066-E', '14', 'MORARANO FIVAVAHANA'],
+  ['067-E', '15', 'TSARAHALANA-AMBOHIMANJAKA'],
+]
+
+const rowsDidy = [
+  ['068-F', '01', 'AMBOARABE'],
+  ['069-F', '02', 'AMBOHIBE'],
+  ['070-F', '03', 'AMBOHIDAVA DIDY'],
+  ['071-F', '04', 'AMBOHIJANAHARY DIDY NAZARETA'],
+  ['072-F', '05', 'AMBOHIMADERA'],
+  ['073-F', '06', 'AMBOHIMANJAKA DIDY'],
+  ['074-F', '07', 'ANKENIHENIBE'],
+  ['075-F', '08', 'DIDY FAHAZAVANA '],
+  ['076-F', '09', 'SAHAFASENINA-MANARINTSOA'],
+  ['077-F', '10', 'TSARATAMPONA'],
+]
+
+const rowsImerimandroso = [
+  ['078-G', '01', 'AMBALAHAZO'],
+['079-G', '02', 'AMBOASARIMASINA'],
+['080-G', '03', 'AMBODIHASINA'],
+['081-G', '04', 'AMBOHIJANAHARIKELY'],
+['082-G', '05', 'AMBOHIMANJAKA FITIAVANA'],
+['083-G', '06', 'AMBOHITRAMPIRANA'],
+['084-G', '07', 'AMPISARAHANA'],
+['085-G', '08', 'ANDREBAKELY FIHAVAOZANA'],
+['086-G', '09', 'ANDROMBA EDENA VAOVAO'],
+['087-G', '10', 'ANKASINA FAHAZAVANA'],
+['088-G', '11', 'ANTANANDAVA IMERIMANDROSO'],
+['089-G', '12', 'ANTAZAMASO'],
+['090-G', '13', 'ANTSAHALEMAKA'],
+['091-G', '14', 'IMERIMANDAROSO'],
+['092-G', '15', 'ISOAVINA'],
+['093-G', '16', 'MAROSALAZANA FITAHIANA'],
+['094-G', '17', 'MAROVATO'],
+['095-G', '18', 'SANDRANIKA'],
+['096-G', '19', 'TSARAHONENANA'],
+['097-G', '20', 'VATOFOLAKA AVARATRA'],
+['098-G', '21', 'VOHIMENA NAZARETA VAOVAO'],
+['099-G', '22', 'VOHITRAIVO FAHARETANA'],
+['100-G', '23', 'VOHITSIVALANA FAMONJENA'],
+['101-G', '24', 'VOHITSOA'],
 ]
 
 const faritra = [
@@ -79,15 +134,9 @@ const faritra = [
   { sokajy: 'G', name: 'IMERIMANDROSO' },
 ]
 // End
-
-// const options = {
-//   filter: false,
-//   search: false,
-//   download: false,
-//   print: false,
-//   pagination: false,
-//   viewColumns: false,
-// };
+const options = {
+  elevation: 0,
+}
 
 const Country: FC = () => {
   const classes = useStyles()
@@ -95,68 +144,80 @@ const Country: FC = () => {
     <div style={{ marginTop: '50px' }}>
       <div className={classes.boxOne}>
         <Grid container spacing={0}>
-          <Grid xs={2}>
-            <div>
+          <Grid xs={12} md={2} lg={3} xl={3}>
+            <div style={{ position: 'fixed', backgroundColor: '#FFFFFF' }}>
               <h2 style={{ marginLeft: '15px', color: '#F4C247' }}>FARITRA</h2>
               <div className="item" style={{ marginLeft: '20px' }}>
                 <div className="menuItem">
-                  <Link>Ambatondrazaka</Link>
+                  <a href="#ambatondrazaka">Ambatondrazaka</a>
                 </div>
                 <div className="menuItem">
-                  <Link>Andilamena</Link>
+                  <a href="#andilamena">Andilamena</a>
                 </div>
                 <div className="menuItem">
-                  <Link>Andilanatoby</Link>
+                  <a href="#andilanatoby">Andilanatoby</a>
                 </div>
                 <div className="menuItem">
-                  <Link>Andreba</Link>
+                  <a href="#andreba">Andreba</a>
                 </div>
                 <div className="menuItem">
-                  <Link>Didy</Link>
+                  <a href="#didy">Didy</a>
                 </div>
                 <div className="menuItem">
-                  <Link>Imerimandroso</Link>
+                  <a href="#imerimandroso">Imerimandroso</a>
                 </div>
               </div>
             </div>
           </Grid>
           <Grid style={{ padding: '20px' }} xs>
-            <Faritra
-              name={'AMBATONDRAZAKA'}
-              sokajy={'A'}
-              rows={rowsAmbato}
-              tileData={tileDataAmbato}
-            />
-            <Faritra
-              name={'ANDILAMENA'}
-              sokajy={'B'}
-              rows={rowsAndilamena}
-              tileData={tileDataAndilamena}
-            />
-            <Faritra
-              name={'ANDILANATOBY'}
-              sokajy={'D'}
-              rows={rowsAndilamena}
-              tileData={tileDataAndilamena}
-            />
-            <Faritra
-              name={'ANDREBA'}
-              sokajy={'E'}
-              rows={rowsAndilamena}
-              tileData={tileDataAndilamena}
-            />
-            <Faritra
-              name={'DIDY'}
-              sokajy={'F'}
-              rows={rowsAndilamena}
-              tileData={tileDataAndilamena}
-            />
-            <Faritra
-              name={'IMERIMANDROSO'}
-              sokajy={'G'}
-              rows={rowsAndilamena}
-              tileData={tileDataAndilamena}
-            />
+            <div id="ambatondrazaka">
+              <MUIDataTable
+                title={'AMBATONDRAZAKA'}
+                data={rowsAmbato}
+                columns={columnsCountry}
+                options={options}
+              />
+            </div>
+            <div id="andilamena">
+              <MUIDataTable
+                title={'ANDILAMENA'}
+                data={rowsAndilamena}
+                columns={columnsCountry}
+                options={options}
+              />
+            </div>
+            <div id="andilanatoby">
+              <MUIDataTable
+                title={'ANDILANATOBY'}
+                data={rowsAndilanatoby}
+                columns={columnsCountry}
+                options={options}
+              />
+            </div>
+            <div id="andreba">
+              <MUIDataTable
+                title={'ANDREBA'}
+                data={rowsAndreba}
+                columns={columnsCountry}
+                options={options}
+              />
+            </div>
+            <div id="didy">
+              <MUIDataTable
+                title={'DIDY'}
+                data={rowsDidy}
+                columns={columnsCountry}
+                options={options}
+              />
+            </div>
+            <div id="imerimandroso">
+              <MUIDataTable
+                title={'IMERIMANDROSO'}
+                data={rowsImerimandroso}
+                columns={columnsCountry}
+                options={options}
+              />
+            </div>
           </Grid>
         </Grid>
       </div>

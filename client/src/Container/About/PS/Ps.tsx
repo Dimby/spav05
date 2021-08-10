@@ -32,7 +32,7 @@ const Ps: FC<PsProps> = ({
     <>
       <Grid
         item
-        xs={6}
+        xs={12} md={12} lg={6} xl={6}
         style={{ textAlign: 'center', padding: '20px' }}
         key={urlPicture}
       >

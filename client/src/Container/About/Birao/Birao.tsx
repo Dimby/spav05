@@ -21,7 +21,7 @@ const Birao: FC<BiraoProps> = ({
 }) => {
   const classes = useStyles()
   return (
-    <Grid xs={3} style={{ padding: '10px' }}>
+    <Grid xs={12} xl={3} lg={3} md={4} style={{ padding: '10px' }}>
       <Card className={classes.cardBirao}>
         <CardContent style={{ margin: 'auto', textAlign: 'center' }}>
           <Avatar

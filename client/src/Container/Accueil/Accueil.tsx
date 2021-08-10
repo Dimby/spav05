@@ -142,7 +142,7 @@ const Accueil: FC = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 3000,
@@ -245,7 +245,7 @@ const Accueil: FC = () => {
       </div>
       <div className={classes.boxThree}>
         <Grid container>
-          <Grid xs={3}>
+          <Grid item xs={12} lg={4} xl={3} md={4}>
             <div className={classes.boxThree1}>
               <div className="content" style={{ height: "500px", overflow: "hidden", position: "relative" }}>
                 <div style={{ backgroundColor: '#F4C247' }}>
@@ -316,12 +316,12 @@ const Accueil: FC = () => {
               </div>
             </div>
           </Grid>
-          <Grid xs={9}>
+          <Grid item xs={12} lg={8} xl={9} md={8}>
             <div className={classes.boxThree2}>
               <div className="content">
                 <h1>HAFATRY NY PRESIDENT SYNODAL</h1>
                 <Grid container>
-                  <Grid xs={7}>
+                  <Grid item xl={7} lg={12} md={12} xs={12}>
                     <div className="quote">
                       <div className="quoteIcon">
                         <svg
@@ -360,14 +360,14 @@ const Accueil: FC = () => {
                       </div>
                     </div>
                   </Grid>
-                  <Grid
-                    xs={5}
+                  <Grid item
+                    xl={5} lg={12} md={12} xs={12}
                     style={{
                       display: 'flex',
                       justifyContent: 'center',
                     }}
                   >
-                    <div style={{ width: '90%' }}>
+                    <div>
                       <video src={VideoPS} width="480" height="300" controls={true} />
                     </div>
                   </Grid>
