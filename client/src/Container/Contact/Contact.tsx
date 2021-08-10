@@ -3,11 +3,16 @@ import SendIcon from '@material-ui/icons/Send'
 import React, { FC } from 'react'
 //@ts-ignore
 import Slider from 'react-slick'
-import image1 from '../../Images/Faritra 1.png'
+import sary1 from '../../Images/Gallery/Gallery (1).jpg'
+import sary2 from '../../Images/Gallery/Gallery (2).jpg'
+import sary3 from '../../Images/Gallery/Gallery (3).jpg'
+import sary4 from '../../Images/Gallery/Gallery (4).jpg'
+import sary5 from '../../Images/Gallery/Gallery (5).jpg'
+import sary6 from '../../Images/Gallery/Gallery (6).jpg'
 import { verset } from '../../Lib/verset'
 import useStyles from './style'
 
-const sary = [image1, image1]
+const sary = [sary1, sary2, sary3, sary4, sary5, sary6]
 
 const Contact: FC = () => {
   const classes = useStyles()
