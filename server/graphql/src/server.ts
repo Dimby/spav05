@@ -10,6 +10,10 @@ import { schema } from './schema'
 import { GraphQLError } from 'graphql'
 import { execute, subscribe } from 'graphql'
 import { createServer } from 'http'
+
+import admin from 'firebase-admin'
+var serviceAccount = require('../../graphql/spav5-ed370-firebase-adminsdk-f0gaq-a4b9e2159d.json')
+
 const port = process.env.NODE_PORT || 4000
 
 //const { redis, pubsub } = configureRedis()
@@ -23,6 +27,10 @@ app.use(
     parameterLimit: 100000,
   }),
 )
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+})
 
 app.use(cors())
 app.use('/graphql', bodyParser.json({ limit: '200mb' }))

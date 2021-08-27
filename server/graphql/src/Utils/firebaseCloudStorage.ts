@@ -10,7 +10,7 @@ const storage = new Storage({
 const bucket = storage.bucket(
   process.env.GCLOUD_STORAGE_BUCKET_URL
     ? process.env.GCLOUD_STORAGE_BUCKET_URL
-    : 'skapa-b88c9.appspot.com',
+    : 'spav5-ed370.appspot.com',
 )
 
 const generateReadSignedUrl = async (filename: string) => {
