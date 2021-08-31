@@ -37,6 +37,9 @@ model Sary {
   id        String  @id @default(uuid())
   urlPicture  String?
   urlPicturePublic String? 
+  titre     String
+  description  String
+  anotherDesc  String
   Faritra    Faritra?  @relation(fields: [faritraId], references: [id])
   faritraId  String?
 }
