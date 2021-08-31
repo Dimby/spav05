@@ -56,8 +56,7 @@ const rowsMisongadin = [
 const mofonainaAnio = {
   date: 'Sabotsy 12 Jona 2021',
   andininy: 'I Samoela 15: 16-26',
-  andalana:
-    `16	Dia hoy Samoela tamin'i Saoly: Aoka izay, fa hambarako aminao izay nolazain'i Jehovah tamiko halina. Ary hoy izy taminy: Ambarao ary.
+  andalana: `16	Dia hoy Samoela tamin'i Saoly: Aoka izay, fa hambarako aminao izay nolazain'i Jehovah tamiko halina. Ary hoy izy taminy: Ambarao ary.
     17	Dia hoy Samoela: Na dia noheverinao ho kely aza ny tenanao, moa tsy tonga lohan'ny firenen'Isiraely va? Ary Jehovah nanosotra anao ho mpanjakan'ny Isiraely;
     18	ary Jehovah naniraka anao ka nanao hoe: Mandehana, ka aringano* avokoa ny Amalekita mpanota, ary miadia aminy ambara-paharingany.[Heb. ataovy herema]
     19	Koa nahoana ianao no tsy nihaino ny feon'i Jehovah, fa nanao an-kazakazaka tamin'ny babo ka nanao izay ratsy eo imason'i Jehovah?
@@ -78,15 +77,18 @@ const jereoKoa = [
 const fjkmVaovao = [
   { title: 'HAFATRY NY FILOHA', desc: 'Vaovao Covid-19', to: '/contact' },
   { title: 'SEKOLY ALAHADY', desc: 'Fivoriambe 1 - Jereo eto', to: '/contact' },
-  { title: 'DORKASY FJKM', desc: 'Zaika Be atao any Antsiranana', to: '/contact' },
+  {
+    title: 'DORKASY FJKM',
+    desc: 'Zaika Be atao any Antsiranana',
+    to: '/contact',
+  },
 ]
 
 const vaovaoFit = [
   {
     title: 'MARAIM-BAOVAO ISANANDRO',
     subtitle: 'AMBOHIMASINA FIVAVAHANA',
-    desc:
-      `Manomboka amin’ny 6 ora sy sasany mifarana amin’ny 7 ora sy fahefany, dia samy mavitrika, matanjaka mamonjy ny asa aman-draharaha, ny fianarana.
+    desc: `Manomboka amin’ny 6 ora sy sasany mifarana amin’ny 7 ora sy fahefany, dia samy mavitrika, matanjaka mamonjy ny asa aman-draharaha, ny fianarana.
       Hoy ny Soratra Masina « Mifankazara amin’ny Tsitoha ianao dia hiadana, izany no hahatongavan’ny soa aminao ».Joba22 :21
       Ny Faniriantsika dia hiara-dàlana amin’ny TOMPO mandrakariva, manompo AZY amin’ny fifaliana, midera sy mankalaza ny anarany masina ; manao ny Sitrapony.
       « Voninahitra anie amin’ny avo indrindra ho an’Andriamanitra ! ary fiadanana ho ety ambonin’ny tany amin’ny olona ankasitrahany ». AMENA`,
@@ -183,7 +185,7 @@ const Accueil: FC = () => {
       />
       {/* Modal for Mofonaina */}
       <DialogCustom
-        title={mofonainaAnio.date+" : "+mofonainaAnio.andininy}
+        title={mofonainaAnio.date + ' : ' + mofonainaAnio.andininy}
         description={mofonainaAnio.andalana}
         open={openMofonaina}
         setOpen={setOpenMofonaina}
@@ -215,11 +217,15 @@ const Accueil: FC = () => {
         </div>
         <div className={classes.boxButton}>
           <Link to="/about">MOMBA NY SPAV5 </Link>
-          <Link to="" style={{ marginLeft: "20px" }}
+          <Link
+            to=""
+            style={{ marginLeft: '20px' }}
             onClick={() => {
               handleClickOpenJobily()
             }}
-          >JOBILY 25e</Link>
+          >
+            JOBILY 25e
+          </Link>
         </div>
       </div>
       <div className={classes.boxTwo}>
@@ -241,13 +247,22 @@ const Accueil: FC = () => {
       >
         PERIKOPA VOLANA {moment().format('MMMM').toUpperCase()} :{' '}
         {/* 0 Janoary - 1 Febroary ... 11 Desambra */}
-        <span style={{ fontWeight: 'bold' }}>"{getAndalana(moment().month()).andalana} "</span>
+        <span style={{ fontWeight: 'bold' }}>
+          "{getAndalana(moment().month()).andalana} "
+        </span>
       </div>
       <div className={classes.boxThree}>
         <Grid container>
           <Grid item xs={12} lg={4} xl={3} md={4}>
             <div className={classes.boxThree1}>
-              <div className="content" style={{ height: "500px", overflow: "hidden", position: "relative" }}>
+              <div
+                className="content"
+                style={{
+                  height: '500px',
+                  overflow: 'hidden',
+                  position: 'relative',
+                }}
+              >
                 <div style={{ backgroundColor: '#F4C247' }}>
                   <div
                     style={{
@@ -266,17 +281,27 @@ const Accueil: FC = () => {
                   andininy={mofonainaAnio.andininy}
                   andalana={mofonainaAnio.andalana}
                 />
-                <div style={{ 
-                  position: "absolute",
-                  zIndex: 1, bottom: "0",
-                  backgroundColor: "#fff",
-                  width: "90%",
-                  padding: "20px",
-                  textAlign: "center" }}>
-                    <Link to="" style={{ color: "#004D80", textDecoration: "none" }} onClick={() => {
-              handleClickMofonaina()
-            }} >SOKAFANA MANONTOLO</Link>
-                  </div>
+                <div
+                  style={{
+                    position: 'absolute',
+                    zIndex: 1,
+                    bottom: '0',
+                    backgroundColor: '#fff',
+                    width: '90%',
+                    padding: '20px',
+                    textAlign: 'center',
+                  }}
+                >
+                  <Link
+                    to=""
+                    style={{ color: '#004D80', textDecoration: 'none' }}
+                    onClick={() => {
+                      handleClickMofonaina()
+                    }}
+                  >
+                    SOKAFANA MANONTOLO
+                  </Link>
+                </div>
               </div>
               <br />
               <br />
@@ -336,23 +361,38 @@ const Accueil: FC = () => {
                       </div>
                       <div className="quoteContent">
                         <div className="text">
-                        Ry havana malala,
-                        Velona i JESOA! –Eny, velona tokoa i JESOA!
-                        Koa miarahaba antsika rehetra nomen’Andriamanitra izao Paska 2021 izao: Ho aminao anie ny fiadanana, araka ny fiarahaban’i JESOA nitsangana tamin’ny maty.
-                        Ary ny fitsanganany tamin’ny maty dia fandresen’ny Fiainana!
-                        Roahin’ny finoana ny fitsanganan’i Kristy tamin’ny maty ny toetra maty fahavelona, maty eritreritra, rehetra.
-                        Ongotan’ny finoana ny fitsanganan’i Kristy tamin’ny maty ny filavoana lefona eo anoloan’ny fahotana sy ny fahazaran-dratsy rehetra.
-                        Arodan’ny finoana ny fitsanganan’i Kristy tamin’ny maty ny manda fito soson’ny fahakiviana rehetra .
-                        “fa efa natsangana tamin’ny maty tokoa i Kristy” (I Kor.15.20)
-                        Nisy nitantara hoe: I Martin Luther, ilay mpanitsy fivavahana tamin’ny Taonjato faha-16 niteraka ny “Fiangonana Loterana”, dia nisedra ady mangotraka tamin’ny fanaovana izany fanitsiam-pivavahana izany. Ary tahaka ny nanjo an’i Elia, ao amin’ny Baiboly, dia latsaka tao amin’ny fahakiviana lalina izy. Rehefa nahita izany ny vadiny, dia lasa nanao akanjo mainty, dia nankao an’efitranony. Gaga i Luther raha nahita azy ka velom-panontaniana hoe:
-                        -Fa iza no maty no misaona be toy izao ianao?
-                        –Maty Andriamanitra! hoy ny vadiny .
-                        -Aza miteniteny foana ianao! hoy i Luther tezitra !
-                        Fa namaly mora Ramatoa vadiny ka nanao hoe:
-                        -Ka raha tsy maty ve Andriamanitra, ho kivy toy izao i Luther mpanompony?
-                        Izay no  nampiredareda ny finoana tao am-pon’i Luther  indray fa hay tsy maty tokoa Andriamanitra, ka nahoana izy no ho kivy? Dia nanohy ny fijoroany izy.
-                        Ary ny Andriamanitrao: maty sa velona ?
-                                    Mirary Paska sambatra, ry Havana.
+                          Ry havana malala, Velona i JESOA! –Eny, velona tokoa i
+                          JESOA! Koa miarahaba antsika rehetra
+                          nomen’Andriamanitra izao Paska 2021 izao: Ho aminao
+                          anie ny fiadanana, araka ny fiarahaban’i JESOA
+                          nitsangana tamin’ny maty. Ary ny fitsanganany tamin’ny
+                          maty dia fandresen’ny Fiainana! Roahin’ny finoana ny
+                          fitsanganan’i Kristy tamin’ny maty ny toetra maty
+                          fahavelona, maty eritreritra, rehetra. Ongotan’ny
+                          finoana ny fitsanganan’i Kristy tamin’ny maty ny
+                          filavoana lefona eo anoloan’ny fahotana sy ny
+                          fahazaran-dratsy rehetra. Arodan’ny finoana ny
+                          fitsanganan’i Kristy tamin’ny maty ny manda fito
+                          soson’ny fahakiviana rehetra . “fa efa natsangana
+                          tamin’ny maty tokoa i Kristy” (I Kor.15.20) Nisy
+                          nitantara hoe: I Martin Luther, ilay mpanitsy
+                          fivavahana tamin’ny Taonjato faha-16 niteraka ny
+                          “Fiangonana Loterana”, dia nisedra ady mangotraka
+                          tamin’ny fanaovana izany fanitsiam-pivavahana izany.
+                          Ary tahaka ny nanjo an’i Elia, ao amin’ny Baiboly, dia
+                          latsaka tao amin’ny fahakiviana lalina izy. Rehefa
+                          nahita izany ny vadiny, dia lasa nanao akanjo mainty,
+                          dia nankao an’efitranony. Gaga i Luther raha nahita
+                          azy ka velom-panontaniana hoe: -Fa iza no maty no
+                          misaona be toy izao ianao? –Maty Andriamanitra! hoy ny
+                          vadiny . -Aza miteniteny foana ianao! hoy i Luther
+                          tezitra ! Fa namaly mora Ramatoa vadiny ka nanao hoe:
+                          -Ka raha tsy maty ve Andriamanitra, ho kivy toy izao i
+                          Luther mpanompony? Izay no nampiredareda ny finoana
+                          tao am-pon’i Luther indray fa hay tsy maty tokoa
+                          Andriamanitra, ka nahoana izy no ho kivy? Dia nanohy
+                          ny fijoroany izy. Ary ny Andriamanitrao: maty sa
+                          velona ? Mirary Paska sambatra, ry Havana.
                         </div>
                         <div className="profil">
                           Rasolonirina Robert, Mpitandrina, Président Synodal
@@ -360,15 +400,24 @@ const Accueil: FC = () => {
                       </div>
                     </div>
                   </Grid>
-                  <Grid item
-                    xl={5} lg={12} md={12} xs={12}
+                  <Grid
+                    item
+                    xl={5}
+                    lg={12}
+                    md={12}
+                    xs={12}
                     style={{
                       display: 'flex',
                       justifyContent: 'center',
                     }}
                   >
                     <div>
-                      <video src={VideoPS} width="480" height="300" controls={true} />
+                      <video
+                        src={VideoPS}
+                        width="480"
+                        height="300"
+                        controls={true}
+                      />
                     </div>
                   </Grid>
                 </Grid>
