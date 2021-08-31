@@ -132,6 +132,7 @@ const Gallery: FC = () => {
                     label="Recherche..."
                     variant="outlined"
                     size="small"
+                    disabled
                   />
                 </form>
               </Grid>

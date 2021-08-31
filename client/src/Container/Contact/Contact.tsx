@@ -3,6 +3,7 @@ import SendIcon from '@material-ui/icons/Send'
 import React, { FC } from 'react'
 //@ts-ignore
 import Slider from 'react-slick'
+import WarningIcon from '@material-ui/icons/Warning';
 import sary1 from '../../Images/Gallery/Gallery (1).jpg'
 import sary2 from '../../Images/Gallery/Gallery (2).jpg'
 import sary3 from '../../Images/Gallery/Gallery (3).jpg'
@@ -93,6 +94,7 @@ const Contact: FC = () => {
               word'.
             </p>
             <br />
+            <div style={{ width: "fit-content", backgroundColor: "#ffe4e4", padding: "10px 15px" }}><WarningIcon /> <span style={{ position: 'relative', top: "-4px" }}>Fonctionnalité en cours de construction...</span></div>
             <div>
               <form className="root" noValidate autoComplete="off">
                 <TextField
@@ -150,6 +152,7 @@ const Contact: FC = () => {
                   style={{ width: '74ch' }}
                 />
                 <Button
+                  disabled
                   variant="contained"
                   color="primary"
                   className="button"

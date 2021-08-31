@@ -241,7 +241,7 @@ const Accueil: FC = () => {
       >
         PERIKOPA VOLANA {moment().format('MMMM').toUpperCase()} :{' '}
         {/* 0 Janoary - 1 Febroary ... 11 Desambra */}
-        <span style={{ fontWeight: 'bold' }}>"{getAndalana(moment().month()).andalana}"</span>
+        <span style={{ fontWeight: 'bold' }}>"{getAndalana(moment().month()).andalana} "</span>
       </div>
       <div className={classes.boxThree}>
         <Grid container>
