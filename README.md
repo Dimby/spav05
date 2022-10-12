@@ -11,7 +11,7 @@ yarn install
 
 ## Author
 
-👤 **Keke Tantely <keke@hairun-technology.com>**
+👤 **Dimby Rasolonirina <dimbyrasolonirina@gmail.com>**
 
 ## Show your support
 
