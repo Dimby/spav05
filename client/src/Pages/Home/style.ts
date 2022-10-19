@@ -7,8 +7,8 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   leftDiv: {
-    backgroundColor: 'red',
     flex: '0 100%',
+    backgroundRepeat: 'round',
   },
   rightDiv: {
     backgroundColor: 'yellow',
