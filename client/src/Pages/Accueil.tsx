@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import Bg01 from '../Assets/bg-01.jpg'
+import BurgerMenu from "../Components/BurgerMenu";
 
 const styles = {
     container: {
@@ -16,9 +17,8 @@ const styles = {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             '.box-blur': {
-                backgroundColor: '#000000',
+                backgroundColor: '#00000054',
                 height: '100vh',
-                opacity: '0.4'
             }
         }
     }
@@ -29,7 +29,9 @@ const Accueil = () => {
         <>
             <Box sx={styles.container} >
                 <Box className="first-box">
-                    <div className="box-blur">A</div>
+                    <div className="box-blur">
+                        <BurgerMenu />
+                    </div>
                 </Box>
                 <Box className="second-box">B</Box>
             </Box>
