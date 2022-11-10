@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Button, IconButton, Tooltip } from '@mui/material'
 import { HiX, HiMenu } from 'react-icons/hi'
+import { Link } from 'react-router-dom'
 
 const styles = {
     container: {
@@ -22,6 +23,10 @@ const styles = {
         }
     },
     menuButton: {
+        'a': {
+            display: 'block',
+            textDecoration: 'none'
+        },
         'button': {
             display: 'inherit',
             marginBottom: '10px'
@@ -35,11 +40,21 @@ const BurgerMenu = () => {
 
     const tooltipMenu = (
         <Box sx={styles.menuButton}>
-            <Button color='menuButton' variant='contained'>Fandraisana</Button>
+            <Link to='/'>
+                <Button color='menuButton' variant='contained'>Fandraisana</Button>
+            </Link>
+            <Link to='/aboutUs'>
             <Button color='menuButton' variant='contained'>Mombamomba</Button>
+            </Link>
+            <Link to='/areas'>
             <Button color='menuButton' variant='contained'>Faritra</Button>
+            </Link>
+            <Link to='/albums'>
             <Button color='menuButton' variant='contained'>Sary</Button>
+            </Link>
+            <Link to='/contactUs'>
             <Button color='menuButton' variant='contained'>Fifandraisana</Button>
+            </Link>
         </Box>
     )
 

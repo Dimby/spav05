@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import Bg01 from '../Assets/bg-01.jpg'
 import BurgerMenu from "../Components/BurgerMenu";
+import Routes from "../Routes/Routes";
 
 const styles = {
     container: {
@@ -33,7 +34,9 @@ const Accueil = () => {
                         <BurgerMenu />
                     </div>
                 </Box>
-                <Box className="second-box">B</Box>
+                <Box className="second-box">
+                    <Routes />
+                </Box>
             </Box>
         </>
     )
