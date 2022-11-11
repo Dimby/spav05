@@ -7,6 +7,7 @@ import { Link, useResolvedPath, useMatch } from 'react-router-dom';
 interface ButtonMenuProps {
     title: string;
     link: string;
+    onClick?: () => void
 }
 
 const styles = {
@@ -23,15 +24,15 @@ const styles = {
     }
 }
 
-const ButtonMenu: FC<ButtonMenuProps> = ({ title, link }) => {
+const ButtonMenu: FC<ButtonMenuProps> = ({ title, link, onClick }) => {
     const resolvedPath = useResolvedPath(link);
     const isActive = useMatch({ path: resolvedPath.pathname, end: true })
     return (
         <Link to={link}>
-            <Button sx={{ ...styles.container, backgroundColor: isActive && 'rgb(255 255 255 / 48%)' }} color='menuButton' variant='contained'>
+            <Button sx={{ ...styles.container, backgroundColor: isActive && 'rgb(255 255 255 / 48%)' }} color='menuButton' variant='contained' onClick={onClick}>
                 {title}
                 {isActive && (
-                    <motion.div initial={{ x: -10, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }} >
+                    <motion.div initial={{ x: -10, opacity: 0 }} animate={{ x: 0, opacity: 1 }} >
                         <BsArrowRight />
                     </motion.div>
                 )}
