@@ -1,8 +1,10 @@
 import React, { FC } from 'react'
 import { Box, Typography } from '@mui/material'
+import { motion } from 'framer-motion'
 import Button from '../Components/Button'
 import Verse from '../Components/Verse'
 import Welcome from '../Components/Welcome'
+import BgCircle from '../Assets/bgCircle.png'
 
 interface HomeProps {
     onClickHome: () => void
@@ -11,10 +13,10 @@ interface HomeProps {
 const styles = {
     container: {
         '.left-boxHome': {
+            color: "#FFFFFF",
             display: 'flex',
             flexDirection: 'column-reverse'
         },
-        color: "#FFFFFF"
     },
     welcomeSubtitle: {
         margin: '22px 0',
@@ -31,6 +33,13 @@ const styles = {
             display: 'inline !important',
             mr: 2
         }
+    },
+    bgCircle: {
+        backgroundImage: `url('${BgCircle}')`,
+        backgroundPosition: 'right',
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        height: '500px'
     }
 }
 
@@ -51,7 +60,15 @@ const Home: FC<HomeProps> = ({ onClickHome }) => {
                     </Box>
                 </Box>
             </Box>
-            <Box className='right-boxHome'>A</Box>
+            <Box className='right-boxHome'>
+                <motion.div
+                    initial={{ x: 500, y: -500, opacity: 0 }}
+                    animate={{ x: 0, y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <Box sx={styles.bgCircle}></Box>
+                </motion.div>
+            </Box>
         </Box>
     )
 }

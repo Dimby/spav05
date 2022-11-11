@@ -34,6 +34,7 @@ const styles = {
                 zIndex: 99,
                 display: 'flex',
                 justifyContent: 'space-between',
+                overflow: 'hidden',
                 '> .MuiBox-root': {
                     width: '100%',
                     height: '100vh'
