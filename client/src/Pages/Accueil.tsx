@@ -87,7 +87,16 @@ const Accueil = () => {
                 <Box sx={styles.container} >
                     <motion.div className="first-box" initial={{ width: '100%' }} animate={{ width: widthBox }}>
                         <div className="box-blur">
-                            <Box sx={{ ...styles.containerBurger, backgroundColor: collapsed ? '#000000b3' : 'inherit' }}>
+                            <Box
+                                sx={{ ...styles.containerBurger, backgroundColor: collapsed ? '#000000b3' : 'inherit' }}
+                                onClick={(e: any) => {
+                                    e.stopPropagation()
+                                    if (collapsed) {
+                                        setCollapsed(false)
+                                        setOpenTooltip(false)
+                                    }
+                                }}
+                            >
                                 <Tooltip
                                     PopperProps={{ disablePortal: true, }}
                                     title={tooltipMenu}
