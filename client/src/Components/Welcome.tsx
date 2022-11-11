@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box } from '@mui/material'
+import { Box, duration } from '@mui/material'
+import { motion } from 'framer-motion'
 import Title from './Title'
 
 const styles = {
@@ -23,9 +24,15 @@ const styles = {
 const Welcome = () => {
     return (
         <Box sx={styles.container}>
+            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
             <Title className='mg' type="h2">Tonga soa</Title>
+            </motion.div>
+            <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7 }} >
             <Title className='en' type="h2">Welcome</Title>
+            </motion.div >
+            <motion.div initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7 }} >
             <Title className='fr' type="h2" color="default">Bienvenue</Title>
+            </motion.div >
         </Box>
     )
 }

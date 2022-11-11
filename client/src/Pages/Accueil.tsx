@@ -8,6 +8,7 @@ import ButtonMenu from "../Components/ButtonMenu";
 import Routes from "../Routes/Routes";
 import Title from "../Components/Title";
 import Welcome from "../Components/Welcome";
+import Verse from "../Components/Verse";
 
 const styles = {
     container: {
@@ -26,6 +27,21 @@ const styles = {
                 backgroundColor: '#00000054',
                 height: '100vh',
             }
+        },
+        '.second-box': {
+            '.mainContent': {
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                zIndex: 99,
+                display: 'flex',
+                justifyContent: 'space-between',
+                '> .MuiBox-root': {
+                    width: '100%',
+                    height: '100vh'
+                }
+            }
         }
     },
     containerBurger: {
@@ -33,6 +49,8 @@ const styles = {
         '.MuiTooltip-popper .MuiTooltip-tooltip': {
             marginTop: 0
         },
+        zIndex: 100,
+        position: 'relative',
         height: 'calc(100vh - 120px)'
     },
     buttonBurger: {
@@ -90,7 +108,7 @@ const Accueil = () => {
                     <motion.div className="first-box" initial={{ width: '100%' }} animate={{ width: widthBox }}>
                         <div className="box-blur">
                             <Box
-                                sx={{ ...styles.containerBurger, backgroundColor: collapsed ? '#000000b3' : 'inherit' }}
+                                sx={{ ...styles.containerBurger, backgroundColor: collapsed ? '#000000b3' : 'transparent' }}
                                 onClick={(e: any) => {
                                     e.stopPropagation()
                                     if (collapsed) {
@@ -117,9 +135,6 @@ const Accueil = () => {
                                         {collapsed ? <HiX /> : <HiMenu />}
                                     </IconButton>
                                 </Tooltip>
-                                <Box>
-                                    <Welcome />
-                                </Box>
                             </Box>
                         </div>
                     </motion.div>

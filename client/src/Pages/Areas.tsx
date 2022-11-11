@@ -1,10 +1,11 @@
+import { Box } from '@mui/material'
 import React from 'react'
 
 const Areas = () => {
     return (
-        <div>
+        <Box className='mainContent'>
             Faritra
-        </div>
+        </Box>
     )
 }
 

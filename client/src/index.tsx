@@ -34,7 +34,8 @@ const theme = createTheme({
       contrastText: '#FFFFFF'
     },
     default: {
-      main: '#FFFFFF'
+      main: '#FFFFFF',
+      contrastText: '#FFFFFF'
     },
     menuButton: {
       main: '#FFFFFF'

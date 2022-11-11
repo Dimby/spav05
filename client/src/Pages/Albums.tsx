@@ -1,10 +1,11 @@
+import { Box } from '@mui/material'
 import React from 'react'
 
 const Albums = () => {
     return (
-        <div>
+        <Box className='mainContent'>
             Photos
-        </div>
+        </Box>
     )
 }
 
