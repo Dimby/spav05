@@ -17,6 +17,11 @@ const styles = {
             display: 'flex',
             flexDirection: 'column-reverse'
         },
+        '.right-boxHome': {
+            '.boxCercle': {
+                position: 'relative'
+            }
+        }
     },
     welcomeSubtitle: {
         margin: '22px 0',
@@ -26,6 +31,10 @@ const styles = {
     leftContent: {
         alignItems: 'end',
         padding: '60px 75px 60px 100px',
+    },
+    rightContent: {
+        position: 'absolute',
+        top: 0
     },
     buttonCTA: {
         mt: 3,
@@ -62,11 +71,15 @@ const Home: FC<HomeProps> = ({ onClickHome }) => {
             </Box>
             <Box className='right-boxHome'>
                 <motion.div
+                    className='boxCercle'
                     initial={{ x: 500, y: -500, opacity: 0 }}
                     animate={{ x: 0, y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.3 }}
                 >
                     <Box sx={styles.bgCircle}></Box>
+                    <Box sx={styles.rightContent}>
+                        Alert
+                    </Box>
                 </motion.div>
             </Box>
         </Box>
