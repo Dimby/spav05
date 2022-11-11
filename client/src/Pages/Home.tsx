@@ -5,6 +5,7 @@ import Button from '../Components/Button'
 import Verse from '../Components/Verse'
 import Welcome from '../Components/Welcome'
 import BgCircle from '../Assets/bgCircle.png'
+import Title from '../Components/Title'
 
 interface HomeProps {
     onClickHome: () => void
@@ -77,10 +78,10 @@ const Home: FC<HomeProps> = ({ onClickHome }) => {
                     transition={{ duration: 0.3 }}
                 >
                     <Box sx={styles.bgCircle}></Box>
-                    <Box sx={styles.rightContent}>
-                        Alert
-                    </Box>
                 </motion.div>
+                    <Box sx={styles.rightContent}>
+                    <Title type='h1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta incidunt, recusandae aperiam facere dignissimos maiores ut rem autem iure esse quidem repellat debitis sit quas! Rerum magni cumque neque suscipit.</Title>
+                </Box>
             </Box>
         </Box>
     )
