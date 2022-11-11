@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './index.css';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
+import Mullingar from './Assets/Mullingar.ttf'
 
 declare module '@mui/material' {
   interface Palette {
@@ -70,8 +71,31 @@ const theme = createTheme({
           backgroundColor: 'transparent'
         }
       }
+    },
+    MuiCssBaseline: {
+      styleOverrides: `
+      @font-face {
+          font-family: 'Mullingar';
+          src: url(${Mullingar})
+      }`
+    },
+    MuiTypography: {
+      styleOverrides: {
+        h1: {
+          fontFamily: 'Mullingar',
+          fontSize: '86px'
+        },
+        h2: {
+          fontFamily: 'Mullingar',
+          fontSize: '56px'
+        },
+        h3: {
+          fontFamily: 'Mullingar',
+          fontSize: '26px'
+        }
+      }
     }
-  }
+  },
 })
 
 const root = ReactDOM.createRoot(

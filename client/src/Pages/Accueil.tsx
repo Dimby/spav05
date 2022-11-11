@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Box, IconButton, Tooltip } from "@mui/material";
+import { Box, IconButton, Tooltip, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 import { BrowserRouter } from "react-router-dom";
 import Bg01 from '../Assets/bg-01.jpg';
 import ButtonMenu from "../Components/ButtonMenu";
 import Routes from "../Routes/Routes";
+import Title from "../Components/Title";
+import Welcome from "../Components/Welcome";
 
 const styles = {
     container: {
@@ -27,11 +29,11 @@ const styles = {
         }
     },
     containerBurger: {
-        padding: '60px 75px 0 100px',
+        padding: '60px 75px 60px 100px',
         '.MuiTooltip-popper .MuiTooltip-tooltip': {
             marginTop: 0
         },
-        height: 'calc(100vh - 60px)'
+        height: 'calc(100vh - 120px)'
     },
     buttonBurger: {
         color: '#FFFFFF',
@@ -115,6 +117,9 @@ const Accueil = () => {
                                         {collapsed ? <HiX /> : <HiMenu />}
                                     </IconButton>
                                 </Tooltip>
+                                <Box>
+                                    <Welcome />
+                                </Box>
                             </Box>
                         </div>
                     </motion.div>
