@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import { Box, IconButton, Tooltip, Typography } from "@mui/material";
+import { Box, IconButton, Tooltip } from "@mui/material";
 import { motion } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 import { BrowserRouter } from "react-router-dom";
 import Bg01 from '../Assets/bg-01.jpg';
-import ButtonMenu from "../Components/ButtonMenu";
+import ButtonMenu from "../Components/Button";
 import Routes from "../Routes/Routes";
-import Title from "../Components/Title";
-import Welcome from "../Components/Welcome";
-import Verse from "../Components/Verse";
 
 const styles = {
     container: {
@@ -42,7 +39,11 @@ const styles = {
                     height: '100vh'
                 }
             }
-        }
+        },
+        'a.link-button': {
+            display: 'block',
+            textDecoration: 'none'
+        },
     },
     containerBurger: {
         padding: '60px 75px 60px 100px',
@@ -51,7 +52,6 @@ const styles = {
         },
         zIndex: 100,
         position: 'relative',
-        height: 'calc(100vh - 120px)'
     },
     buttonBurger: {
         color: '#FFFFFF',
@@ -65,10 +65,6 @@ const styles = {
         }
     },
     menuButton: {
-        'a': {
-            display: 'block',
-            textDecoration: 'none'
-        },
         'button': {
             display: 'inherit',
             marginBottom: '10px'
@@ -84,19 +80,19 @@ const Accueil = () => {
     const tooltipMenu = (
         <Box sx={styles.menuButton}>
             <motion.div initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }} >
-                <ButtonMenu title='Fandraisana' link='/' onClick={() => setWidthBox('100%')} />
+                <ButtonMenu color="menuButton" title='Fandraisana' link='/' onClick={() => setWidthBox('100%')} />
             </motion.div>
             <motion.div initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }} >
-                <ButtonMenu title='Mombamomba' link='/aboutUs' onClick={() => setWidthBox('55%')} />
+                <ButtonMenu color="menuButton" title='Mombamomba' link='/aboutUs' onClick={() => setWidthBox('55%')} />
             </motion.div>
             <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }} >
-                <ButtonMenu title='Faritra' link='/areas' onClick={() => setWidthBox('55%')} />
+                <ButtonMenu color="menuButton" title='Faritra' link='/areas' onClick={() => setWidthBox('55%')} />
             </motion.div>
             <motion.div initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }} >
-                <ButtonMenu title='Sary' link='/albums' onClick={() => setWidthBox('55%')} />
+                <ButtonMenu color="menuButton" title='Sary' link='/albums' onClick={() => setWidthBox('55%')} />
             </motion.div>
             <motion.div initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }} >
-                <ButtonMenu title='Fifandraisana' link='/contactUs' onClick={() => setWidthBox('55%')} />
+                <ButtonMenu color="menuButton" title='Fifandraisana' link='/contactUs' onClick={() => setWidthBox('55%')} />
             </motion.div>
         </Box>
     )
@@ -108,7 +104,7 @@ const Accueil = () => {
                     <motion.div className="first-box" initial={{ width: '100%' }} animate={{ width: widthBox }}>
                         <div className="box-blur">
                             <Box
-                                sx={{ ...styles.containerBurger, backgroundColor: collapsed ? '#000000b3' : 'transparent' }}
+                                sx={{ ...styles.containerBurger, backgroundColor: collapsed ? '#000000b3' : 'transparent', height: !collapsed ? 'calc(50vh - 120px)' : 'calc(100vh - 120px)' }}
                                 onClick={(e: any) => {
                                     e.stopPropagation()
                                     if (collapsed) {
@@ -139,7 +135,7 @@ const Accueil = () => {
                         </div>
                     </motion.div>
                     <Box className="second-box">
-                        <Routes />
+                        <Routes onClickHome={() => setWidthBox('55%')} />
                     </Box>
                 </Box>
             </BrowserRouter>
