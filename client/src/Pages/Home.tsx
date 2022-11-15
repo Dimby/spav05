@@ -6,6 +6,7 @@ import Verse from '../Components/Verse'
 import Welcome from '../Components/Welcome'
 import BgCircle from '../Assets/bgCircle.png'
 import Title from '../Components/Title'
+import QuoteMark from '../Assets/quote-right.png'
 
 interface HomeProps {
     onClickHome: () => void
@@ -35,7 +36,39 @@ const styles = {
     },
     rightContent: {
         position: 'absolute',
-        top: 0
+        top: 0,
+        width: '-webkit-fill-available',
+        height: '50vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '70px 0 50px',
+        '.box-heading': {
+            width: 400,
+            position: 'relative',
+            '.MuiTypography-h5:first-child': {
+                position: 'absolute',
+                width: 300,
+                right: '-30px',
+                top: '-20px',
+                lineHeight: '27px',
+                color: '#534117'
+            },
+            '.quote-mark': {
+                position: 'relative',
+                right: 32
+            },
+            '.heading-lg': {
+                letterSpacing: '2px',
+                textShadow: '-4px -4px 0px #FFFFFF',
+                lineHeight: '70px'
+            },
+            '.MuiTypography-h5:last-child': {
+                mt: 2,
+                fontWeight: '500',
+                color: '#EEB529'
+            }
+        }
     },
     buttonCTA: {
         mt: 3,
@@ -79,8 +112,18 @@ const Home: FC<HomeProps> = ({ onClickHome }) => {
                 >
                     <Box sx={styles.bgCircle}></Box>
                 </motion.div>
-                    <Box sx={styles.rightContent}>
-                    <Title type='h1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta incidunt, recusandae aperiam facere dignissimos maiores ut rem autem iure esse quidem repellat debitis sit quas! Rerum magni cumque neque suscipit.</Title>
+                <Box sx={styles.rightContent}>
+                    <Box className='box-heading'>
+                        <Title type='h5'>Synodamparitany Ambatondrazaka vaovao</Title>
+                        <img className='quote-mark' src={QuoteMark} alt="" />
+                        <Title type='h1' className="heading-lg">
+                            Fianarana amin'ny asa tsara
+                        </Title>
+                        <Title type='h5'>Titosy 02 : 07a</Title>
+                    </Box>
+                </Box>
+                <Box>
+                    A
                 </Box>
             </Box>
         </Box>
