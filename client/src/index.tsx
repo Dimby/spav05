@@ -129,6 +129,13 @@ const theme = createTheme({
                     fontSize: '26px'
                 }
             }
+        },
+        MuiTableHead: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: 'rgb(243 243 243 / 64%)'
+                }
+            }
         }
     },
 })

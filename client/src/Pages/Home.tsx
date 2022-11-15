@@ -140,8 +140,8 @@ const Home: FC<HomeProps> = ({ onClickHome }) => {
                         videos
                     </Box>
                     <Box sx={styles.buttonCTA} className='buttonCTA-right'>
-                        <Button link='/aboutUs' color='primary' title='Misongadina' onClick={() => { }} icon={<BsArrowRight />} />
-                        <Button link='/contactUs' color='primary' title='Mety ilainao' onClick={() => { }} variant='outlined' icon={<BsFillFileEarmarkZipFill />} />
+                        <Button link='/aboutUs' color='primary' title='Misongadina' onClick={() => { }} endIcon={<BsArrowRight />} />
+                        <Button link='/files' color='primary' title='Mety ilainao' onClick={() => { }} variant='outlined' endIcon={<BsFillFileEarmarkZipFill />} />
                     </Box>
                 </Box>
             </Box>

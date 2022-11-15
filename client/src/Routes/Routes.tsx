@@ -4,6 +4,7 @@ import AboutUs from "../Pages/AboutUs";
 import Albums from "../Pages/Albums";
 import Areas from "../Pages/Areas";
 import Contact from "../Pages/Contact";
+import Files from "../Pages/Files";
 import Home from "../Pages/Home";
 
 interface RoutesProps {
@@ -19,6 +20,7 @@ const Routes: FC<RoutesProps> = ({ onClickHome }) => {
             <Route path="/areas" element={<Areas />} />
             <Route path="/albums" element={<Albums />} />
             <Route path="/contactUs" element={<Contact />} />
+            <Route path="/files" element={<Files />} />
         </RoutesDOM>
     )
 }
