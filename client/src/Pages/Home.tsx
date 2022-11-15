@@ -7,6 +7,7 @@ import Welcome from '../Components/Welcome'
 import BgCircle from '../Assets/bgCircle.png'
 import Title from '../Components/Title'
 import QuoteMark from '../Assets/quote-right.png'
+import { BsArrowRight, BsFillFileEarmarkZipFill } from 'react-icons/bs'
 
 interface HomeProps {
     onClickHome: () => void
@@ -34,7 +35,7 @@ const styles = {
         alignItems: 'end',
         padding: '60px 75px 60px 100px',
     },
-    rightContent: {
+    rightContentTop: {
         position: 'absolute',
         top: 0,
         width: '-webkit-fill-available',
@@ -68,6 +69,18 @@ const styles = {
                 fontWeight: '500',
                 color: '#EEB529'
             }
+        }
+    },
+    rightContentBottom: {
+        position: 'absolute',
+        bottom: '0',
+        width: '-webkit-fill-available',
+        padding: '60px 75px 60px 100px',
+        '.slider-videos': {
+            height: '250px',
+        },
+        '.buttonCTA-right': {
+            textAlign: 'center'
         }
     },
     buttonCTA: {
@@ -112,7 +125,7 @@ const Home: FC<HomeProps> = ({ onClickHome }) => {
                 >
                     <Box sx={styles.bgCircle}></Box>
                 </motion.div>
-                <Box sx={styles.rightContent}>
+                <Box sx={styles.rightContentTop}>
                     <Box className='box-heading'>
                         <Title type='h5'>Synodamparitany Ambatondrazaka vaovao</Title>
                         <img className='quote-mark' src={QuoteMark} alt="" />
@@ -122,8 +135,14 @@ const Home: FC<HomeProps> = ({ onClickHome }) => {
                         <Title type='h5'>Titosy 02 : 07a</Title>
                     </Box>
                 </Box>
-                <Box>
-                    A
+                <Box sx={styles.rightContentBottom}>
+                    <Box className="slider-videos">
+                        videos
+                    </Box>
+                    <Box sx={styles.buttonCTA} className='buttonCTA-right'>
+                        <Button link='/aboutUs' color='primary' title='Misongadina' onClick={() => { }} icon={<BsArrowRight />} />
+                        <Button link='/contactUs' color='primary' title='Mety ilainao' onClick={() => { }} variant='outlined' icon={<BsFillFileEarmarkZipFill />} />
+                    </Box>
                 </Box>
             </Box>
         </Box>

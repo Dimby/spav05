@@ -24,21 +24,22 @@ declare module '@mui/material' {
     }
 }
 
+const colors = { primary: '#006AB0', secondary: '#FFD160', default: '#FFFFFF' }
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#006AB0',
+            main: colors.primary,
         },
         secondary: {
-            main: '#FFD160',
+            main: colors.secondary,
             contrastText: '#FFFFFF'
         },
         default: {
-            main: '#FFFFFF',
+            main: colors.default,
             contrastText: '#000000'
         },
         menuButton: {
-            main: '#FFFFFF'
+            main: colors.default
         }
     },
     components: {
@@ -51,9 +52,6 @@ const theme = createTheme({
                     padding: '13px 38px',
                     borderRadius: '50px',
                     fontWeight: 400,
-                    '.MuiButton-containedSecondary': {
-                        color: 'red'
-                    },
                     ...(ownerState.color === 'menuButton' && {
                         color: '#FFFFFF',
                         backgroundColor: '#ffffff1a',
@@ -63,25 +61,41 @@ const theme = createTheme({
                         }
                     }),
                     ...(ownerState.color === 'default' && {
-                        color: '#006AB0',
+                        color: colors.primary,
                         ':hover': {
                             boxShadow: 'none',
                             backgroundColor: '#ffffffd9'
                         }
                     }),
-                    ...(ownerState.color === 'secondary' && {
-                        color: '#000000',
-                        ':hover': {
-                            boxShadow: 'none',
-                            backgroundColor: '#ffd160d9'
-                        }
-                    }),
+                    ...(ownerState.color === 'secondary' &&
+                    {
+                        ...(ownerState.variant === 'contained' ? {
+                            color: '#000000',
+                            ':hover': {
+                                boxShadow: 'none',
+                                backgroundColor: '#ffd160d9'
+                            }
+                        } : {
+                            ':hover': {
+                                boxShadow: 'none',
+                                backgroundColor: '#ebf6ff'
+                            }
+                        })
+                    }
+                    ),
                     ...(ownerState.color === 'primary' && {
-                        color: '#FFFFFF',
-                        ':hover': {
-                            boxShadow: 'none',
-                            backgroundColor: '#006AB0d9'
-                        }
+                        ...(ownerState.variant === 'contained' ? {
+                            ':hover': {
+                                boxShadow: 'none',
+                                backgroundColor: '#006AB0d9'
+                            }
+                        } : {
+                            color: colors.primary,
+                            ':hover': {
+                                boxShadow: 'none',
+                                backgroundColor: '#ebf6ff'
+                            }
+                        })
                     }),
                 }),
             },
