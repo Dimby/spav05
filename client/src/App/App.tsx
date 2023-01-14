@@ -1,9 +1,9 @@
 import React from 'react';
-import Routes from '../Routes/Routes';
+import Accueil from '../Pages/Accueil';
 import './App.css';
 
 const App = () => {
-  return <Routes />
+  return <Accueil />
 }
 
 export default App;
